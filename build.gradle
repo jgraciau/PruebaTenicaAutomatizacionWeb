@@ -28,6 +28,14 @@ repositories {
     mavenCentral()
 }
 
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}
+
+processTestResources {
+    exclude '**/~$*'
+}
+
 ext {
     serenityVersion = '3.6.12'
     cucumberVersion = '7.11.2'
@@ -80,7 +88,10 @@ dependencies {
 test {
     useJUnit()
 
-    systemProperties System.getProperties()
+    def testSystemPropertyPrefixes = ['webdriver.', 'serenity.', 'cucumber.', 'headless.']
+    systemProperties System.getProperties().findAll { key, value ->
+        testSystemPropertyPrefixes.any { prefix -> key.toString().startsWith(prefix) }
+    }
 
     testLogging {
         events "PASSED", "FAILED", "SKIPPED"

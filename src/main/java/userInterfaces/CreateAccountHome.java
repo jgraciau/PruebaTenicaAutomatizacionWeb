@@ -27,9 +27,6 @@ public class CreateAccountHome {
             .located(By.id("privacy_policy_reg"));
 
     public static final Target BTTN_REGISTER  = Target.the("boton registrar")
-            .located(By.xpath("//button[contains(text(), 'Registrarme')]"));
-
-    public static final Target WELCOMEMESSAGE = Target.the("welcome message")
-            .locatedBy("//h3[contains(.,'Hola')]");
+            .located(By.name("register"));
 
 }

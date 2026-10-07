@@ -8,7 +8,6 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         plugin = {"pretty", "json:target/cucumber-json-report.json"},
         features = "src/test/resources/features",
-        tags = "@PQRS",
         glue = "stepDefinitions",
         snippets = CucumberOptions.SnippetType.CAMELCASE
 )
