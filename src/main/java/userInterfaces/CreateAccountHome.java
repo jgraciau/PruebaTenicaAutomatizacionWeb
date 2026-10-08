@@ -5,6 +5,12 @@ import org.openqa.selenium.By;
 
 public class CreateAccountHome {
 
+    public static final Target REGISTER_TOGGLE = Target.the("mostrar formulario de registro")
+            .located(By.id("show_register"));
+
+    public static final Target REGISTER_USER = Target.the("usuario del registro")
+            .located(By.id("reg_username"));
+
     public static final Target INPUT_ID = Target.the("Ingreso la cedula del usuario")
             .located(By.id("reg_username"));
 

@@ -1,6 +1,6 @@
 Feature: Gestión de PQR
 
-  @PQRS
+  @PQRS @Destructive @ManualGate @RequiresQAData
   Scenario: Crear una PQR exitosamente
     Given el usuario esta en la pagina de PQRS
     When ingresa a la opcion crear solicitud PQRS

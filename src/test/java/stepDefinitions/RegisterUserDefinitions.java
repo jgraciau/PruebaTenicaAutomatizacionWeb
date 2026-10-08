@@ -18,7 +18,6 @@ import utils.Utility;
 import java.util.List;
 import java.util.Map;
 
-import static jxl.biff.FormatRecord.logger;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 
@@ -49,14 +48,10 @@ public class RegisterUserDefinitions {
         Serenity.setSessionVariable("hoja").to(hoja);
         Serenity.setSessionVariable("numeroFila").to(numeroFila);
 
-        List<Map<String, String>> lecturaExcel;
-        if (rutaExcel.contains("prueba.xlsx")) {
-            lecturaExcel = Utility.readExcelTarifas(rutaExcel, hoja);
-        }else{
-            lecturaExcel = Utility.readExcel(rutaExcel, hoja);
-        }
+        List<Map<String, String>> lecturaExcel = rutaExcel.contains("prueba.xlsx")
+                ? Utility.readExcelTarifas(rutaExcel, hoja)
+                : Utility.readExcel(rutaExcel, hoja);
 
-        //Validamos fila
         if (numeroFila < 1 || numeroFila > lecturaExcel.size()) {
             throw new IllegalStateException("La fila especifica no existe en el archivo Excel");
         }
@@ -67,7 +62,6 @@ public class RegisterUserDefinitions {
 
         String ambiente = datoFila.getOrDefault("ambiente", "QA").trim();
         Serenity.setSessionVariable("ambiente").to(ambiente);
-        logger.info("Ambiente capturado desde el Excel: " + ambiente);
     }
 
     @And("el usuario esta en la pagina de bonBonite")

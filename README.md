@@ -72,7 +72,7 @@ Para compilar y ejecutar el runner de Cucumber:
 .\gradlew.bat test --tests runners.RunnerTest
 ```
 
-**Precaución:** la configuración predeterminada apunta a `https://www.bon-bonite.com/`. El único runner incluye todos los features, sin filtro de tags: registro, cinco outlines de compra (seis casos de ejemplo, dos para zapatos), PQRS y actualización de facturación, para nueve casos en total. Los escenarios de compra hacen clic en `place_order` y pueden crear pedidos reales; el registro puede crear una cuenta y el escenario de facturación guarda cambios persistentes en la cuenta. Ejecuta la suite completa únicamente contra un ambiente autorizado y con datos de prueba aprobados.
+**Ejecución local:** por defecto el perfil `local` usa `https://www.bon-bonite.com/`. Puedes seleccionar el perfil explícitamente con `-Denvironment=local`. Para QA, usa `-Denvironment=qa` y define `BONBONITE_BASE_URL` antes de ejecutar. El runner incluye todos los features, sin filtro de tags: registro, compras, PQRS y actualización de facturación. Algunos escenarios tienen efectos persistentes; ejecútalos solo con autorización y datos de prueba aprobados.
 
 Las pruebas de compra requieren un usuario QA en el entorno del proceso que lanza Gradle; no vuelven a las credenciales obsoletas del Excel:
 
@@ -114,13 +114,41 @@ $env:BONBONITE_PQRS_DESCRIPTION = "<descripción de prueba>"
 
 Usa únicamente identidad y valores de prueba aprobados. La propiedad `headless.mode=false` es necesaria porque Serenity se configura headless de forma predeterminada y el reCAPTCHA requiere interacción visible. El escenario espera hasta cinco minutos a que una persona lo resuelva; después envía la solicitud y valida el número de radicado. La ejecución crea una solicitud persistente. `BONBONITE_PQRS_CAUSE` se debe definir si el tipo elegido muestra un campo de causal obligatorio.
 
-Se puede sobreescribir la URL de Serenity con una propiedad de Gradle:
+### URL por ambiente
+
+Ejecución local contra el sitio configurado:
 
 ```powershell
-.\gradlew.bat test --tests runners.RunnerTest -Dwebdriver.base.url=https://<url-autorizada-de-qa>/
+.\gradlew.bat test --tests runners.RunnerTest -Denvironment=local
 ```
 
+Para QA, la URL se toma de `BONBONITE_BASE_URL`:
+
+```powershell
+$env:BONBONITE_BASE_URL = "https://<url-autorizada-de-qa>/"
+.\gradlew.bat test --tests runners.RunnerTest -Denvironment=qa
+```
+
+También puedes sobrescribirla directamente con `-Dwebdriver.base.url=https://<url-autorizada>/`.
+
 Usa únicamente una URL de QA autorizada y asegúrate de que los datos Excel correspondan a cuentas de prueba. No incluyas credenciales reales en el código o en la documentación.
+
+## Flujo de actualización de facturación
+
+El escenario `@ActualizarFacturacion` sigue el flujo de usuario real:
+
+1. Abre la cuenta autenticada en `/mi-cuenta/`.
+2. Selecciona exclusivamente el enlace `Datos` del menú de navegación de cuenta.
+3. Espera la sección de dirección de facturación y desplaza la vista hasta ella.
+4. Selecciona el botón `Editar` asociado a la dirección de facturación.
+5. Diligencia la dirección y selecciona la ciudad en el control desplegable.
+6. Guarda mediante el formulario AJAX y valida la confirmación y los valores persistidos.
+
+La implementación mantiene los selectores en `BillingAddressPage` y separa la navegación (`OpenBillingAddressEditor`) del diligenciamiento (`FillBillingAddress`). La ejecución validada del escenario es:
+
+```powershell
+.\\gradlew.bat test --tests runners.RunnerTest -Denvironment=local "-Dcucumber.filter.tags=@ActualizarFacturacion"
+```
 
 ## Reportes
 
@@ -139,4 +167,21 @@ Serenity genera reportes bajo `target/site/serenity`. Gradle también configura 
 - El último intento de reejecución quedó detenido antes de Gradle porque las variables `BONBONITE_TEST_USER`, `BONBONITE_TEST_PASSWORD` y `BONBONITE_REGISTER_EMAIL` no estaban disponibles en el entorno del proceso. No se inició otra sesión de navegador.
 - Verificación del pre-requisito de PQRS: al filtrar `@PQRS` sin variables, el hook detuvo el escenario antes de abrir Chrome; Gradle reporta `PendingException` como fallo, no como test ignorado. Esto evita presentar una solicitud vacía, pero la suite seguirá roja hasta configurar datos de prueba aprobados.
 - No se relanzaron los escenarios mutadores después del último ajuste: los casos de compra aprobados antes ya pueden haber creado pedidos; completar los escenarios de cinturones, accesorios u outlet puede crear pedidos adicionales, y el registro podría crear otra cuenta. PQRS crea un expediente real y exige CAPTCHA visible. Para un E2E completo se requiere QA/CAPTCHA de prueba o autorización específica de cada efecto persistente.
-- La URL predeterminada es el sitio público. Para automatización habitual conviene configurar un ambiente de QA y datos de prueba dedicados antes de ejecutar E2E.
+- La URL de ejecución debe definirse mediante `BONBONITE_BASE_URL`; no se configura una URL pública por defecto. Para automatización habitual conviene usar un ambiente QA y datos de prueba dedicados.
+
+## Estrategia de ejecución segura
+
+Los escenarios mutadores están etiquetados con `@Destructive` y `@RequiresQAData`. El comando general recomendado para validación estructural es:
+
+```powershell
+gradlew.bat dryRun
+```
+
+Para una suite no destructiva se puede usar el task `smokeTest`; requiere que existan escenarios con `@Smoke` que no creen pedidos ni modifiquen cuentas. Las ejecuciones E2E destructivas deben invocarse explícitamente con credenciales QA autorizadas y `BONBONITE_BASE_URL`:
+
+```powershell
+$env:BONBONITE_BASE_URL = "https://<qa-autorizado>/"
+gradlew.bat test --tests runners.RunnerTest -Dcucumber.filter.tags="@Regression and @RequiresQAData"
+```
+
+La compilación y el dry-run son aptos para CI sin abrir navegador. La suite E2E real permanece separada por sus efectos persistentes, CAPTCHA y dependencia del ambiente.

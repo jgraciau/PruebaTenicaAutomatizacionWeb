@@ -11,10 +11,10 @@ import org.openqa.selenium.WebDriver;
 
 import java.io.InputStream;
 import java.util.*;
-
-import static jxl.biff.FormatRecord.logger;
+import java.util.logging.Logger;
 
 public class Utility {
+    private static final Logger logger = Logger.getLogger(Utility.class.getName());
     public static List<Map<String, String>> readExcelTarifas(String resourcePath, String hoja) {
         List<Map<String, String>> datos = new ArrayList<>();
 
@@ -70,21 +70,18 @@ public class Utility {
         // Usar classpath: resourcePath debe ser como "/src/test/resources/excel/..."
         try (InputStream inputStream = Utility.class.getResourceAsStream(resourcePath)) {
             if (inputStream == null) {
-                System.err.println("ERROR: No se encontró el archivo en el classpath: " + resourcePath);
-                return null;
+                throw new IllegalArgumentException("No se encontró el archivo Excel en classpath: " + resourcePath);
             }
 
             try (XSSFWorkbook newWorkbook = new XSSFWorkbook(inputStream)) {
                 Sheet sheet = newWorkbook.getSheet(sheetName);
                 if (sheet == null) {
-                    System.err.println("ERROR: Hoja no encontrada: " + sheetName);
-                    return null;
+                    throw new IllegalArgumentException("No se encontró la hoja Excel: " + sheetName);
                 }
 
                 Iterator<Row> rowIterator = sheet.iterator();
                 if (!rowIterator.hasNext()) {
-                    System.err.println("ERROR: El archivo Excel está vacío.");
-                    return null;
+                    throw new IllegalArgumentException("El archivo Excel está vacío: " + resourcePath);
                 }
 
                 Row titulos = rowIterator.next(); // Primera fila = encabezados
@@ -155,14 +152,6 @@ public class Utility {
             case STRING: return celda.getStringCellValue();
             case NUMERIC: return String.valueOf(celda.getNumericCellValue());
             default: return "";
-        }
-    }
-
-    public static void tiempoEspera() {
-        try {
-            Thread.sleep(5000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
         }
     }
 

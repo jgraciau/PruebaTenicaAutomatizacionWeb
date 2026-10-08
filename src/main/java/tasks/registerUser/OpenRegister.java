@@ -4,6 +4,11 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
 import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
+import net.serenitybdd.screenplay.waits.WaitUntil;
+
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
+import static userInterfaces.CreateAccountHome.REGISTER_TOGGLE;
+import static userInterfaces.CreateAccountHome.REGISTER_USER;
 import net.thucydides.core.environment.SystemEnvironmentVariables;
 import net.thucydides.core.util.EnvironmentVariables;
 import org.openqa.selenium.By;
@@ -24,18 +29,11 @@ public class OpenRegister implements Task {
             WebDriver driver = BrowseTheWeb.as(actor).getDriver();
             driver.navigate().to(accountUrl);
 
-            WebElement registerToggle = new WebDriverWait(driver, Duration.ofSeconds(20))
-                    .withMessage("The registration form toggle did not load")
-                    .until(currentDriver -> currentDriver.findElements(By.id("show_register")).stream()
-                            .filter(WebElement::isDisplayed)
-                            .findFirst()
-                            .orElse(null));
-            registerToggle.click();
-
-            new WebDriverWait(driver, Duration.ofSeconds(20))
-                    .withMessage("The registration form did not open")
-                    .until(currentDriver -> currentDriver.findElements(By.id("reg_username")).stream()
-                            .anyMatch(WebElement::isDisplayed));
+            actor.attemptsTo(
+                    WaitUntil.the(REGISTER_TOGGLE, isVisible()).forNoMoreThan(Duration.ofSeconds(20)),
+                    net.serenitybdd.screenplay.actions.Click.on(REGISTER_TOGGLE),
+                    WaitUntil.the(REGISTER_USER, isVisible()).forNoMoreThan(Duration.ofSeconds(20))
+            );
 
         }
 

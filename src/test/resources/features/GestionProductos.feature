@@ -1,6 +1,6 @@
 Feature: Gestion de compras de productos
 
-  @Zapatos @RegresionCompra
+  @Regression @Destructive @RequiresQAData @Zapatos
   Scenario Outline: Compra exitosa de zapatos
     Given el usuario carga la informacion desde el Excel "<fila>"
       | rutaExcel                  | hoja                |
@@ -16,7 +16,7 @@ Feature: Gestion de compras de productos
       | 1    |
       | 2    |
 
-  @Bolsos @RegresionCompra
+  @Regression @Destructive @RequiresQAData @Bolsos
   Scenario Outline: Compra exitosa de bolsos
     Given el usuario carga la informacion desde el Excel "<fila>"
       | rutaExcel                  | hoja                |
@@ -32,7 +32,7 @@ Feature: Gestion de compras de productos
       | fila |
       | 2    |
 
-  @Cinturones @RegresionCompra
+  @Regression @Destructive @RequiresQAData @Cinturones
   Scenario Outline: Compra exitosa de cinturones
     Given el usuario carga la informacion desde el Excel "<fila>"
       | rutaExcel                  | hoja                |
@@ -48,7 +48,7 @@ Feature: Gestion de compras de productos
       | fila |
       | 3    |
 
-  @Accesorios @RegresionCompra
+  @Regression @Destructive @RequiresQAData @Accesorios
   Scenario Outline: Compra exitosa de accesorios
     Given el usuario carga la informacion desde el Excel "<fila>"
       | rutaExcel                  | hoja                |
@@ -63,7 +63,7 @@ Feature: Gestion de compras de productos
       | fila |
       | 4    |
 
-  @Outlet @RegresionCompra
+  @Regression @Destructive @RequiresQAData @Outlet
   Scenario Outline: Compra exitosa en outlet
     Given el usuario carga la informacion desde el Excel "<fila>"
       | rutaExcel                  | hoja                |

@@ -1,6 +1,6 @@
 Feature: Registro de usuario
 
-  @register
+  @Smoke @Destructive @RequiresQAData
   Scenario Outline: Registro exitoso
     Given el usuario carga la informacion desde el Excel "<fila>"
       | rutaExcel                  | hoja           |

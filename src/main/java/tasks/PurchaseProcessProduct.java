@@ -25,7 +25,5 @@ public class PurchaseProcessProduct implements Task {
 
         actor.attemptsTo(ClickJs.en(CHECKBOX_TERMINOS));
         actor.attemptsTo(ClickJs.en(BOTON_REALIZAR_PEDIDO));
-
-        Utility.tiempoEspera();
     }
 }

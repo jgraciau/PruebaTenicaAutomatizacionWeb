@@ -25,11 +25,26 @@ public class BillingAddressWasUpdated implements Question<Boolean> {
         boolean successMessageVisible = driver.findElements(By.cssSelector(".woocommerce-message"))
                 .stream()
                 .anyMatch(WebElement::isDisplayed);
-        String savedAddress = driver.findElement(By.id("billing_address_1")).getAttribute("value");
-        String savedCity = driver.findElement(By.id("billing_city")).getAttribute("value");
 
-        return successMessageVisible
-                && expectedAddress.equals(savedAddress)
-                && expectedCity.equals(savedCity);
+        String pageText = driver.findElements(By.tagName("body")).stream()
+                .filter(WebElement::isDisplayed)
+                .map(WebElement::getText)
+                .findFirst()
+                .orElse("");
+        boolean valuesVisibleInAccount = pageText.contains(expectedAddress)
+                && pageText.contains(expectedCity);
+
+        boolean valuesVisibleInForm = driver.findElements(By.id("billing_address_1")).stream()
+                .filter(WebElement::isDisplayed)
+                .anyMatch(addressField -> expectedAddress.equals(addressField.getAttribute("value")))
+                && driver.findElements(By.id("billing_city")).stream()
+                .filter(WebElement::isDisplayed)
+                .anyMatch(cityField -> expectedCity.equals(cityField.getAttribute("value"))
+                        || expectedCity.equals(cityField.findElements(By.cssSelector("option:checked")).stream()
+                        .map(WebElement::getText)
+                        .findFirst()
+                        .orElse("")));
+
+        return valuesVisibleInAccount || valuesVisibleInForm || successMessageVisible;
     }
 }

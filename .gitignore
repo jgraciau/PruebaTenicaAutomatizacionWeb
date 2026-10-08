@@ -43,10 +43,13 @@ bin/
 .DS_Store
 
 target/
-.github/
 .graphify/
 .idea/
 build/
 gradle/
 history/
-target/
+
+# Local credentials and environment overrides
+.env
+.env.*
+!.env.example
