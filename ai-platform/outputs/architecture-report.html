@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>Reporte de arquitectura FKA — PruebaTenicaAutomatizacionWeb</title>
+  <style>
+    :root { color-scheme: light; --ink:#142033; --muted:#617087; --line:#e5eaf1; --bg:#f4f7fb; --card:#fff; --accent:#2563eb; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--bg); color:var(--ink); font:15px/1.55 "Segoe UI",Arial,sans-serif; }
+    main { max-width:1180px; margin:0 auto; padding:36px 24px 60px; }
+    .hero { padding:30px 34px; color:#fff; border-radius:20px; background:linear-gradient(120deg,#142b55,#2563eb 72%,#0891b2); box-shadow:0 12px 35px #16396b24; }
+    .eyebrow { text-transform:uppercase; letter-spacing:.14em; font-size:12px; opacity:.8; }
+    h1 { margin:8px 0; font-size:clamp(27px,4vw,40px); line-height:1.15; }
+    .hero p { margin:5px 0 0; opacity:.86; }
+    .summary { display:grid; grid-template-columns:repeat(auto-fit,minmax(155px,1fr)); gap:14px; margin:20px 0; }
+    .summary-card,.card { background:var(--card); border:1px solid var(--line); border-radius:16px; box-shadow:0 4px 14px #182c4810; }
+    .summary-card { padding:17px 20px; } .summary-card span { display:block; color:var(--muted); font-size:13px; } .summary-card strong { display:block; margin-top:3px; font-size:30px; }
+    .grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; margin:18px 0; }
+    .card { padding:22px; min-width:0; } h2 { margin:0 0 14px; font-size:20px; } h3 { margin:0; font-size:15px; }
+    .chart-wrap { width:100%; overflow-x:auto; } .bar-chart { min-width:540px; width:100%; height:auto; } .donut-chart { min-width:420px; width:100%; max-width:560px; height:auto; }
+    .chart-label,.legend-label { fill:#35445a; font:13px "Segoe UI",Arial,sans-serif; } .chart-value,.legend-value { fill:#142033; font:bold 13px "Segoe UI",Arial,sans-serif; }
+    .bar-bg { fill:#edf2f8; } .bar { fill:#3b82f6; } .donut-total { fill:#142033; font:bold 22px "Segoe UI",Arial,sans-serif; } .donut-caption { fill:#718096; font:12px "Segoe UI",Arial,sans-serif; }
+    table { width:100%; border-collapse:collapse; } th,td { text-align:left; border-bottom:1px solid var(--line); padding:10px 8px; } td { text-align:right; font-variant-numeric:tabular-nums; } thead th { color:var(--muted); font-size:12px; text-transform:uppercase; letter-spacing:.05em; }
+    .pattern { display:flex; justify-content:space-between; align-items:center; gap:16px; padding:13px 0; border-bottom:1px solid var(--line); } .pattern:last-child { border:0; } .pattern p { margin:3px 0 0; color:var(--muted); font-size:13px; } .pattern-count { min-width:42px; padding:5px 10px; border-radius:10px; background:#eff6ff; color:#1d4ed8; font-weight:700; text-align:center; }
+    .badge { display:inline-block; padding:3px 9px; border-radius:999px; background:#eef2ff; color:#4338ca; font-size:12px; }
+    .meta { color:var(--muted); } .warning { border-left:4px solid #f59e0b; } .success { border-left:4px solid #10b981; } .success p { margin:0; color:#166534; } .warning ul { margin-bottom:0; }
+    .scope { color:var(--muted); } footer { margin-top:22px; color:var(--muted); font-size:13px; }
+    @media(max-width:760px) { main { padding:18px 13px 36px; } .hero { padding:23px; } .grid { grid-template-columns:1fr; } .card { padding:18px; } }
+    @media print { body { background:#fff; } main { max-width:none; padding:0; } .hero { box-shadow:none; print-color-adjust:exact; } .card,.summary-card { box-shadow:none; break-inside:avoid; } }
+  </style>
+</head>
+<body>
+<main>
+  <header class="hero">
+    <div class="eyebrow">Framework Knowledge Agent · Análisis estático</div>
+    <h1>Reporte de arquitectura</h1>
+    <p>PruebaTenicaAutomatizacionWeb</p>
+  </header>
+  <section class="summary" aria-label="Resumen del proyecto"><article class="summary-card"><span>Archivos fuente</span><strong>48</strong></article><article class="summary-card"><span>Características</span><strong>4</strong></article><article class="summary-card"><span>Escenarios</span><strong>8</strong></article><article class="summary-card"><span>Pasos de Gherkin</span><strong>51</strong></article><article class="summary-card"><span>Componentes Screenplay</span><strong>26</strong></article></section>
+  <section class="grid">
+    <article class="card"><h2>Inventario de componentes</h2><div class="chart-wrap"><svg class="bar-chart" viewBox="0 0 760 258" role="img" aria-label="Gráfica de barras del inventario de componentes"><text x="0" y="33" class="chart-label">Características</text><rect x="180" y="16" width="530" height="22" rx="6" class="bar-bg"/><rect x="180" y="16" width="163" height="22" rx="6" class="bar"/><text x="722" y="33" class="chart-value">4</text><text x="0" y="67" class="chart-label">Definiciones de pasos</text><rect x="180" y="50" width="530" height="22" rx="6" class="bar-bg"/><rect x="180" y="50" width="163" height="22" rx="6" class="bar"/><text x="722" y="67" class="chart-value">4</text><text x="0" y="101" class="chart-label">Tasks</text><rect x="180" y="84" width="530" height="22" rx="6" class="bar-bg"/><rect x="180" y="84" width="530" height="22" rx="6" class="bar"/><text x="722" y="101" class="chart-value">13</text><text x="0" y="135" class="chart-label">Questions</text><rect x="180" y="118" width="530" height="22" rx="6" class="bar-bg"/><rect x="180" y="118" width="163" height="22" rx="6" class="bar"/><text x="722" y="135" class="chart-value">4</text><text x="0" y="169" class="chart-label">Interactions</text><rect x="180" y="152" width="530" height="22" rx="6" class="bar-bg"/><rect x="180" y="152" width="122" height="22" rx="6" class="bar"/><text x="722" y="169" class="chart-value">3</text><text x="0" y="203" class="chart-label">Interfaces de usuario</text><rect x="180" y="186" width="530" height="22" rx="6" class="bar-bg"/><rect x="180" y="186" width="245" height="22" rx="6" class="bar"/><text x="722" y="203" class="chart-value">6</text><text x="0" y="237" class="chart-label">Modelos</text><rect x="180" y="220" width="530" height="22" rx="6" class="bar-bg"/><rect x="180" y="220" width="163" height="22" rx="6" class="bar"/><text x="722" y="237" class="chart-value">4</text></svg></div></article>
+    <article class="card"><h2>Distribución de relaciones</h2><div class="chart-wrap"><svg class="donut-chart" viewBox="0 0 450 180" role="img" aria-label="Gráfica de distribución de relaciones"><circle cx="90" cy="90" r="62" fill="none" stroke="#2563eb" stroke-width="24" stroke-dasharray="283.82 105.74" stroke-dashoffset="-0.00" transform="rotate(-90 90 90)"/><circle cx="90" cy="90" r="62" fill="none" stroke="#7c3aed" stroke-width="24" stroke-dasharray="66.78 322.78" stroke-dashoffset="-283.82" transform="rotate(-90 90 90)"/><circle cx="90" cy="90" r="62" fill="none" stroke="#0891b2" stroke-width="24" stroke-dasharray="38.96 350.60" stroke-dashoffset="-350.60" transform="rotate(-90 90 90)"/><circle cx="90" cy="90" r="62" fill="none" stroke="#ea580c" stroke-width="24" stroke-dasharray="0.00 389.56" stroke-dashoffset="-389.56" transform="rotate(-90 90 90)"/><text x="90" y="86" text-anchor="middle" class="donut-total">70</text><text x="90" y="106" text-anchor="middle" class="donut-caption">vínculos</text><circle cx="196" cy="27" r="5" fill="#2563eb"/><text x="210" y="32" class="legend-label">Característica → paso</text><text x="425" y="32" text-anchor="end" class="legend-value">51</text><circle cx="196" cy="57" r="5" fill="#7c3aed"/><text x="210" y="62" class="legend-label">Paso → Task</text><text x="425" y="62" text-anchor="end" class="legend-value">12</text><circle cx="196" cy="87" r="5" fill="#0891b2"/><text x="210" y="92" class="legend-label">Task → Interaction</text><text x="425" y="92" text-anchor="end" class="legend-value">7</text><circle cx="196" cy="117" r="5" fill="#ea580c"/><text x="210" y="122" class="legend-label">Task → Question</text><text x="425" y="122" text-anchor="end" class="legend-value">0</text></svg></div></article>
+  </section>
+  <section class="grid">
+    <article class="card"><h2>Detalle del inventario</h2><table><thead><tr><th>Componente</th><th>Cantidad</th></tr></thead><tbody><tr><th scope="row">Características</th><td>4</td></tr><tr><th scope="row">Definiciones de pasos</th><td>4</td></tr><tr><th scope="row">Tasks</th><td>13</td></tr><tr><th scope="row">Questions</th><td>4</td></tr><tr><th scope="row">Interactions</th><td>3</td></tr><tr><th scope="row">Interfaces de usuario</th><td>6</td></tr><tr><th scope="row">Modelos</th><td>4</td></tr><tr><th scope="row">Escenarios</th><td>8</td></tr><tr><th scope="row">Pasos de Gherkin</th><td>51</td></tr></tbody></table></article>
+    <article class="card"><h2>Patrones detectados</h2><article class="pattern"><div><h3>Cucumber Gherkin</h3><p>Archivos Feature y escenarios analizados</p></div><span class="pattern-count">4</span></article><article class="pattern"><div><h3>Definiciones de pasos Cucumber</h3><p>Clases Java con anotaciones Cucumber o ubicadas en stepDefinitions</p></div><span class="pattern-count">4</span></article><article class="pattern"><div><h3>Tasks de Screenplay</h3><p>Clases Java del paquete tasks que implementan Task</p></div><span class="pattern-count">13</span></article><article class="pattern"><div><h3>Questions de Screenplay</h3><p>Clases Java del paquete questions que usan Question&lt;T&gt;</p></div><span class="pattern-count">4</span></article><article class="pattern"><div><h3>Interactions de Screenplay</h3><p>Clases Java del paquete interactions</p></div><span class="pattern-count">3</span></article><article class="pattern"><div><h3>Interfaces de usuario Screenplay</h3><p>Clases Java del paquete userInterfaces con Target</p></div><span class="pattern-count">6</span></article></article>
+  </section>
+  <section class="card"><h2>Relaciones</h2><table><thead><tr><th>Relación</th><th>Vínculos</th><th>Clasificación</th></tr></thead><tbody><tr><th scope="row">Característica → definición de paso</th><td>51</td><td><span class="badge">Heurística</span></td></tr><tr><th scope="row">Definición de paso → Task</th><td>12</td><td><span class="badge">Observada</span></td></tr><tr><th scope="row">Task → Interaction</th><td>7</td><td><span class="badge">Observada</span></td></tr><tr><th scope="row">Task → Question</th><td>0</td><td><span class="badge">Observada</span></td></tr></tbody></table>
+    <p class="meta">Raíz analizada: <code>.</code> · Frameworks detectados: Serenity BDD, Cucumber, Gradle, Screenplay</p>
+  </section>
+  <section class="card success"><h2>Estado del análisis</h2><p>No se encontraron errores de lectura o exploración.</p></section>
+  <section class="card scope" style="margin-top:18px"><h2>Alcance y limitaciones</h2><p>Este reporte inspecciona únicamente los archivos fuente. No ejecuta código Java ni pruebas. Las relaciones entre características y definiciones de pasos son heurísticas; las referencias de tipos Java son observadas. Las llamadas indirectas, la inyección de dependencias y las expresiones Cucumber no compatibles pueden limitar la detección de relaciones.</p></section>
+  <footer>Generado por FKA · Las gráficas SVG están integradas; este reporte funciona sin conexión y se actualiza en cada ejecución.</footer>
+</main>
+</body>
+</html>

@@ -1,0 +1,15 @@
+{
+  "include": ["ai-platform"],
+  "exclude": [
+    "**/__pycache__",
+    "**/.pytest_cache",
+    "**/build",
+    "**/target",
+    "**/.axet-code",
+    "**/.venv",
+    "**/venv"
+  ],
+  "extraPaths": ["ai-platform"],
+  "pythonVersion": "3.10",
+  "typeCheckingMode": "basic"
+}

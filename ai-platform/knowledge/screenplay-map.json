@@ -1,0 +1,632 @@
+{
+  "metrics": {
+    "features": 4,
+    "gherkin_steps": 51,
+    "interactions": 3,
+    "models": 4,
+    "questions": 4,
+    "scenarios": 8,
+    "step_definitions": 4,
+    "tasks": 13,
+    "user_interfaces": 6
+  },
+  "patterns_detected": [
+    {
+      "count": 4,
+      "evidence": "Feature files and parsed scenarios",
+      "evidence_es": "Archivos Feature y escenarios analizados",
+      "pattern": "Cucumber Gherkin",
+      "pattern_es": "Cucumber Gherkin"
+    },
+    {
+      "count": 4,
+      "evidence": "Java classes with Cucumber annotations or stepDefinitions path",
+      "evidence_es": "Clases Java con anotaciones Cucumber o ubicadas en stepDefinitions",
+      "pattern": "Cucumber Step Definitions",
+      "pattern_es": "Definiciones de pasos Cucumber"
+    },
+    {
+      "count": 13,
+      "evidence": "Java classes in task package implementing Task",
+      "evidence_es": "Clases Java del paquete tasks que implementan Task",
+      "pattern": "Screenplay Tasks",
+      "pattern_es": "Tasks de Screenplay"
+    },
+    {
+      "count": 4,
+      "evidence": "Java classes in questions package using Question<T>",
+      "evidence_es": "Clases Java del paquete questions que usan Question<T>",
+      "pattern": "Screenplay Questions",
+      "pattern_es": "Questions de Screenplay"
+    },
+    {
+      "count": 3,
+      "evidence": "Java classes in interactions package",
+      "evidence_es": "Clases Java del paquete interactions",
+      "pattern": "Screenplay Interactions",
+      "pattern_es": "Interactions de Screenplay"
+    },
+    {
+      "count": 6,
+      "evidence": "Java classes in userInterfaces package with Target",
+      "evidence_es": "Clases Java del paquete userInterfaces con Target",
+      "pattern": "Screenplay User Interfaces",
+      "pattern_es": "Interfaces de usuario Screenplay"
+    }
+  ],
+  "relationship_semantics": {
+    "heuristic": "coincidencia textual normalizada entre pasos Gherkin y expresiones de anotaciones Cucumber",
+    "heuristic_en": "normalized text matching between Gherkin steps and Cucumber annotation expressions",
+    "observed": "referencias directas a tipos Java extraídas del código fuente",
+    "observed_en": "direct Java type references extracted from source"
+  },
+  "relationships": {
+    "feature_to_step_definition": [
+      {
+        "evidence": "complete Gherkin step matched annotated expression",
+        "feature": "src/test/resources/features/ActualizarFacturacion.feature",
+        "gherkin_step": "actualiza su direccion de facturacion a \"Cr 67 #54-77\" y ciudad \"Itagui\"",
+        "relation": "heuristic",
+        "scenario": "Cambiar dirección y ciudad de facturación",
+        "step_definition": "src/test/java/stepDefinitions/BillingAddressDefinitions.java"
+      },
+      {
+        "evidence": "complete Gherkin step matched annotated expression",
+        "feature": "src/test/resources/features/ActualizarFacturacion.feature",
+        "gherkin_step": "debe confirmar que la direccion de facturacion quedo guardada como \"Cr 67 #54-77\" en la ciudad \"Itagui\"",
+        "relation": "heuristic",
+        "scenario": "Cambiar dirección y ciudad de facturación",
+        "step_definition": "src/test/java/stepDefinitions/BillingAddressDefinitions.java"
+      },
+      {
+        "evidence": "complete Gherkin step matched annotated expression",
+        "feature": "src/test/resources/features/ActualizarFacturacion.feature",
+        "gherkin_step": "inicia sesion con su usuario",
+        "relation": "heuristic",
+        "scenario": "Cambiar dirección y ciudad de facturación",
+        "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java"
+      },
+      {
+        "evidence": "complete Gherkin step matched annotated expression",
+        "feature": "src/test/resources/features/ActualizarFacturacion.feature",
+        "gherkin_step": "el usuario carga la informacion desde el Excel \"1\"",
+        "relation": "heuristic",
+        "scenario": "Cambiar dirección y ciudad de facturación",
+        "step_definition": "src/test/java/stepDefinitions/RegisterUserDefinitions.java"
+      },
+      {
+        "evidence": "complete Gherkin step matched annotated expression",
+        "feature": "src/test/resources/features/ActualizarFacturacion.feature",
+        "gherkin_step": "el usuario esta en la pagina de bonBonite",
+        "relation": "heuristic",
+        "scenario": "Cambiar dirección y ciudad de facturación",
+        "step_definition": "src/test/java/stepDefinitions/RegisterUserDefinitions.java"
+      },
+      {
+        "evidence": "complete Gherkin step matched annotated expression",
+        "feature": "src/test/resources/features/CrearPQRS.feature",
+        "gherkin_step": "el usuario carga la informacion PQRS desde el Excel \"<fila>\"",
+        "relation": "heuristic",
+        "scenario": "Crear una PQR exitosamente",
+        "step_definition": "src/test/java/stepDefinitions/ApplicationPqrsDefinitions.java"
+      },
+      {
+        "evidence": "complete Gherkin step matched annotated expression",
+        "feature": "src/test/resources/features/CrearPQRS.feature",
+        "gherkin_step": "el usuario PQRS abre la pagina de bonBonite",
+        "relation": "heuristic",
+        "scenario": "Crear una PQR exitosamente",
+        "step_definition": "src/test/java/stepDefinitions/ApplicationPqrsDefinitions.java"
+      },
+      {
+        "evidence": "complete Gherkin step matched annotated expression",
+        "feature": "src/test/resources/features/CrearPQRS.feature",
+        "gherkin_step": "el usuario PQRS inicia sesion",
+        "relation": "heuristic",
+        "scenario": "Crear una PQR exitosamente",
+        "step_definition": "src/test/java/stepDefinitions/ApplicationPqrsDefinitions.java"
+      },
+      {
+        "evidence": "complete Gherkin step matched annotated expression",
+        "feature": "src/test/resources/features/CrearPQRS.feature",
+        "gherkin_step": "ingresa a la opcion crear solicitud PQRS",
+        "relation": "heuristic",
+        "scenario": "Crear una PQR exitosamente",
+        "step_definition": "src/test/java/stepDefinitions/ApplicationPqrsDefinitions.java"
+      },
+      {
+        "evidence": "complete Gherkin step matched annotated expression",
+        "feature": "src/test/resources/features/CrearPQRS.feature",
+        "gherkin_step": "diligencia el formulario con los datos requeridos",
+        "relation": "heuristic",
+        "scenario": "Crear una PQR exitosamente",
+        "step_definition": "src/test/java/stepDefinitions/ApplicationPqrsDefinitions.java"
+      },
+      {
+        "evidence": "complete Gherkin step matched annotated expression",
+        "feature": "src/test/resources/features/CrearPQRS.feature",
+        "gherkin_step": "el sistema genera un mensaje de confirmacion con el numero de radicado",
+        "relation": "heuristic",
+        "scenario": "Crear una PQR exitosamente",
+        "step_definition": "src/test/java/stepDefinitions/ApplicationPqrsDefinitions.java"
+      },
+      {
+        "evidence": "complete Gherkin step matched annotated expression",
+        "feature": "src/test/resources/features/GestionProductos.feature",
+        "gherkin_step": "inicia sesion con su usuario",
+        "relation": "heuristic",
+        "scenario": "Compra exitosa de zapatos",
+        "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java"
+      },
+      {
+        "evidence": "complete Gherkin step matched annotated expression",
+        "feature": "src/test/resources/features/GestionProductos.feature",
+        "gherkin_step": "busca la categoria de \"zapatos\"",
+        "relation": "heuristic",
+        "scenario": "Compra exitosa de zapatos",
+        "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java"
+      },
+      {
+        "evidence": "complete Gherkin step matched annotated expression",
+        "feature": "src/test/resources/features/GestionProductos.feature",
+        "gherkin_step": "selecciona un producto disponible",
+        "relation": "heuristic",
+        "scenario": "Compra exitosa de zapatos",
+        "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java"
+      },
+      {
+        "evidence": "complete Gherkin step matched annotated expression",
+        "feature": "src/test/resources/features/GestionProductos.feature",
+        "gherkin_step": "realizamos el proceso de compra",
+        "relation": "heuristic",
+        "scenario": "Compra exitosa de zapatos",
+        "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java"
+      },
+      {
+        "evidence": "complete Gherkin step matched annotated expression",
+        "feature": "src/test/resources/features/GestionProductos.feature",
+        "gherkin_step": "el sistema genera mensaje de confirmacion de compra con el numero de pedido",
+        "relation": "heuristic",
+        "scenario": "Compra exitosa de zapatos",
+        "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java"
+      },
+      {
+        "evidence": "complete Gherkin step matched annotated expression",
+        "feature": "src/test/resources/features/GestionProductos.feature",
+        "gherkin_step": "inicia sesion con su usuario",
+        "relation": "heuristic",
+        "scenario": "Compra exitosa de bolsos",
+        "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java"
+      },
+      {
+        "evidence": "complete Gherkin step matched annotated expression",
+        "feature": "src/test/resources/features/GestionProductos.feature",
+        "gherkin_step": "busca la categoria de \"bolsos\"",
+        "relation": "heuristic",
+        "scenario": "Compra exitosa de bolsos",
+        "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java"
+      },
+      {
+        "evidence": "complete Gherkin step matched annotated expression",
+        "feature": "src/test/resources/features/GestionProductos.feature",
+        "gherkin_step": "selecciona un producto disponible",
+        "relation": "heuristic",
+        "scenario": "Compra exitosa de bolsos",
+        "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java"
+      },
+      {
+        "evidence": "complete Gherkin step matched annotated expression",
+        "feature": "src/test/resources/features/GestionProductos.feature",
+        "gherkin_step": "realizamos el proceso de compra",
+        "relation": "heuristic",
+        "scenario": "Compra exitosa de bolsos",
+        "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java"
+      },
+      {
+        "evidence": "complete Gherkin step matched annotated expression",
+        "feature": "src/test/resources/features/GestionProductos.feature",
+        "gherkin_step": "el sistema genera mensaje de confirmacion de compra con el numero de pedido",
+        "relation": "heuristic",
+        "scenario": "Compra exitosa de bolsos",
+        "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java"
+      },
+      {
+        "evidence": "complete Gherkin step matched annotated expression",
+        "feature": "src/test/resources/features/GestionProductos.feature",
+        "gherkin_step": "inicia sesion con su usuario",
+        "relation": "heuristic",
+        "scenario": "Compra exitosa de cinturones",
+        "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java"
+      },
+      {
+        "evidence": "complete Gherkin step matched annotated expression",
+        "feature": "src/test/resources/features/GestionProductos.feature",
+        "gherkin_step": "busca la categoria de \"cinturones\"",
+        "relation": "heuristic",
+        "scenario": "Compra exitosa de cinturones",
+        "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java"
+      },
+      {
+        "evidence": "complete Gherkin step matched annotated expression",
+        "feature": "src/test/resources/features/GestionProductos.feature",
+        "gherkin_step": "selecciona un producto disponible",
+        "relation": "heuristic",
+        "scenario": "Compra exitosa de cinturones",
+        "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java"
+      },
+      {
+        "evidence": "complete Gherkin step matched annotated expression",
+        "feature": "src/test/resources/features/GestionProductos.feature",
+        "gherkin_step": "realizamos el proceso de compra",
+        "relation": "heuristic",
+        "scenario": "Compra exitosa de cinturones",
+        "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java"
+      },
+      {
+        "evidence": "complete Gherkin step matched annotated expression",
+        "feature": "src/test/resources/features/GestionProductos.feature",
+        "gherkin_step": "el sistema genera mensaje de confirmacion de compra con el numero de pedido",
+        "relation": "heuristic",
+        "scenario": "Compra exitosa de cinturones",
+        "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java"
+      },
+      {
+        "evidence": "complete Gherkin step matched annotated expression",
+        "feature": "src/test/resources/features/GestionProductos.feature",
+        "gherkin_step": "inicia sesion con su usuario",
+        "relation": "heuristic",
+        "scenario": "Compra exitosa de accesorios",
+        "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java"
+      },
+      {
+        "evidence": "complete Gherkin step matched annotated expression",
+        "feature": "src/test/resources/features/GestionProductos.feature",
+        "gherkin_step": "busca la categoria de \"accesorios\"",
+        "relation": "heuristic",
+        "scenario": "Compra exitosa de accesorios",
+        "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java"
+      },
+      {
+        "evidence": "complete Gherkin step matched annotated expression",
+        "feature": "src/test/resources/features/GestionProductos.feature",
+        "gherkin_step": "selecciona un producto disponible",
+        "relation": "heuristic",
+        "scenario": "Compra exitosa de accesorios",
+        "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java"
+      },
+      {
+        "evidence": "complete Gherkin step matched annotated expression",
+        "feature": "src/test/resources/features/GestionProductos.feature",
+        "gherkin_step": "realizamos el proceso de compra",
+        "relation": "heuristic",
+        "scenario": "Compra exitosa de accesorios",
+        "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java"
+      },
+      {
+        "evidence": "complete Gherkin step matched annotated expression",
+        "feature": "src/test/resources/features/GestionProductos.feature",
+        "gherkin_step": "el sistema genera mensaje de confirmacion de compra con el numero de pedido",
+        "relation": "heuristic",
+        "scenario": "Compra exitosa de accesorios",
+        "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java"
+      },
+      {
+        "evidence": "complete Gherkin step matched annotated expression",
+        "feature": "src/test/resources/features/GestionProductos.feature",
+        "gherkin_step": "inicia sesion con su usuario",
+        "relation": "heuristic",
+        "scenario": "Compra exitosa en outlet",
+        "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java"
+      },
+      {
+        "evidence": "complete Gherkin step matched annotated expression",
+        "feature": "src/test/resources/features/GestionProductos.feature",
+        "gherkin_step": "busca la categoria de \"outlet\"",
+        "relation": "heuristic",
+        "scenario": "Compra exitosa en outlet",
+        "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java"
+      },
+      {
+        "evidence": "complete Gherkin step matched annotated expression",
+        "feature": "src/test/resources/features/GestionProductos.feature",
+        "gherkin_step": "selecciona un producto disponible",
+        "relation": "heuristic",
+        "scenario": "Compra exitosa en outlet",
+        "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java"
+      },
+      {
+        "evidence": "complete Gherkin step matched annotated expression",
+        "feature": "src/test/resources/features/GestionProductos.feature",
+        "gherkin_step": "realizamos el proceso de compra",
+        "relation": "heuristic",
+        "scenario": "Compra exitosa en outlet",
+        "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java"
+      },
+      {
+        "evidence": "complete Gherkin step matched annotated expression",
+        "feature": "src/test/resources/features/GestionProductos.feature",
+        "gherkin_step": "el sistema genera mensaje de confirmacion de compra con el numero de pedido",
+        "relation": "heuristic",
+        "scenario": "Compra exitosa en outlet",
+        "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java"
+      },
+      {
+        "evidence": "complete Gherkin step matched annotated expression",
+        "feature": "src/test/resources/features/GestionProductos.feature",
+        "gherkin_step": "el usuario carga la informacion desde el Excel \"<fila>\"",
+        "relation": "heuristic",
+        "scenario": "Compra exitosa de zapatos",
+        "step_definition": "src/test/java/stepDefinitions/RegisterUserDefinitions.java"
+      },
+      {
+        "evidence": "complete Gherkin step matched annotated expression",
+        "feature": "src/test/resources/features/GestionProductos.feature",
+        "gherkin_step": "el usuario esta en la pagina de bonBonite",
+        "relation": "heuristic",
+        "scenario": "Compra exitosa de zapatos",
+        "step_definition": "src/test/java/stepDefinitions/RegisterUserDefinitions.java"
+      },
+      {
+        "evidence": "complete Gherkin step matched annotated expression",
+        "feature": "src/test/resources/features/GestionProductos.feature",
+        "gherkin_step": "el usuario carga la informacion desde el Excel \"<fila>\"",
+        "relation": "heuristic",
+        "scenario": "Compra exitosa de bolsos",
+        "step_definition": "src/test/java/stepDefinitions/RegisterUserDefinitions.java"
+      },
+      {
+        "evidence": "complete Gherkin step matched annotated expression",
+        "feature": "src/test/resources/features/GestionProductos.feature",
+        "gherkin_step": "el usuario esta en la pagina de bonBonite",
+        "relation": "heuristic",
+        "scenario": "Compra exitosa de bolsos",
+        "step_definition": "src/test/java/stepDefinitions/RegisterUserDefinitions.java"
+      },
+      {
+        "evidence": "complete Gherkin step matched annotated expression",
+        "feature": "src/test/resources/features/GestionProductos.feature",
+        "gherkin_step": "el usuario carga la informacion desde el Excel \"<fila>\"",
+        "relation": "heuristic",
+        "scenario": "Compra exitosa de cinturones",
+        "step_definition": "src/test/java/stepDefinitions/RegisterUserDefinitions.java"
+      },
+      {
+        "evidence": "complete Gherkin step matched annotated expression",
+        "feature": "src/test/resources/features/GestionProductos.feature",
+        "gherkin_step": "el usuario esta en la pagina de bonBonite",
+        "relation": "heuristic",
+        "scenario": "Compra exitosa de cinturones",
+        "step_definition": "src/test/java/stepDefinitions/RegisterUserDefinitions.java"
+      },
+      {
+        "evidence": "complete Gherkin step matched annotated expression",
+        "feature": "src/test/resources/features/GestionProductos.feature",
+        "gherkin_step": "el usuario carga la informacion desde el Excel \"<fila>\"",
+        "relation": "heuristic",
+        "scenario": "Compra exitosa de accesorios",
+        "step_definition": "src/test/java/stepDefinitions/RegisterUserDefinitions.java"
+      },
+      {
+        "evidence": "complete Gherkin step matched annotated expression",
+        "feature": "src/test/resources/features/GestionProductos.feature",
+        "gherkin_step": "el usuario esta en la pagina de bonBonite",
+        "relation": "heuristic",
+        "scenario": "Compra exitosa de accesorios",
+        "step_definition": "src/test/java/stepDefinitions/RegisterUserDefinitions.java"
+      },
+      {
+        "evidence": "complete Gherkin step matched annotated expression",
+        "feature": "src/test/resources/features/GestionProductos.feature",
+        "gherkin_step": "el usuario carga la informacion desde el Excel \"<fila>\"",
+        "relation": "heuristic",
+        "scenario": "Compra exitosa en outlet",
+        "step_definition": "src/test/java/stepDefinitions/RegisterUserDefinitions.java"
+      },
+      {
+        "evidence": "complete Gherkin step matched annotated expression",
+        "feature": "src/test/resources/features/GestionProductos.feature",
+        "gherkin_step": "el usuario esta en la pagina de bonBonite",
+        "relation": "heuristic",
+        "scenario": "Compra exitosa en outlet",
+        "step_definition": "src/test/java/stepDefinitions/RegisterUserDefinitions.java"
+      },
+      {
+        "evidence": "complete Gherkin step matched annotated expression",
+        "feature": "src/test/resources/features/RegistrarUsuario.feature",
+        "gherkin_step": "el usuario carga la informacion desde el Excel \"<fila>\"",
+        "relation": "heuristic",
+        "scenario": "Registro exitoso",
+        "step_definition": "src/test/java/stepDefinitions/RegisterUserDefinitions.java"
+      },
+      {
+        "evidence": "complete Gherkin step matched annotated expression",
+        "feature": "src/test/resources/features/RegistrarUsuario.feature",
+        "gherkin_step": "el usuario esta en la pagina de bonBonite",
+        "relation": "heuristic",
+        "scenario": "Registro exitoso",
+        "step_definition": "src/test/java/stepDefinitions/RegisterUserDefinitions.java"
+      },
+      {
+        "evidence": "complete Gherkin step matched annotated expression",
+        "feature": "src/test/resources/features/RegistrarUsuario.feature",
+        "gherkin_step": "ingresa al formulario de registro",
+        "relation": "heuristic",
+        "scenario": "Registro exitoso",
+        "step_definition": "src/test/java/stepDefinitions/RegisterUserDefinitions.java"
+      },
+      {
+        "evidence": "complete Gherkin step matched annotated expression",
+        "feature": "src/test/resources/features/RegistrarUsuario.feature",
+        "gherkin_step": "ingresa sus datos correctamente",
+        "relation": "heuristic",
+        "scenario": "Registro exitoso",
+        "step_definition": "src/test/java/stepDefinitions/RegisterUserDefinitions.java"
+      },
+      {
+        "evidence": "complete Gherkin step matched annotated expression",
+        "feature": "src/test/resources/features/RegistrarUsuario.feature",
+        "gherkin_step": "deberia ver confirmacion de registro exitoso",
+        "relation": "heuristic",
+        "scenario": "Registro exitoso",
+        "step_definition": "src/test/java/stepDefinitions/RegisterUserDefinitions.java"
+      }
+    ],
+    "step_definition_to_task": [
+      {
+        "evidence": "Java source references task type",
+        "relation": "observed",
+        "source": "src/test/java/stepDefinitions/ApplicationPqrsDefinitions.java",
+        "source_type": "step_definition",
+        "target": "src/main/java/tasks/LoginBonBonite.java",
+        "target_type": "task"
+      },
+      {
+        "evidence": "Java source references task type",
+        "relation": "observed",
+        "source": "src/test/java/stepDefinitions/ApplicationPqrsDefinitions.java",
+        "source_type": "step_definition",
+        "target": "src/main/java/tasks/browser/OpenBrowser.java",
+        "target_type": "task"
+      },
+      {
+        "evidence": "Java source references task type",
+        "relation": "observed",
+        "source": "src/test/java/stepDefinitions/ApplicationPqrsDefinitions.java",
+        "source_type": "step_definition",
+        "target": "src/main/java/tasks/pqrs/OpenPqrsPage.java",
+        "target_type": "task"
+      },
+      {
+        "evidence": "Java source references task type",
+        "relation": "observed",
+        "source": "src/test/java/stepDefinitions/ApplicationPqrsDefinitions.java",
+        "source_type": "step_definition",
+        "target": "src/main/java/tasks/pqrs/SubmitPqrsRequest.java",
+        "target_type": "task"
+      },
+      {
+        "evidence": "Java source references task type",
+        "relation": "observed",
+        "source": "src/test/java/stepDefinitions/BillingAddressDefinitions.java",
+        "source_type": "step_definition",
+        "target": "src/main/java/tasks/UpdateBillingAddress.java",
+        "target_type": "task"
+      },
+      {
+        "evidence": "Java source references task type",
+        "relation": "observed",
+        "source": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+        "source_type": "step_definition",
+        "target": "src/main/java/tasks/LoginBonBonite.java",
+        "target_type": "task"
+      },
+      {
+        "evidence": "Java source references task type",
+        "relation": "observed",
+        "source": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+        "source_type": "step_definition",
+        "target": "src/main/java/tasks/PurchaseProcessProduct.java",
+        "target_type": "task"
+      },
+      {
+        "evidence": "Java source references task type",
+        "relation": "observed",
+        "source": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+        "source_type": "step_definition",
+        "target": "src/main/java/tasks/SelectCategory.java",
+        "target_type": "task"
+      },
+      {
+        "evidence": "Java source references task type",
+        "relation": "observed",
+        "source": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+        "source_type": "step_definition",
+        "target": "src/main/java/tasks/SelectProduct.java",
+        "target_type": "task"
+      },
+      {
+        "evidence": "Java source references task type",
+        "relation": "observed",
+        "source": "src/test/java/stepDefinitions/RegisterUserDefinitions.java",
+        "source_type": "step_definition",
+        "target": "src/main/java/tasks/browser/OpenBrowser.java",
+        "target_type": "task"
+      },
+      {
+        "evidence": "Java source references task type",
+        "relation": "observed",
+        "source": "src/test/java/stepDefinitions/RegisterUserDefinitions.java",
+        "source_type": "step_definition",
+        "target": "src/main/java/tasks/registerUser/CreateAccount.java",
+        "target_type": "task"
+      },
+      {
+        "evidence": "Java source references task type",
+        "relation": "observed",
+        "source": "src/test/java/stepDefinitions/RegisterUserDefinitions.java",
+        "source_type": "step_definition",
+        "target": "src/main/java/tasks/registerUser/OpenRegister.java",
+        "target_type": "task"
+      }
+    ],
+    "task_to_interaction": [
+      {
+        "evidence": "Java source references interaction type",
+        "relation": "observed",
+        "source": "src/main/java/tasks/LoginBonBonite.java",
+        "source_type": "task",
+        "target": "src/main/java/interactions/ClickJs.java",
+        "target_type": "interaction"
+      },
+      {
+        "evidence": "Java source references interaction type",
+        "relation": "observed",
+        "source": "src/main/java/tasks/PurchaseProcessProduct.java",
+        "source_type": "task",
+        "target": "src/main/java/interactions/ScrollToCenter.java",
+        "target_type": "interaction"
+      },
+      {
+        "evidence": "Java source references interaction type",
+        "relation": "observed",
+        "source": "src/main/java/tasks/pqrs/FillPqrsForm.java",
+        "source_type": "task",
+        "target": "src/main/java/interactions/ClickJs.java",
+        "target_type": "interaction"
+      },
+      {
+        "evidence": "Java source references interaction type",
+        "relation": "observed",
+        "source": "src/main/java/tasks/pqrs/SubmitPqrsRequest.java",
+        "source_type": "task",
+        "target": "src/main/java/interactions/ClickJs.java",
+        "target_type": "interaction"
+      },
+      {
+        "evidence": "Java source references interaction type",
+        "relation": "observed",
+        "source": "src/main/java/tasks/pqrs/SubmitPqrsRequest.java",
+        "source_type": "task",
+        "target": "src/main/java/interactions/Pause.java",
+        "target_type": "interaction"
+      },
+      {
+        "evidence": "Java source references interaction type",
+        "relation": "observed",
+        "source": "src/main/java/tasks/pqrs/SubmitPqrsRequest.java",
+        "source_type": "task",
+        "target": "src/main/java/interactions/ScrollToCenter.java",
+        "target_type": "interaction"
+      },
+      {
+        "evidence": "Java source references interaction type",
+        "relation": "observed",
+        "source": "src/main/java/tasks/registerUser/CreateAccount.java",
+        "source_type": "task",
+        "target": "src/main/java/interactions/ClickJs.java",
+        "target_type": "interaction"
+      }
+    ],
+    "task_to_question": []
+  }
+}

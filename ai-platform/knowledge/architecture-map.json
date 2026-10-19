@@ -1,0 +1,1068 @@
+{
+  "features": [
+    {
+      "background": [],
+      "name": "Actualizar dirección de facturación",
+      "path": "src/test/resources/features/ActualizarFacturacion.feature",
+      "scenarios": [
+        {
+          "examples": [],
+          "line": 4,
+          "name": "Cambiar dirección y ciudad de facturación",
+          "steps": [
+            {
+              "keyword": "Given",
+              "line": 5,
+              "text": "el usuario carga la informacion desde el Excel \"1\""
+            },
+            {
+              "keyword": "And",
+              "line": 8,
+              "text": "el usuario esta en la pagina de bonBonite"
+            },
+            {
+              "keyword": "And",
+              "line": 9,
+              "text": "inicia sesion con su usuario"
+            },
+            {
+              "keyword": "When",
+              "line": 10,
+              "text": "actualiza su direccion de facturacion a \"Cr 67 #54-77\" y ciudad \"Itagui\""
+            },
+            {
+              "keyword": "Then",
+              "line": 11,
+              "text": "debe confirmar que la direccion de facturacion quedo guardada como \"Cr 67 #54-77\" en la ciudad \"Itagui\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "background": [],
+      "name": "Gestión de PQR",
+      "path": "src/test/resources/features/CrearPQRS.feature",
+      "scenarios": [
+        {
+          "examples": [
+            "| fila |",
+            "| 1    |"
+          ],
+          "line": 4,
+          "name": "Crear una PQR exitosamente",
+          "steps": [
+            {
+              "keyword": "Given",
+              "line": 5,
+              "text": "el usuario carga la informacion PQRS desde el Excel \"<fila>\""
+            },
+            {
+              "keyword": "And",
+              "line": 8,
+              "text": "el usuario PQRS abre la pagina de bonBonite"
+            },
+            {
+              "keyword": "And",
+              "line": 9,
+              "text": "el usuario PQRS inicia sesion"
+            },
+            {
+              "keyword": "When",
+              "line": 10,
+              "text": "ingresa a la opcion crear solicitud PQRS"
+            },
+            {
+              "keyword": "And",
+              "line": 11,
+              "text": "diligencia el formulario con los datos requeridos"
+            },
+            {
+              "keyword": "Then",
+              "line": 12,
+              "text": "el sistema genera un mensaje de confirmacion con el numero de radicado"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "background": [],
+      "name": "Gestion de compras de productos",
+      "path": "src/test/resources/features/GestionProductos.feature",
+      "scenarios": [
+        {
+          "examples": [
+            "| fila |",
+            "| 1    |"
+          ],
+          "line": 4,
+          "name": "Compra exitosa de zapatos",
+          "steps": [
+            {
+              "keyword": "Given",
+              "line": 5,
+              "text": "el usuario carga la informacion desde el Excel \"<fila>\""
+            },
+            {
+              "keyword": "And",
+              "line": 8,
+              "text": "el usuario esta en la pagina de bonBonite"
+            },
+            {
+              "keyword": "And",
+              "line": 9,
+              "text": "inicia sesion con su usuario"
+            },
+            {
+              "keyword": "When",
+              "line": 10,
+              "text": "busca la categoria de \"zapatos\""
+            },
+            {
+              "keyword": "And",
+              "line": 11,
+              "text": "selecciona un producto disponible"
+            },
+            {
+              "keyword": "And",
+              "line": 12,
+              "text": "realizamos el proceso de compra"
+            },
+            {
+              "keyword": "Then",
+              "line": 13,
+              "text": "el sistema genera mensaje de confirmacion de compra con el numero de pedido"
+            }
+          ]
+        },
+        {
+          "examples": [
+            "| fila |",
+            "| 2    |"
+          ],
+          "line": 19,
+          "name": "Compra exitosa de bolsos",
+          "steps": [
+            {
+              "keyword": "Given",
+              "line": 20,
+              "text": "el usuario carga la informacion desde el Excel \"<fila>\""
+            },
+            {
+              "keyword": "And",
+              "line": 23,
+              "text": "el usuario esta en la pagina de bonBonite"
+            },
+            {
+              "keyword": "And",
+              "line": 24,
+              "text": "inicia sesion con su usuario"
+            },
+            {
+              "keyword": "When",
+              "line": 25,
+              "text": "busca la categoria de \"bolsos\""
+            },
+            {
+              "keyword": "And",
+              "line": 26,
+              "text": "selecciona un producto disponible"
+            },
+            {
+              "keyword": "And",
+              "line": 27,
+              "text": "realizamos el proceso de compra"
+            },
+            {
+              "keyword": "Then",
+              "line": 28,
+              "text": "el sistema genera mensaje de confirmacion de compra con el numero de pedido"
+            }
+          ]
+        },
+        {
+          "examples": [
+            "| fila |",
+            "| 3    |"
+          ],
+          "line": 35,
+          "name": "Compra exitosa de cinturones",
+          "steps": [
+            {
+              "keyword": "Given",
+              "line": 36,
+              "text": "el usuario carga la informacion desde el Excel \"<fila>\""
+            },
+            {
+              "keyword": "And",
+              "line": 39,
+              "text": "el usuario esta en la pagina de bonBonite"
+            },
+            {
+              "keyword": "And",
+              "line": 40,
+              "text": "inicia sesion con su usuario"
+            },
+            {
+              "keyword": "When",
+              "line": 41,
+              "text": "busca la categoria de \"cinturones\""
+            },
+            {
+              "keyword": "And",
+              "line": 42,
+              "text": "selecciona un producto disponible"
+            },
+            {
+              "keyword": "And",
+              "line": 43,
+              "text": "realizamos el proceso de compra"
+            },
+            {
+              "keyword": "Then",
+              "line": 44,
+              "text": "el sistema genera mensaje de confirmacion de compra con el numero de pedido"
+            }
+          ]
+        },
+        {
+          "examples": [
+            "| fila |",
+            "| 4    |"
+          ],
+          "line": 51,
+          "name": "Compra exitosa de accesorios",
+          "steps": [
+            {
+              "keyword": "Given",
+              "line": 52,
+              "text": "el usuario carga la informacion desde el Excel \"<fila>\""
+            },
+            {
+              "keyword": "And",
+              "line": 55,
+              "text": "el usuario esta en la pagina de bonBonite"
+            },
+            {
+              "keyword": "And",
+              "line": 56,
+              "text": "inicia sesion con su usuario"
+            },
+            {
+              "keyword": "When",
+              "line": 57,
+              "text": "busca la categoria de \"accesorios\""
+            },
+            {
+              "keyword": "And",
+              "line": 58,
+              "text": "selecciona un producto disponible"
+            },
+            {
+              "keyword": "And",
+              "line": 59,
+              "text": "realizamos el proceso de compra"
+            },
+            {
+              "keyword": "Then",
+              "line": 60,
+              "text": "el sistema genera mensaje de confirmacion de compra con el numero de pedido"
+            }
+          ]
+        },
+        {
+          "examples": [
+            "| fila |",
+            "| 5    |"
+          ],
+          "line": 66,
+          "name": "Compra exitosa en outlet",
+          "steps": [
+            {
+              "keyword": "Given",
+              "line": 67,
+              "text": "el usuario carga la informacion desde el Excel \"<fila>\""
+            },
+            {
+              "keyword": "And",
+              "line": 70,
+              "text": "el usuario esta en la pagina de bonBonite"
+            },
+            {
+              "keyword": "And",
+              "line": 71,
+              "text": "inicia sesion con su usuario"
+            },
+            {
+              "keyword": "When",
+              "line": 72,
+              "text": "busca la categoria de \"outlet\""
+            },
+            {
+              "keyword": "And",
+              "line": 73,
+              "text": "selecciona un producto disponible"
+            },
+            {
+              "keyword": "And",
+              "line": 74,
+              "text": "realizamos el proceso de compra"
+            },
+            {
+              "keyword": "Then",
+              "line": 75,
+              "text": "el sistema genera mensaje de confirmacion de compra con el numero de pedido"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "background": [],
+      "name": "Registro de usuario",
+      "path": "src/test/resources/features/RegistrarUsuario.feature",
+      "scenarios": [
+        {
+          "examples": [
+            "| fila |",
+            "| 1    |"
+          ],
+          "line": 4,
+          "name": "Registro exitoso",
+          "steps": [
+            {
+              "keyword": "Given",
+              "line": 5,
+              "text": "el usuario carga la informacion desde el Excel \"<fila>\""
+            },
+            {
+              "keyword": "And",
+              "line": 8,
+              "text": "el usuario esta en la pagina de bonBonite"
+            },
+            {
+              "keyword": "When",
+              "line": 9,
+              "text": "ingresa al formulario de registro"
+            },
+            {
+              "keyword": "And",
+              "line": 10,
+              "text": "ingresa sus datos correctamente"
+            },
+            {
+              "keyword": "Then",
+              "line": 11,
+              "text": "deberia ver confirmacion de registro exitoso"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "interactions": [
+    {
+      "classes": [
+        "ClickJs"
+      ],
+      "name": "ClickJs",
+      "package": "interactions",
+      "path": "src/main/java/interactions/ClickJs.java",
+      "references": [
+        "BrowseTheWeb",
+        "ClickJs"
+      ],
+      "root": "interaction"
+    },
+    {
+      "classes": [
+        "Pause"
+      ],
+      "name": "Pause",
+      "package": "interactions",
+      "path": "src/main/java/interactions/Pause.java",
+      "references": [
+        "Duration",
+        "IllegalStateException",
+        "Pause",
+        "Thread"
+      ],
+      "root": "interaction"
+    },
+    {
+      "classes": [
+        "ScrollToCenter"
+      ],
+      "name": "ScrollToCenter",
+      "package": "interactions",
+      "path": "src/main/java/interactions/ScrollToCenter.java",
+      "references": [
+        "BrowseTheWeb",
+        "ScrollToCenter"
+      ],
+      "root": "interaction"
+    }
+  ],
+  "models": [
+    {
+      "classes": [
+        "LoginCredentials"
+      ],
+      "name": "LoginCredentials",
+      "package": "models",
+      "path": "src/main/java/models/LoginCredentials.java",
+      "references": [
+        "IllegalStateException",
+        "LoginCredentials",
+        "System"
+      ],
+      "root": "model"
+    },
+    {
+      "classes": [
+        "Orden"
+      ],
+      "name": "Orden",
+      "package": "models",
+      "path": "src/main/java/models/Orden.java",
+      "references": [
+        "Orden"
+      ],
+      "root": "model"
+    },
+    {
+      "classes": [
+        "PqrsTestData"
+      ],
+      "name": "PqrsTestData",
+      "package": "models",
+      "path": "src/main/java/models/PqrsTestData.java",
+      "references": [
+        "IllegalStateException",
+        "List",
+        "PqrsTestData",
+        "String",
+        "System"
+      ],
+      "root": "model"
+    },
+    {
+      "classes": [
+        "PqrsTestDataTest"
+      ],
+      "name": "PqrsTestDataTest",
+      "package": "models",
+      "path": "src/test/java/models/PqrsTestDataTest.java",
+      "references": [
+        "Map",
+        "MatcherAssert",
+        "Matchers",
+        "PqrsTestData"
+      ],
+      "root": "model"
+    }
+  ],
+  "project": {
+    "frameworks": [
+      "Serenity BDD",
+      "Cucumber",
+      "Gradle",
+      "Screenplay"
+    ],
+    "language": "Java",
+    "name": "PruebaTenicaAutomatizacionWeb",
+    "root": ".",
+    "scan_errors": [],
+    "source_files_scanned": 48
+  },
+  "questions": [
+    {
+      "classes": [
+        "BillingAddressWasUpdated"
+      ],
+      "name": "BillingAddressWasUpdated",
+      "package": "questions",
+      "path": "src/main/java/questions/BillingAddressWasUpdated.java",
+      "references": [
+        "ADDRESS",
+        "BillingAddressPage",
+        "BillingAddressWasUpdated",
+        "CITY",
+        "PAGE_BODY",
+        "SELECTED_CITY_OPTION",
+        "WOOCOMMERCE_MESSAGE"
+      ],
+      "root": "question"
+    },
+    {
+      "classes": [
+        "ObtenerResumenOrden"
+      ],
+      "name": "ObtenerResumenOrden",
+      "package": "questions",
+      "path": "src/main/java/questions/ObtenerResumenOrden.java",
+      "references": [
+        "AssertionError",
+        "ObtenerResumenOrden",
+        "Orden",
+        "Predicate",
+        "ProductHome"
+      ],
+      "root": "question"
+    },
+    {
+      "classes": [
+        "PqrsRadicado"
+      ],
+      "name": "PqrsRadicado",
+      "package": "questions",
+      "path": "src/main/java/questions/PqrsRadicado.java",
+      "references": [
+        "AssertionError",
+        "CONFIRMACION_ENVIO",
+        "NUMERO_RADICADO",
+        "PqrsConfirmationPatterns",
+        "PqrsHome",
+        "PqrsRadicado",
+        "RADICADO_PATTERN",
+        "SUCCESS_PATTERN"
+      ],
+      "root": "question"
+    },
+    {
+      "classes": [
+        "SuccessfulRegistration"
+      ],
+      "name": "SuccessfulRegistration",
+      "package": "questions",
+      "path": "src/main/java/questions/SuccessfulRegistration.java",
+      "references": [
+        "ACCOUNT_CONTENT",
+        "ACCOUNT_LOGOUT",
+        "CreateAccountHome",
+        "REGISTRATION_ERRORS",
+        "SuccessfulRegistration"
+      ],
+      "root": "question"
+    }
+  ],
+  "step_definitions": [
+    {
+      "classes": [
+        "ApplicationPqrsDefinitions"
+      ],
+      "definitions": [
+        {
+          "expression": "el usuario carga la informacion PQRS desde el Excel {string}",
+          "keyword": "Given"
+        },
+        {
+          "expression": "el usuario PQRS abre la pagina de bonBonite",
+          "keyword": "And"
+        },
+        {
+          "expression": "el usuario PQRS inicia sesion",
+          "keyword": "And"
+        },
+        {
+          "expression": "ingresa a la opcion crear solicitud PQRS",
+          "keyword": "When"
+        },
+        {
+          "expression": "diligencia el formulario con los datos requeridos",
+          "keyword": "And"
+        },
+        {
+          "expression": "el sistema genera un mensaje de confirmacion con el numero de radicado",
+          "keyword": "Then"
+        }
+      ],
+      "line_count": 98,
+      "name": "ApplicationPqrsDefinitions",
+      "package": "stepDefinitions",
+      "path": "src/test/java/stepDefinitions/ApplicationPqrsDefinitions.java",
+      "references": [
+        "And",
+        "DatosPruebaWeb",
+        "Given",
+        "IllegalStateException",
+        "Integer",
+        "LoginBonBonite",
+        "MatcherAssert",
+        "Matchers",
+        "OnStage",
+        "OnlineCast",
+        "OpenBrowser",
+        "OpenPqrsPage",
+        "Path",
+        "PqrsHome",
+        "PqrsRadicado",
+        "PqrsTestData",
+        "Scroll",
+        "Serenity",
+        "String",
+        "SubmitPqrsRequest",
+        "Then",
+        "Utility",
+        "When"
+      ],
+      "root": ""
+    },
+    {
+      "classes": [
+        "BillingAddressDefinitions"
+      ],
+      "definitions": [
+        {
+          "expression": "actualiza su direccion de facturacion a {string} y ciudad {string}",
+          "keyword": "When"
+        },
+        {
+          "expression": "debe confirmar que la direccion de facturacion quedo guardada como {string} en la ciudad {string}",
+          "keyword": "Then"
+        }
+      ],
+      "line_count": 34,
+      "name": "BillingAddressDefinitions",
+      "package": "stepDefinitions",
+      "path": "src/test/java/stepDefinitions/BillingAddressDefinitions.java",
+      "references": [
+        "BillingAddressWasUpdated",
+        "GivenWhenThen",
+        "Matchers",
+        "OnStage",
+        "OnlineCast",
+        "Then",
+        "UpdateBillingAddress",
+        "When"
+      ],
+      "root": ""
+    },
+    {
+      "classes": [
+        "ProductManagementDefinitions"
+      ],
+      "definitions": [
+        {
+          "expression": "inicia sesion con su usuario",
+          "keyword": "And"
+        },
+        {
+          "expression": "busca la categoria de {string}",
+          "keyword": "And"
+        },
+        {
+          "expression": "selecciona un producto disponible",
+          "keyword": "When"
+        },
+        {
+          "expression": "realizamos el proceso de compra",
+          "keyword": "And"
+        },
+        {
+          "expression": "el sistema genera mensaje de confirmacion de compra con el numero de pedido",
+          "keyword": "Then"
+        }
+      ],
+      "line_count": 62,
+      "name": "ProductManagementDefinitions",
+      "package": "stepDefinitions",
+      "path": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "references": [
+        "And",
+        "GivenWhenThen",
+        "LoginBonBonite",
+        "Matchers",
+        "ObtenerResumenOrden",
+        "OnStage",
+        "OnlineCast",
+        "PurchaseProcessProduct",
+        "SelectCategory",
+        "SelectProduct",
+        "Then",
+        "When"
+      ],
+      "root": ""
+    },
+    {
+      "classes": [
+        "RegisterUserDefinitions"
+      ],
+      "definitions": [
+        {
+          "expression": "^el usuario carga la informacion desde el Excel \\\"([^\\\"]*)\\\"$",
+          "keyword": "Given"
+        },
+        {
+          "expression": "el usuario esta en la pagina de bonBonite",
+          "keyword": "And"
+        },
+        {
+          "expression": "ingresa al formulario de registro",
+          "keyword": "When"
+        },
+        {
+          "expression": "ingresa sus datos correctamente",
+          "keyword": "And"
+        },
+        {
+          "expression": "deberia ver confirmacion de registro exitoso",
+          "keyword": "Then"
+        }
+      ],
+      "line_count": 94,
+      "name": "RegisterUserDefinitions",
+      "package": "stepDefinitions",
+      "path": "src/test/java/stepDefinitions/RegisterUserDefinitions.java",
+      "references": [
+        "And",
+        "CreateAccount",
+        "Given",
+        "GivenWhenThen",
+        "IllegalStateException",
+        "Integer",
+        "OnStage",
+        "OnlineCast",
+        "OpenBrowser",
+        "OpenRegister",
+        "Serenity",
+        "String",
+        "SuccessfulRegistration",
+        "Then",
+        "Utility",
+        "When"
+      ],
+      "root": ""
+    }
+  ],
+  "tasks": [
+    {
+      "classes": [
+        "FillBillingAddress"
+      ],
+      "name": "FillBillingAddress",
+      "package": "tasks",
+      "path": "src/main/java/tasks/FillBillingAddress.java",
+      "references": [
+        "BillingAddressPage",
+        "Clear",
+        "Click",
+        "Enter",
+        "FillBillingAddress",
+        "GlobalWait",
+        "IllegalArgumentException",
+        "SelectFromOptions",
+        "Tasks"
+      ],
+      "root": "task"
+    },
+    {
+      "classes": [
+        "LoginBonBonite"
+      ],
+      "name": "LoginBonBonite",
+      "package": "tasks",
+      "path": "src/main/java/tasks/LoginBonBonite.java",
+      "references": [
+        "BrowseTheWeb",
+        "ClickJs",
+        "Enter",
+        "LoginBonBonite",
+        "LoginBonBonitePage",
+        "LoginSupport",
+        "Serenity",
+        "Tasks"
+      ],
+      "root": "task"
+    },
+    {
+      "classes": [
+        "OpenBillingAddressEditor"
+      ],
+      "name": "OpenBillingAddressEditor",
+      "package": "tasks",
+      "path": "src/main/java/tasks/OpenBillingAddressEditor.java",
+      "references": [
+        "BillingAddressPage",
+        "Click",
+        "GlobalWait",
+        "OpenBillingAddressEditor",
+        "Scroll",
+        "Tasks",
+        "WebElementStateMatchers"
+      ],
+      "root": "task"
+    },
+    {
+      "classes": [
+        "PurchaseProcessProduct"
+      ],
+      "name": "PurchaseProcessProduct",
+      "package": "tasks",
+      "path": "src/main/java/tasks/PurchaseProcessProduct.java",
+      "references": [
+        "Click",
+        "GlobalWait",
+        "ProductHome",
+        "PurchaseProcessProduct",
+        "ScrollToCenter",
+        "Tasks"
+      ],
+      "root": "task"
+    },
+    {
+      "classes": [
+        "SelectCategory"
+      ],
+      "name": "SelectCategory",
+      "package": "tasks",
+      "path": "src/main/java/tasks/SelectCategory.java",
+      "references": [
+        "CATEGORIA",
+        "Click",
+        "GlobalWait",
+        "IllegalArgumentException",
+        "ProductHome",
+        "SelectCategory",
+        "Serenity",
+        "Tasks"
+      ],
+      "root": "task"
+    },
+    {
+      "classes": [
+        "SelectProduct"
+      ],
+      "name": "SelectProduct",
+      "package": "tasks",
+      "path": "src/main/java/tasks/SelectProduct.java",
+      "references": [
+        "Click",
+        "GlobalWait",
+        "PRODUCTO_LINK",
+        "ProductHome",
+        "SelectProduct",
+        "Serenity",
+        "TALLA",
+        "Tasks"
+      ],
+      "root": "task"
+    },
+    {
+      "classes": [
+        "UpdateBillingAddress"
+      ],
+      "name": "UpdateBillingAddress",
+      "package": "tasks",
+      "path": "src/main/java/tasks/UpdateBillingAddress.java",
+      "references": [
+        "FillBillingAddress",
+        "OpenBillingAddressEditor",
+        "Tasks",
+        "UpdateBillingAddress"
+      ],
+      "root": "task"
+    },
+    {
+      "classes": [
+        "OpenBrowser"
+      ],
+      "name": "OpenBrowser",
+      "package": "tasks.browser",
+      "path": "src/main/java/tasks/browser/OpenBrowser.java",
+      "references": [
+        "BrowseTheWeb",
+        "EnvironmentSpecificConfiguration",
+        "FormatRecord",
+        "MyChromeDriver",
+        "OpenBrowser",
+        "SystemEnvironmentVariables",
+        "Tasks"
+      ],
+      "root": "task"
+    },
+    {
+      "classes": [
+        "FillPqrsForm"
+      ],
+      "name": "FillPqrsForm",
+      "package": "tasks.pqrs",
+      "path": "src/main/java/tasks/pqrs/FillPqrsForm.java",
+      "references": [
+        "BrowseTheWeb",
+        "By",
+        "ClickJs",
+        "Enter",
+        "FillPqrsForm",
+        "IllegalStateException",
+        "PqrsHome",
+        "SelectFromOptions"
+      ],
+      "root": "task"
+    },
+    {
+      "classes": [
+        "OpenPqrsPage"
+      ],
+      "name": "OpenPqrsPage",
+      "package": "tasks.pqrs",
+      "path": "src/main/java/tasks/pqrs/OpenPqrsPage.java",
+      "references": [
+        "BrowseTheWeb",
+        "EnvironmentSpecificConfiguration",
+        "IllegalStateException",
+        "OpenPqrsPage",
+        "SystemEnvironmentVariables",
+        "Tasks"
+      ],
+      "root": "task"
+    },
+    {
+      "classes": [
+        "SubmitPqrsRequest"
+      ],
+      "name": "SubmitPqrsRequest",
+      "package": "tasks.pqrs",
+      "path": "src/main/java/tasks/pqrs/SubmitPqrsRequest.java",
+      "references": [
+        "ClickJs",
+        "FillPqrsForm",
+        "Pause",
+        "PqrsFormResponse",
+        "PqrsHome",
+        "ScrollToCenter",
+        "SubmitPqrsRequest"
+      ],
+      "root": "task"
+    },
+    {
+      "classes": [
+        "CreateAccount"
+      ],
+      "name": "CreateAccount",
+      "package": "tasks.registerUser",
+      "path": "src/main/java/tasks/registerUser/CreateAccount.java",
+      "references": [
+        "ACCOUNT_CONTENT",
+        "ACCOUNT_LOGOUT",
+        "BrowseTheWeb",
+        "Click",
+        "ClickJs",
+        "CreateAccount",
+        "CreateAccountHome",
+        "Enter",
+        "GlobalWait",
+        "IllegalStateException",
+        "REGISTRATION_ERRORS",
+        "Serenity",
+        "String",
+        "System",
+        "Tasks",
+        "ThreadLocalRandom",
+        "UUID",
+        "WebDriverWait"
+      ],
+      "root": "task"
+    },
+    {
+      "classes": [
+        "OpenRegister"
+      ],
+      "name": "OpenRegister",
+      "package": "tasks.registerUser",
+      "path": "src/main/java/tasks/registerUser/OpenRegister.java",
+      "references": [
+        "BrowseTheWeb",
+        "Click",
+        "CreateAccountHome",
+        "EnvironmentSpecificConfiguration",
+        "GlobalWait",
+        "OpenRegister",
+        "SystemEnvironmentVariables",
+        "Tasks"
+      ],
+      "root": "task"
+    }
+  ],
+  "user_interfaces": [
+    {
+      "classes": [
+        "BillingAddressPage"
+      ],
+      "name": "BillingAddressPage",
+      "package": "userInterfaces",
+      "path": "src/main/java/userInterfaces/BillingAddressPage.java",
+      "references": [
+        "By",
+        "Target"
+      ],
+      "root": "user_interface"
+    },
+    {
+      "classes": [
+        "CreateAccountHome"
+      ],
+      "name": "CreateAccountHome",
+      "package": "userInterfaces",
+      "path": "src/main/java/userInterfaces/CreateAccountHome.java",
+      "references": [
+        "By",
+        "Target"
+      ],
+      "root": "user_interface"
+    },
+    {
+      "classes": [
+        "LoginBonBonitePage"
+      ],
+      "name": "LoginBonBonitePage",
+      "package": "userInterfaces",
+      "path": "src/main/java/userInterfaces/LoginBonBonitePage.java",
+      "references": [
+        "By",
+        "Target"
+      ],
+      "root": "user_interface"
+    },
+    {
+      "classes": [
+        "PqrsHome"
+      ],
+      "name": "PqrsHome",
+      "package": "userInterfaces",
+      "path": "src/main/java/userInterfaces/PqrsHome.java",
+      "references": [
+        "By",
+        "Target"
+      ],
+      "root": "user_interface"
+    },
+    {
+      "classes": [
+        "ProductHome"
+      ],
+      "name": "ProductHome",
+      "package": "userInterfaces",
+      "path": "src/main/java/userInterfaces/ProductHome.java",
+      "references": [
+        "By",
+        "Target"
+      ],
+      "root": "user_interface"
+    },
+    {
+      "classes": [
+        "ResgisterPage"
+      ],
+      "name": "ResgisterPage",
+      "package": "userInterfaces",
+      "path": "src/main/java/userInterfaces/ResgisterPage.java",
+      "references": [
+        "By",
+        "Target"
+      ],
+      "root": "user_interface"
+    }
+  ]
+}
