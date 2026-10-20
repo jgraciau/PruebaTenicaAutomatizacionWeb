@@ -6,7 +6,7 @@ from core.builders.dependency_builder import DependencyBuilder, _matches_express
 from core.builders.html_report_builder import render_html_report
 from core.builders.screenplay_builder import ScreenplayBuilder
 from core.common.models import ScanResult, SourceFile
-from main import run
+from main import run, run_preflight
 
 
 def _source(root: Path, relative: str, content: str) -> SourceFile:
@@ -154,6 +154,11 @@ def test_cli_generates_json_and_report(tmp_path: Path) -> None:
     assert architecture["project"]["frameworks"] == ["Cucumber"]
     assert (output / "knowledge/screenplay-map.json").exists()
     assert (output / "knowledge/dependency-map.json").exists()
+    profile = json.loads(
+        (output / "outputs/project-profile.json").read_text(encoding="utf-8")
+    )
+    assert profile["readiness"] == "partial"
+    assert profile["scan_plan"]["auto_adapted"] is True
     markdown_report = (output / "outputs/architecture-report.md").read_text(encoding="utf-8")
     assert "# Reporte de arquitectura" in markdown_report
     assert "## Inventario de componentes" in markdown_report
@@ -165,6 +170,82 @@ def test_cli_generates_json_and_report(tmp_path: Path) -> None:
     assert '<html lang="es">' in html_report
     assert "Inventario de componentes" in html_report
     assert "Distribución de relaciones" in html_report
+
+
+def test_preflight_adapts_to_nonstandard_screenplay_packages(
+    tmp_path: Path,
+) -> None:
+    source_root = tmp_path / "different-framework-layout"
+    _source(
+        source_root,
+        "features/checkout.feature",
+        "Feature: Checkout\nScenario: submits order\n Given a checkout is ready",
+    )
+    _source(
+        source_root,
+        "glue/CheckoutSteps.java",
+        '@Given("a checkout is ready") class CheckoutSteps {}',
+    )
+    _source(
+        source_root,
+        "actions/PrepareCheckout.java",
+        "class PrepareCheckout implements Task {}",
+    )
+    _source(
+        source_root,
+        "answers/OrderTotal.java",
+        "class OrderTotal implements Question<Integer> {}",
+    )
+    _source(
+        source_root,
+        "flow/ScrollToCheckout.java",
+        "class ScrollToCheckout implements Interaction {}",
+    )
+    _source(
+        source_root,
+        "pages/CheckoutPage.java",
+        'class CheckoutPage { Target submit = Target.the("submit"); }',
+    )
+    _source(
+        source_root,
+        "domain/Order.java",
+        "@Entity class Order {}",
+    )
+
+    output = tmp_path / "artifacts"
+    assert run(source_root, output) == 0
+    profile = json.loads(
+        (output / "outputs/project-profile.json").read_text(encoding="utf-8")
+    )
+
+    assert profile["readiness"] == "ready"
+    assert "Screenplay" in profile["frameworks"]
+    assert profile["conventions"]["tasks"] == ["actions"]
+    assert profile["conventions"]["questions"] == ["answers"]
+    assert profile["conventions"]["interactions"] == ["flow"]
+    assert profile["conventions"]["user_interfaces"] == ["pages"]
+    assert profile["conventions"]["models"] == ["domain"]
+    architecture = json.loads(
+        (output / "knowledge/architecture-map.json").read_text(encoding="utf-8")
+    )
+    assert len(architecture["tasks"]) == 1
+    assert len(architecture["questions"]) == 1
+    assert len(architecture["interactions"]) == 1
+    assert len(architecture["user_interfaces"]) == 1
+    assert len(architecture["models"]) == 1
+
+
+def test_preflight_only_writes_profile_without_building_maps(
+    tmp_path: Path,
+) -> None:
+    source_root = tmp_path / "repo"
+    _source(source_root, "src/main/java/tasks/SignIn.java", "class SignIn implements Task {}")
+    output = tmp_path / "out"
+
+    assert run_preflight(source_root, output) == 0
+
+    assert (output / "outputs/project-profile.json").is_file()
+    assert not (output / "knowledge/architecture-map.json").exists()
 
 
 def test_html_report_escapes_project_content_and_handles_zero_links() -> None:

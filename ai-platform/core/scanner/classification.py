@@ -4,7 +4,12 @@ from core.common.models import SourceFile
 
 _STEP_ANNOTATION_RE = re.compile(r"@(Given|When|Then|And|But)\s*\(")
 _TASK_RE = re.compile(r"\b(?:implements|extends)\s+Task\b")
-_QUESTION_RE = re.compile(r"\bQuestion\s*(?:<|\b)")
+_QUESTION_RE = re.compile(
+    r"\b(?:implements|extends)\s+Question\s*(?:<|\b)"
+)
+_INTERACTION_RE = re.compile(
+    r"\b(?:implements|extends)\s+Interaction\b|Interaction\s*\.\s*(?:call|where)\s*\("
+)
 
 
 def _package_parts(source: SourceFile) -> set[str]:
@@ -30,37 +35,30 @@ def is_step_definition(source: SourceFile) -> bool:
 def is_task(source: SourceFile) -> bool:
     return (
         not is_step_definition(source)
-        and _in_package(source, "tasks")
+        and not _in_package(source, "interactions")
         and bool(_TASK_RE.search(source.content))
     )
 
 
 def is_question(source: SourceFile) -> bool:
-    return (
+    return bool(_QUESTION_RE.search(source.content)) or (
         _in_package(source, "questions")
-        and bool(_QUESTION_RE.search(source.content))
+        and "Question" in source.content
     )
 
 
 def is_interaction(source: SourceFile) -> bool:
-    markers = (
-        "implements Interaction",
-        "implements Task",
-        "Interaction.call",
-        "Interaction.where",
-    )
-    return _in_package(source, "interactions") and any(
-        marker in source.content for marker in markers
+    return bool(_INTERACTION_RE.search(source.content)) or (
+        _in_package(source, "interactions")
+        and "implements Task" in source.content
     )
 
 
 def is_user_interface(source: SourceFile) -> bool:
-    return (
-        _in_package(source, "userInterfaces")
-        and bool(
-            re.search(
-                r"\bTarget\s*\.\s*(?:the|empty|named)\s*\(",
-                source.content,
-            )
+    has_target = bool(
+        re.search(
+            r"\bTarget\s*\.\s*(?:the|empty|named)\s*\(",
+            source.content,
         )
     )
+    return has_target

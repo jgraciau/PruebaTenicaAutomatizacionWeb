@@ -1,0 +1,82 @@
+{
+  "conventions": {
+    "features": [
+      "src/test/resources/features"
+    ],
+    "interactions": [
+      "src/main/java/interactions"
+    ],
+    "models": [
+      "src/main/java/models"
+    ],
+    "questions": [
+      "src/main/java/questions"
+    ],
+    "step_definitions": [
+      "src/test/java/stepDefinitions"
+    ],
+    "tasks": [
+      "src/main/java/tasks",
+      "src/main/java/tasks/browser",
+      "src/main/java/tasks/pqrs",
+      "src/main/java/tasks/registerUser"
+    ],
+    "user_interfaces": [
+      "src/main/java/userInterfaces"
+    ]
+  },
+  "frameworks": [
+    "Serenity BDD",
+    "Cucumber",
+    "Gradle",
+    "Screenplay"
+  ],
+  "inventory": {
+    "features": 4,
+    "interactions": 3,
+    "models": 3,
+    "questions": 4,
+    "source_files": 48,
+    "step_definitions": 4,
+    "tasks": 13,
+    "user_interfaces": 6
+  },
+  "project": "PruebaTenicaAutomatizacionWeb",
+  "readiness": "ready",
+  "root": "C:\\Automatizacion\\Practivas Automatización Web\\PruebaTenicaAutomatizacionWeb",
+  "scan_plan": {
+    "auto_adapted": true,
+    "component_paths": {
+      "features": [
+        "src/test/resources/features"
+      ],
+      "interactions": [
+        "src/main/java/interactions"
+      ],
+      "models": [
+        "src/main/java/models"
+      ],
+      "questions": [
+        "src/main/java/questions"
+      ],
+      "step_definitions": [
+        "src/test/java/stepDefinitions"
+      ],
+      "tasks": [
+        "src/main/java/tasks",
+        "src/main/java/tasks/browser",
+        "src/main/java/tasks/pqrs",
+        "src/main/java/tasks/registerUser"
+      ],
+      "user_interfaces": [
+        "src/main/java/userInterfaces"
+      ]
+    },
+    "language_extensions": [
+      ".java",
+      ".feature"
+    ],
+    "source_files_modified": false
+  },
+  "warnings": []
+}

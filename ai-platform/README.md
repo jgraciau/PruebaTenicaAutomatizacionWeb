@@ -12,20 +12,43 @@ python -m pip install -r requirements.txt
 
 ## Ejecución
 
-Desde este directorio, el comando predeterminado analiza el repositorio padre y escribe aquí los artefactos:
+`main.py` está dentro de `PruebaTenicaAutomatizacionWeb\ai-platform`. Puedes ejecutarlo desde esa carpeta:
 
 ```powershell
+Set-Location "C:\ruta\al\repositorio\PruebaTenicaAutomatizacionWeb\ai-platform"
 python main.py
 ```
 
-Usa `--root` para seleccionar el repositorio fuente y `--output` para seleccionar el directorio de artefactos:
+O desde la carpeta padre del repositorio, especificando la ruta al script:
 
 ```powershell
-python main.py --root "C:/path/to/java-project" --output "C:/path/to/artifacts"
+python .\PruebaTenicaAutomatizacionWeb\ai-platform\main.py `
+  --root ".\PruebaTenicaAutomatizacionWeb" `
+  --output ".\PruebaTenicaAutomatizacionWeb\ai-platform"
 ```
+
+Para analizar otro proyecto, cambia `--root` por la ruta real de su carpeta. `--output` indica dónde escribir los artefactos; también puedes usar una ruta absoluta:
+
+```powershell
+python .\PruebaTenicaAutomatizacionWeb\ai-platform\main.py `
+  --root "C:\ruta\real\al\proyecto-java" `
+  --output "C:\ruta\real\para\los\artefactos"
+```
+
+Antes del análisis completo, FKA inspecciona la estructura y señales Java/Gherkin para inferir los paquetes y componentes Screenplay existentes. La ejecución completa escribe ese diagnóstico en `outputs/project-profile.json` y utiliza el inventario detectado para analizar también paquetes no convencionales como `actions`, `answers`, `flow` o `pages`. El perfil solo adapta reglas de análisis en memoria; no modifica archivos del proyecto. Para validar otro repositorio antes de generar mapas, añade `--preflight-only`:
+
+```powershell
+python .\PruebaTenicaAutomatizacionWeb\ai-platform\main.py `
+  --root "C:\ruta\real\al\proyecto-java" `
+  --output "C:\ruta\real\para\los\artefactos" `
+  --preflight-only
+```
+
+Sustituye esas rutas de ejemplo por directorios existentes en tu equipo; `C:\ruta\...` es un marcador y no una ruta ejecutable. El preflight reporta readiness `ready`, `partial` o `unsupported`, convenciones detectadas, conteos y advertencias. `partial` indica que faltan señales Screenplay esperadas; `unsupported` indica que no se encontraron fuentes Java/Gherkin para analizar. La detección automática depende de evidencia estática (anotaciones, tipos implementados, `Target` y estructura); convenciones propietarias que no expongan esas señales requerirán ampliar el perfil.
 
 Generated files:
 
+- `outputs/project-profile.json` — diagnóstico previo y convenciones detectadas.
 - `knowledge/architecture-map.json`
 - `knowledge/screenplay-map.json`
 - `knowledge/dependency-map.json`
