@@ -7,4 +7,4 @@ EXCLUDED_DIRS = frozenset({
 })
 JAVA_SUFFIX = ".java"
 FEATURE_SUFFIX = ".feature"
-DEFAULT_OUTPUT_DIR = Path(__file__).resolve().parents[2]
+DEFAULT_OUTPUT_DIR = Path(__file__).resolve().parents[4]

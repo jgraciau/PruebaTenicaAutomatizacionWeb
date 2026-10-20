@@ -1,10 +1,10 @@
 import logging
 from pathlib import Path
 
-from core.common.constants import JAVA_SUFFIX
-from core.common.logger import get_logger
-from core.common.models import ScanResult
-from core.scanner.project_profile import ProjectProfile, ProjectProfileAnalyzer
+from adapters.serenity_screenplay.legacy.common.constants import JAVA_SUFFIX
+from adapters.serenity_screenplay.legacy.common.logger import get_logger
+from adapters.serenity_screenplay.legacy.common.models import ScanResult
+from adapters.serenity_screenplay.legacy.scanner.project_profile import ProjectProfile, ProjectProfileAnalyzer
 
 logger: logging.Logger = get_logger(__name__)
 

@@ -1,11 +1,11 @@
 import json
 from pathlib import Path
 
-from core.builders.architecture_builder import ArchitectureBuilder
-from core.builders.dependency_builder import DependencyBuilder, _matches_expression
-from core.builders.html_report_builder import render_html_report
-from core.builders.screenplay_builder import ScreenplayBuilder
-from core.common.models import ScanResult, SourceFile
+from adapters.serenity_screenplay.legacy.builders.architecture_builder import ArchitectureBuilder
+from adapters.serenity_screenplay.legacy.builders.dependency_builder import DependencyBuilder, _matches_expression
+from adapters.serenity_screenplay.legacy.builders.html_report_builder import render_html_report
+from adapters.serenity_screenplay.legacy.builders.screenplay_builder import ScreenplayBuilder
+from adapters.serenity_screenplay.legacy.common.models import ScanResult, SourceFile
 from main import run, run_preflight
 
 
@@ -281,6 +281,9 @@ def test_missing_root_returns_error_without_crashing(tmp_path: Path) -> None:
 
 def test_invalid_utf8_is_reported(tmp_path: Path) -> None:
     (tmp_path / "Bad.java").write_bytes(b"class Bad { \xff }")
-    result = __import__("core.scanner.project_scanner", fromlist=["ProjectScanner"]).ProjectScanner().scan(tmp_path)
+    result = __import__(
+        "adapters.serenity_screenplay.legacy.scanner.project_scanner",
+        fromlist=["ProjectScanner"],
+    ).ProjectScanner().scan(tmp_path)
     assert result.project_files == ()
     assert "Unable to read Bad.java" in result.errors[0]

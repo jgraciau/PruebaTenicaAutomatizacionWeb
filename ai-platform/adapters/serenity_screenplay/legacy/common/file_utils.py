@@ -2,9 +2,9 @@ import os
 from pathlib import Path
 from typing import Iterable
 
-from core.common.constants import EXCLUDED_DIRS
-from core.common.logger import get_logger
-from core.common.models import SourceFile
+from adapters.serenity_screenplay.legacy.common.constants import EXCLUDED_DIRS
+from adapters.serenity_screenplay.legacy.common.logger import get_logger
+from adapters.serenity_screenplay.legacy.common.models import SourceFile
 
 logger = get_logger(__name__)
 

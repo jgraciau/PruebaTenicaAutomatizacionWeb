@@ -2,18 +2,18 @@ import logging
 from dataclasses import dataclass
 from pathlib import Path
 
-from core.common.constants import FEATURE_SUFFIX, JAVA_SUFFIX
-from core.common.file_utils import iter_source_files
-from core.common.logger import get_logger
-from core.common.models import ScanResult, SourceFile
-from core.scanner.classification import (
+from adapters.serenity_screenplay.legacy.common.constants import FEATURE_SUFFIX, JAVA_SUFFIX
+from adapters.serenity_screenplay.legacy.common.file_utils import iter_source_files
+from adapters.serenity_screenplay.legacy.common.logger import get_logger
+from adapters.serenity_screenplay.legacy.common.models import ScanResult, SourceFile
+from adapters.serenity_screenplay.legacy.scanner.classification import (
     is_interaction,
     is_question,
     is_step_definition,
     is_task,
     is_user_interface,
 )
-from core.scanner.model_scanner import ModelScanner
+from adapters.serenity_screenplay.legacy.scanner.model_scanner import ModelScanner
 
 logger: logging.Logger = get_logger(__name__)
 

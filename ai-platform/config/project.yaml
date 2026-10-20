@@ -1,0 +1,27 @@
+project:
+  name: Automatizacion Web Bon-Bonite
+  root: ../..
+
+framework:
+  type: serenity
+
+language:
+  type: java
+  extensions:
+    - .java
+
+pattern:
+  type: screenplay
+
+paths:
+  features: src/test/resources/features
+  tasks: src/main/java/tasks
+  questions: src/main/java/questions
+  interactions: src/main/java/interactions
+  step_definitions: src/test/java/stepDefinitions
+  user_interfaces: src/main/java/userInterfaces
+  models: src/main/java/models
+
+outputs:
+  knowledge: ../knowledge
+  reports: ../outputs

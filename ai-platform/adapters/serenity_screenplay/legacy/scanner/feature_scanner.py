@@ -1,8 +1,8 @@
 from pathlib import Path
 
-from core.common.constants import FEATURE_SUFFIX
-from core.common.file_utils import iter_source_files
-from core.common.models import SourceFile
+from adapters.serenity_screenplay.legacy.common.constants import FEATURE_SUFFIX
+from adapters.serenity_screenplay.legacy.common.file_utils import iter_source_files
+from adapters.serenity_screenplay.legacy.common.models import SourceFile
 
 
 class FeatureScanner:

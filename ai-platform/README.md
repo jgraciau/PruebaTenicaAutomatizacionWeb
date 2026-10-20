@@ -1,67 +1,113 @@
-# Framework Knowledge Agent (FKA) — Sprint 1
+# Screenplay Knowledge Platform (SKP)
 
-Analizador estático de repositorios Java / Serenity BDD / Cucumber / Gradle / Screenplay. No ejecuta código ni pruebas Java y no depende de IA generativa.
+SKP extracts a framework-neutral model of a configured Screenplay project. The
+core contains universal project models, configuration loading, source reading,
+relationship building, and reporting. Framework-specific discovery and
+translation live behind interchangeable adapters.
 
-## Requisitos e instalación
+## Requirements
 
-Python 3.10 o superior. El runtime usa solo la biblioteca estándar; pytest se requiere para las pruebas.
+Python 3.10 or later.
 
 ```powershell
 python -m pip install -r requirements.txt
 ```
 
-## Ejecución
+## Run
 
-`main.py` está dentro de `PruebaTenicaAutomatizacionWeb\ai-platform`. Puedes ejecutarlo desde esa carpeta:
+From this directory, run the configured project:
 
 ```powershell
-Set-Location "C:\ruta\al\repositorio\PruebaTenicaAutomatizacionWeb\ai-platform"
 python main.py
 ```
 
-O desde la carpeta padre del repositorio, especificando la ruta al script:
+The default configuration is [config/project.yaml](config/project.yaml). Paths
+under `project.root` are resolved relative to the configuration file; component
+paths are resolved relative to the project root. Knowledge and report output
+paths are resolved relative to the configuration file. To analyze another
+repository, update this YAML file without changing platform code.
+
+The CLI also accepts an alternate configuration and optional one-run overrides:
 
 ```powershell
-python .\PruebaTenicaAutomatizacionWeb\ai-platform\main.py `
-  --root ".\PruebaTenicaAutomatizacionWeb" `
-  --output ".\PruebaTenicaAutomatizacionWeb\ai-platform"
+python main.py --config "C:\work\other-project\skp.yaml"
+python main.py --config "C:\work\other-project\skp.yaml" --preflight-only
 ```
 
-Para analizar otro proyecto, cambia `--root` por la ruta real de su carpeta. `--output` indica dónde escribir los artefactos; también puedes usar una ruta absoluta:
+`framework.type` selects Serenity, Playwright, or Selenium adapters. Unknown
+framework names use the generic adapter. `language.extensions` controls which
+source files are read; each component location is configured independently.
+The generic adapter recognizes common class/function declarations, Gherkin
+features and steps, Screenplay component references, and common locator
+expressions. `features.extensions` can change the specification file suffix,
+and `parser_patterns` can define capture-group regular expressions for
+declarations, features, scenarios, steps, step definitions, targets, and actors
+that use proprietary conventions. Framework-specific semantics not expressible
+as configured patterns require a focused adapter.
 
-```powershell
-python .\PruebaTenicaAutomatizacionWeb\ai-platform\main.py `
-  --root "C:\ruta\real\al\proyecto-java" `
-  --output "C:\ruta\real\para\los\artefactos"
+## Configuration example
+
+```yaml
+project:
+  name: Ecommerce Automation
+  root: ../..
+
+framework:
+  type: serenity
+
+language:
+  type: java
+  extensions: [.java]
+
+pattern:
+  type: screenplay
+
+paths:
+  features: test/resources/features
+  tasks: src/main/java/tasks
+  questions: src/main/java/questions
+  interactions: src/main/java/interactions
+  step_definitions: test/java/stepDefinitions
+  user_interfaces: src/main/java/userInterfaces
+  models: src/main/java/models
+
+outputs:
+  knowledge: ../knowledge
+  reports: ../outputs
 ```
 
-Antes del análisis completo, FKA inspecciona la estructura y señales Java/Gherkin para inferir los paquetes y componentes Screenplay existentes. La ejecución completa escribe ese diagnóstico en `outputs/project-profile.json` y utiliza el inventario detectado para analizar también paquetes no convencionales como `actions`, `answers`, `flow` o `pages`. El perfil solo adapta reglas de análisis en memoria; no modifica archivos del proyecto. Para validar otro repositorio antes de generar mapas, añade `--preflight-only`:
+Each path can be a single path or a list of paths. A missing component path can
+be omitted or set to an empty list.
 
-```powershell
-python .\PruebaTenicaAutomatizacionWeb\ai-platform\main.py `
-  --root "C:\ruta\real\al\proyecto-java" `
-  --output "C:\ruta\real\para\los\artefactos" `
-  --preflight-only
-```
+## Generated artifacts
 
-Sustituye esas rutas de ejemplo por directorios existentes en tu equipo; `C:\ruta\...` es un marcador y no una ruta ejecutable. El preflight reporta readiness `ready`, `partial` o `unsupported`, convenciones detectadas, conteos y advertencias. `partial` indica que faltan señales Screenplay esperadas; `unsupported` indica que no se encontraron fuentes Java/Gherkin para analizar. La detección automática depende de evidencia estática (anotaciones, tipos implementados, `Target` y estructura); convenciones propietarias que no expongan esas señales requerirán ampliar el perfil.
+`knowledge/` contains `architecture-map.json`, `screenplay-map.json`,
+`dependency-map.json`, `relationship-map.json`, and `dependency-graph.json`.
+`outputs/` contains an analysis profile and the Markdown and HTML architecture
+reports. Dependency data remains available as JSON knowledge maps; dependency
+reports are not generated. JSON is UTF-8 and paths in the maps are
+project-relative.
 
-Generated files:
+The architecture report is an executive, Spanish-language view for product
+owners: it summarizes scenarios, estimated step-to-code traceability, reusable
+actions, validations, coverage by business flow, and scenario details with
+recommended follow-ups. It states that results are static analysis, not proof
+that tests passed.
 
-- `outputs/project-profile.json` — diagnóstico previo y convenciones detectadas.
-- `knowledge/architecture-map.json`
-- `knowledge/screenplay-map.json`
-- `knowledge/dependency-map.json`
-- `outputs/architecture-report.md`
-- `outputs/architecture-report.html` — dashboard visual offline con gráficas SVG integradas, regenerado en cada ejecución.
+Relationships include feature-to-scenario, scenario-to-step-definition,
+step-definition-to-task, task-to-interaction/question/model, and
+question/interaction-to-target. Feature-to-step matching is static and
+heuristic; direct source references are recorded as evidence.
 
-Las rutas de los mapas son relativas a `--root`, usan separadores `/` y los artefactos se escriben en UTF-8 con orden estable de claves. Se excluyen `.git`, `.gradle`, carpetas del IDE, `build`, `target`, `venv`, `node_modules` y otros directorios generados. Los archivos ilegibles o que no estén en UTF-8 se omiten; las advertencias se registran en `project.scan_errors`. Las raíces inexistentes se manejan sin interrumpir el proceso; la CLI devuelve un código distinto de cero si no pudo analizar archivos.
+## Compatibility
 
-Las relaciones entre características y definiciones de pasos son heurísticas; las referencias directas entre tipos Java se marcan como observadas. Se analizan anotaciones y expresiones comunes de Cucumber en Java. El panel HTML incluye gráficas del inventario de componentes y distribución de relaciones, métricas, patrones detectados y advertencias. Las gráficas SVG y los estilos están integrados: no requieren acceso a la red ni paquetes de visualización. Abre `outputs/architecture-report.html` en un navegador moderno después de ejecutar el escáner. Tanto el reporte HTML como el Markdown se regeneran automáticamente en cada ejecución de `python main.py` y se presentan en español.
+The original Java/Serenity FKA scanner, parsers, and report builders remain
+under `adapters/serenity_screenplay/legacy`. The `run(root, output)` and
+`run_preflight(root, output)` Python entry points in `main.py` are retained for
+existing callers. New executions should use the YAML-driven `python main.py`
+flow.
 
-Los pasos de `Background` se incluyen en el inventario y se relacionan con sus definiciones de pasos. El mapa de dependencias distingue asociaciones heurísticas Feature → Step Definition de referencias Java observadas; cuando un Task usa varias Interactions se conserva cada vínculo. Los Models detectados en directorios de pruebas con sufijo `Test`/`Tests` no se cuentan como modelos de producción.
-
-## Validación
+## Tests
 
 ```powershell
 python -m pytest -q

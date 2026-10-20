@@ -2,7 +2,7 @@ import re
 from collections import defaultdict
 from typing import Any
 
-from core.models import DependencyModel
+from adapters.serenity_screenplay.legacy.models import DependencyModel
 
 _CUCUMBER_TYPES: dict[str, str] = {
     "string": r'"[^"\\]*(?:\\.[^"\\]*)*"',

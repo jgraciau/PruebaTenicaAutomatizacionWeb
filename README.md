@@ -79,6 +79,16 @@ Este escenario está marcado como `@Destructive` porque crea una cuenta persiste
 La codificación de compilación Java está fijada en UTF-8 para que la compilación sea consistente en sistemas con distintas configuraciones regionales.
 Gradle pasa al proceso de pruebas solo propiedades `webdriver.*`, `serenity.*` y `cucumber.*`; no debe copiar propiedades internas como `java.home`, porque el proceso de pruebas utiliza el JDK de la toolchain.
 
+## Screenplay Knowledge Platform
+
+El analizador de conocimiento reutilizable está en [ai-platform/](ai-platform/README.md).
+Su core usa modelos Screenplay universales; las implementaciones Serenity,
+Playwright, Selenium y convenciones propietarias se conectan mediante adapters.
+La plataforma toma el proyecto y todas las ubicaciones desde
+[ai-platform/config/project.yaml](ai-platform/config/project.yaml); desde
+`ai-platform/`, ejecútala con `python main.py`. Los mapas y reportes se generan
+en `ai-platform/knowledge/` y `ai-platform/outputs/`.
+
 ## Requisitos previos
 
 - Windows con PowerShell.

@@ -1,15 +1,15 @@
 from pathlib import Path
 
-from core.common.models import SourceFile
-from core.parsers.model_parser import parse as parse_model
-from core.scanner.feature_scanner import FeatureScanner
-from core.scanner.interaction_scanner import InteractionScanner
-from core.scanner.model_scanner import ModelScanner
-from core.scanner.project_scanner import ProjectScanner
-from core.scanner.question_scanner import QuestionScanner
-from core.scanner.step_scanner import StepScanner
-from core.scanner.task_scanner import TaskScanner
-from core.scanner.ui_scanner import UiScanner
+from adapters.serenity_screenplay.legacy.common.models import SourceFile
+from adapters.serenity_screenplay.legacy.parsers.model_parser import parse as parse_model
+from adapters.serenity_screenplay.legacy.scanner.feature_scanner import FeatureScanner
+from adapters.serenity_screenplay.legacy.scanner.interaction_scanner import InteractionScanner
+from adapters.serenity_screenplay.legacy.scanner.model_scanner import ModelScanner
+from adapters.serenity_screenplay.legacy.scanner.project_scanner import ProjectScanner
+from adapters.serenity_screenplay.legacy.scanner.question_scanner import QuestionScanner
+from adapters.serenity_screenplay.legacy.scanner.step_scanner import StepScanner
+from adapters.serenity_screenplay.legacy.scanner.task_scanner import TaskScanner
+from adapters.serenity_screenplay.legacy.scanner.ui_scanner import UiScanner
 
 
 def test_specialized_scanners_find_components_in_nested_packages(tmp_path: Path) -> None:

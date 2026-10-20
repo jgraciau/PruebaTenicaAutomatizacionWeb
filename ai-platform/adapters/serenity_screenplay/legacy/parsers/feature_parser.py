@@ -1,7 +1,7 @@
 import re
 from typing import Any
 
-from core.common.models import SourceFile
+from adapters.serenity_screenplay.legacy.common.models import SourceFile
 
 
 class FeatureParser:

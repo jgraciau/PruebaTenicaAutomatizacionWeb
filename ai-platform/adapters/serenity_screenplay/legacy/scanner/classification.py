@@ -1,6 +1,6 @@
 import re
 
-from core.common.models import SourceFile
+from adapters.serenity_screenplay.legacy.common.models import SourceFile
 
 _STEP_ANNOTATION_RE = re.compile(r"@(Given|When|Then|And|But)\s*\(")
 _TASK_RE = re.compile(r"\b(?:implements|extends)\s+Task\b")

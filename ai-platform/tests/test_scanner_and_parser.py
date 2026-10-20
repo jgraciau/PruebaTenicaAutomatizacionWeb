@@ -1,9 +1,9 @@
 from pathlib import Path
 
-from core.common.models import SourceFile
-from core.scanner.project_scanner import ProjectScanner
-from core.parsers.feature_parser import FeatureParser
-from core.parsers.step_parser import parse as parse_step
+from adapters.serenity_screenplay.legacy.common.models import SourceFile
+from adapters.serenity_screenplay.legacy.scanner.project_scanner import ProjectScanner
+from adapters.serenity_screenplay.legacy.parsers.feature_parser import FeatureParser
+from adapters.serenity_screenplay.legacy.parsers.step_parser import parse as parse_step
 
 
 def test_scanner_classifies_artifacts_and_skips_generated(tmp_path: Path) -> None:

@@ -1,7 +1,7 @@
 from dataclasses import dataclass, field
 from typing import Any
 
-from core.models.components import (
+from adapters.serenity_screenplay.legacy.models.components import (
     FeatureModel,
     InteractionModel,
     QuestionModel,

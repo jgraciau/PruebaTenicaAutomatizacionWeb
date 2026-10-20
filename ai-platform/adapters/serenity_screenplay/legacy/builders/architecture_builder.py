@@ -2,8 +2,8 @@ from collections import defaultdict
 from dataclasses import asdict
 from typing import Any
 
-from core.common.models import ScanResult
-from core.models import (
+from adapters.serenity_screenplay.legacy.common.models import ScanResult
+from adapters.serenity_screenplay.legacy.models import (
     ArchitectureModel,
     FeatureModel,
     InteractionModel,
@@ -11,7 +11,7 @@ from core.models import (
     StepDefinitionModel,
     TaskModel,
 )
-from core.parsers import (
+from adapters.serenity_screenplay.legacy.parsers import (
     feature_parser,
     interaction_parser,
     model_parser,

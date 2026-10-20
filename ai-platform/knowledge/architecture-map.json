@@ -1,1053 +1,1055 @@
 {
+  "project": {
+    "name": "Automatizacion Web Bon-Bonite",
+    "root": ".",
+    "framework": "serenity",
+    "language": "java",
+    "pattern": "screenplay",
+    "adapter": "SerenityScreenplayAdapter",
+    "source_files_scanned": 38,
+    "scan_errors": []
+  },
   "features": [
     {
-      "background": [],
-      "background_steps": [],
+      "id": "feature:src/test/resources/features/ActualizarFacturacion.feature",
       "name": "Actualizar dirección de facturación",
-      "path": "src/test/resources/features/ActualizarFacturacion.feature",
+      "source_path": "src/test/resources/features/ActualizarFacturacion.feature",
       "scenarios": [
         {
-          "examples": [],
-          "line": 4,
+          "id": "scenario:src/test/resources/features/ActualizarFacturacion.feature:4",
+          "feature_id": "feature:src/test/resources/features/ActualizarFacturacion.feature",
           "name": "Cambiar dirección y ciudad de facturación",
           "steps": [
-            {
-              "keyword": "Given",
-              "line": 5,
-              "text": "el usuario carga la informacion desde el Excel \"1\""
-            },
-            {
-              "keyword": "And",
-              "line": 8,
-              "text": "el usuario esta en la pagina de bonBonite"
-            },
-            {
-              "keyword": "And",
-              "line": 9,
-              "text": "inicia sesion con su usuario"
-            },
-            {
-              "keyword": "When",
-              "line": 10,
-              "text": "actualiza su direccion de facturacion a \"Cr 67 #54-77\" y ciudad \"Itagui\""
-            },
-            {
-              "keyword": "Then",
-              "line": 11,
-              "text": "debe confirmar que la direccion de facturacion quedo guardada como \"Cr 67 #54-77\" en la ciudad \"Itagui\""
-            }
+            "el usuario carga la informacion desde el Excel \"1\"",
+            "el usuario esta en la pagina de bonBonite",
+            "inicia sesion con su usuario",
+            "actualiza su direccion de facturacion a \"Cr 67 #54-77\" y ciudad \"Itagui\"",
+            "debe confirmar que la direccion de facturacion quedo guardada como \"Cr 67 #54-77\" en la ciudad \"Itagui\""
           ]
         }
       ]
     },
     {
-      "background": [],
-      "background_steps": [],
+      "id": "feature:src/test/resources/features/CrearPQRS.feature",
       "name": "Gestión de PQR",
-      "path": "src/test/resources/features/CrearPQRS.feature",
+      "source_path": "src/test/resources/features/CrearPQRS.feature",
       "scenarios": [
         {
-          "examples": [
-            "| fila |",
-            "| 1    |"
-          ],
-          "line": 4,
+          "id": "scenario:src/test/resources/features/CrearPQRS.feature:4",
+          "feature_id": "feature:src/test/resources/features/CrearPQRS.feature",
           "name": "Crear una PQR exitosamente",
           "steps": [
-            {
-              "keyword": "Given",
-              "line": 5,
-              "text": "el usuario carga la informacion PQRS desde el Excel \"<fila>\""
-            },
-            {
-              "keyword": "And",
-              "line": 8,
-              "text": "el usuario PQRS abre la pagina de bonBonite"
-            },
-            {
-              "keyword": "And",
-              "line": 9,
-              "text": "el usuario PQRS inicia sesion"
-            },
-            {
-              "keyword": "When",
-              "line": 10,
-              "text": "ingresa a la opcion crear solicitud PQRS"
-            },
-            {
-              "keyword": "And",
-              "line": 11,
-              "text": "diligencia el formulario con los datos requeridos"
-            },
-            {
-              "keyword": "Then",
-              "line": 12,
-              "text": "el sistema genera un mensaje de confirmacion con el numero de radicado"
-            }
+            "el usuario carga la informacion PQRS desde el Excel \"<fila>\"",
+            "el usuario PQRS abre la pagina de bonBonite",
+            "el usuario PQRS inicia sesion",
+            "ingresa a la opcion crear solicitud PQRS",
+            "diligencia el formulario con los datos requeridos",
+            "el sistema genera un mensaje de confirmacion con el numero de radicado"
           ]
         }
       ]
     },
     {
-      "background": [],
-      "background_steps": [],
+      "id": "feature:src/test/resources/features/GestionProductos.feature",
       "name": "Gestion de compras de productos",
-      "path": "src/test/resources/features/GestionProductos.feature",
+      "source_path": "src/test/resources/features/GestionProductos.feature",
       "scenarios": [
         {
-          "examples": [
-            "| fila |",
-            "| 1    |"
-          ],
-          "line": 4,
+          "id": "scenario:src/test/resources/features/GestionProductos.feature:4",
+          "feature_id": "feature:src/test/resources/features/GestionProductos.feature",
           "name": "Compra exitosa de zapatos",
           "steps": [
-            {
-              "keyword": "Given",
-              "line": 5,
-              "text": "el usuario carga la informacion desde el Excel \"<fila>\""
-            },
-            {
-              "keyword": "And",
-              "line": 8,
-              "text": "el usuario esta en la pagina de bonBonite"
-            },
-            {
-              "keyword": "And",
-              "line": 9,
-              "text": "inicia sesion con su usuario"
-            },
-            {
-              "keyword": "When",
-              "line": 10,
-              "text": "busca la categoria de \"zapatos\""
-            },
-            {
-              "keyword": "And",
-              "line": 11,
-              "text": "selecciona un producto disponible"
-            },
-            {
-              "keyword": "And",
-              "line": 12,
-              "text": "realizamos el proceso de compra"
-            },
-            {
-              "keyword": "Then",
-              "line": 13,
-              "text": "el sistema genera mensaje de confirmacion de compra con el numero de pedido"
-            }
+            "el usuario carga la informacion desde el Excel \"<fila>\"",
+            "el usuario esta en la pagina de bonBonite",
+            "inicia sesion con su usuario",
+            "busca la categoria de \"zapatos\"",
+            "selecciona un producto disponible",
+            "realizamos el proceso de compra",
+            "el sistema genera mensaje de confirmacion de compra con el numero de pedido"
           ]
         },
         {
-          "examples": [
-            "| fila |",
-            "| 2    |"
-          ],
-          "line": 19,
+          "id": "scenario:src/test/resources/features/GestionProductos.feature:19",
+          "feature_id": "feature:src/test/resources/features/GestionProductos.feature",
           "name": "Compra exitosa de bolsos",
           "steps": [
-            {
-              "keyword": "Given",
-              "line": 20,
-              "text": "el usuario carga la informacion desde el Excel \"<fila>\""
-            },
-            {
-              "keyword": "And",
-              "line": 23,
-              "text": "el usuario esta en la pagina de bonBonite"
-            },
-            {
-              "keyword": "And",
-              "line": 24,
-              "text": "inicia sesion con su usuario"
-            },
-            {
-              "keyword": "When",
-              "line": 25,
-              "text": "busca la categoria de \"bolsos\""
-            },
-            {
-              "keyword": "And",
-              "line": 26,
-              "text": "selecciona un producto disponible"
-            },
-            {
-              "keyword": "And",
-              "line": 27,
-              "text": "realizamos el proceso de compra"
-            },
-            {
-              "keyword": "Then",
-              "line": 28,
-              "text": "el sistema genera mensaje de confirmacion de compra con el numero de pedido"
-            }
+            "el usuario carga la informacion desde el Excel \"<fila>\"",
+            "el usuario esta en la pagina de bonBonite",
+            "inicia sesion con su usuario",
+            "busca la categoria de \"bolsos\"",
+            "selecciona un producto disponible",
+            "realizamos el proceso de compra",
+            "el sistema genera mensaje de confirmacion de compra con el numero de pedido"
           ]
         },
         {
-          "examples": [
-            "| fila |",
-            "| 3    |"
-          ],
-          "line": 35,
+          "id": "scenario:src/test/resources/features/GestionProductos.feature:35",
+          "feature_id": "feature:src/test/resources/features/GestionProductos.feature",
           "name": "Compra exitosa de cinturones",
           "steps": [
-            {
-              "keyword": "Given",
-              "line": 36,
-              "text": "el usuario carga la informacion desde el Excel \"<fila>\""
-            },
-            {
-              "keyword": "And",
-              "line": 39,
-              "text": "el usuario esta en la pagina de bonBonite"
-            },
-            {
-              "keyword": "And",
-              "line": 40,
-              "text": "inicia sesion con su usuario"
-            },
-            {
-              "keyword": "When",
-              "line": 41,
-              "text": "busca la categoria de \"cinturones\""
-            },
-            {
-              "keyword": "And",
-              "line": 42,
-              "text": "selecciona un producto disponible"
-            },
-            {
-              "keyword": "And",
-              "line": 43,
-              "text": "realizamos el proceso de compra"
-            },
-            {
-              "keyword": "Then",
-              "line": 44,
-              "text": "el sistema genera mensaje de confirmacion de compra con el numero de pedido"
-            }
+            "el usuario carga la informacion desde el Excel \"<fila>\"",
+            "el usuario esta en la pagina de bonBonite",
+            "inicia sesion con su usuario",
+            "busca la categoria de \"cinturones\"",
+            "selecciona un producto disponible",
+            "realizamos el proceso de compra",
+            "el sistema genera mensaje de confirmacion de compra con el numero de pedido"
           ]
         },
         {
-          "examples": [
-            "| fila |",
-            "| 4    |"
-          ],
-          "line": 51,
+          "id": "scenario:src/test/resources/features/GestionProductos.feature:51",
+          "feature_id": "feature:src/test/resources/features/GestionProductos.feature",
           "name": "Compra exitosa de accesorios",
           "steps": [
-            {
-              "keyword": "Given",
-              "line": 52,
-              "text": "el usuario carga la informacion desde el Excel \"<fila>\""
-            },
-            {
-              "keyword": "And",
-              "line": 55,
-              "text": "el usuario esta en la pagina de bonBonite"
-            },
-            {
-              "keyword": "And",
-              "line": 56,
-              "text": "inicia sesion con su usuario"
-            },
-            {
-              "keyword": "When",
-              "line": 57,
-              "text": "busca la categoria de \"accesorios\""
-            },
-            {
-              "keyword": "And",
-              "line": 58,
-              "text": "selecciona un producto disponible"
-            },
-            {
-              "keyword": "And",
-              "line": 59,
-              "text": "realizamos el proceso de compra"
-            },
-            {
-              "keyword": "Then",
-              "line": 60,
-              "text": "el sistema genera mensaje de confirmacion de compra con el numero de pedido"
-            }
+            "el usuario carga la informacion desde el Excel \"<fila>\"",
+            "el usuario esta en la pagina de bonBonite",
+            "inicia sesion con su usuario",
+            "busca la categoria de \"accesorios\"",
+            "selecciona un producto disponible",
+            "realizamos el proceso de compra",
+            "el sistema genera mensaje de confirmacion de compra con el numero de pedido"
           ]
         },
         {
-          "examples": [
-            "| fila |",
-            "| 5    |"
-          ],
-          "line": 66,
+          "id": "scenario:src/test/resources/features/GestionProductos.feature:66",
+          "feature_id": "feature:src/test/resources/features/GestionProductos.feature",
           "name": "Compra exitosa en outlet",
           "steps": [
-            {
-              "keyword": "Given",
-              "line": 67,
-              "text": "el usuario carga la informacion desde el Excel \"<fila>\""
-            },
-            {
-              "keyword": "And",
-              "line": 70,
-              "text": "el usuario esta en la pagina de bonBonite"
-            },
-            {
-              "keyword": "And",
-              "line": 71,
-              "text": "inicia sesion con su usuario"
-            },
-            {
-              "keyword": "When",
-              "line": 72,
-              "text": "busca la categoria de \"outlet\""
-            },
-            {
-              "keyword": "And",
-              "line": 73,
-              "text": "selecciona un producto disponible"
-            },
-            {
-              "keyword": "And",
-              "line": 74,
-              "text": "realizamos el proceso de compra"
-            },
-            {
-              "keyword": "Then",
-              "line": 75,
-              "text": "el sistema genera mensaje de confirmacion de compra con el numero de pedido"
-            }
+            "el usuario carga la informacion desde el Excel \"<fila>\"",
+            "el usuario esta en la pagina de bonBonite",
+            "inicia sesion con su usuario",
+            "busca la categoria de \"outlet\"",
+            "selecciona un producto disponible",
+            "realizamos el proceso de compra",
+            "el sistema genera mensaje de confirmacion de compra con el numero de pedido"
           ]
         }
       ]
     },
     {
-      "background": [],
-      "background_steps": [],
+      "id": "feature:src/test/resources/features/RegistrarUsuario.feature",
       "name": "Registro de usuario",
-      "path": "src/test/resources/features/RegistrarUsuario.feature",
+      "source_path": "src/test/resources/features/RegistrarUsuario.feature",
       "scenarios": [
         {
-          "examples": [
-            "| fila |",
-            "| 1    |"
-          ],
-          "line": 4,
+          "id": "scenario:src/test/resources/features/RegistrarUsuario.feature:4",
+          "feature_id": "feature:src/test/resources/features/RegistrarUsuario.feature",
           "name": "Registro exitoso",
           "steps": [
-            {
-              "keyword": "Given",
-              "line": 5,
-              "text": "el usuario carga la informacion desde el Excel \"<fila>\""
-            },
-            {
-              "keyword": "And",
-              "line": 8,
-              "text": "el usuario esta en la pagina de bonBonite"
-            },
-            {
-              "keyword": "When",
-              "line": 9,
-              "text": "ingresa al formulario de registro"
-            },
-            {
-              "keyword": "And",
-              "line": 10,
-              "text": "ingresa sus datos correctamente"
-            },
-            {
-              "keyword": "Then",
-              "line": 11,
-              "text": "deberia ver confirmacion de registro exitoso"
-            }
+            "el usuario carga la informacion desde el Excel \"<fila>\"",
+            "el usuario esta en la pagina de bonBonite",
+            "ingresa al formulario de registro",
+            "ingresa sus datos correctamente",
+            "deberia ver confirmacion de registro exitoso"
           ]
         }
-      ]
-    }
-  ],
-  "interactions": [
-    {
-      "classes": [
-        "ClickJs"
-      ],
-      "name": "ClickJs",
-      "package": "interactions",
-      "path": "src/main/java/interactions/ClickJs.java",
-      "references": [
-        "BrowseTheWeb",
-        "ClickJs"
-      ]
-    },
-    {
-      "classes": [
-        "Pause"
-      ],
-      "name": "Pause",
-      "package": "interactions",
-      "path": "src/main/java/interactions/Pause.java",
-      "references": [
-        "Duration",
-        "IllegalStateException",
-        "Pause",
-        "Thread"
-      ]
-    },
-    {
-      "classes": [
-        "ScrollToCenter"
-      ],
-      "name": "ScrollToCenter",
-      "package": "interactions",
-      "path": "src/main/java/interactions/ScrollToCenter.java",
-      "references": [
-        "BrowseTheWeb",
-        "ScrollToCenter"
-      ]
-    }
-  ],
-  "models": [
-    {
-      "classes": [
-        "LoginCredentials"
-      ],
-      "model_markers": [],
-      "name": "LoginCredentials",
-      "package": "models",
-      "path": "src/main/java/models/LoginCredentials.java",
-      "references": [
-        "IllegalStateException",
-        "LoginCredentials",
-        "System"
-      ]
-    },
-    {
-      "classes": [
-        "Orden"
-      ],
-      "model_markers": [],
-      "name": "Orden",
-      "package": "models",
-      "path": "src/main/java/models/Orden.java",
-      "references": [
-        "Orden"
-      ]
-    },
-    {
-      "classes": [
-        "PqrsTestData"
-      ],
-      "model_markers": [],
-      "name": "PqrsTestData",
-      "package": "models",
-      "path": "src/main/java/models/PqrsTestData.java",
-      "references": [
-        "IllegalStateException",
-        "List",
-        "PqrsTestData",
-        "String",
-        "System"
-      ]
-    }
-  ],
-  "project": {
-    "frameworks": [
-      "Serenity BDD",
-      "Cucumber",
-      "Gradle",
-      "Screenplay"
-    ],
-    "language": "Java",
-    "name": "PruebaTenicaAutomatizacionWeb",
-    "root": ".",
-    "scan_errors": [],
-    "source_files_scanned": 48
-  },
-  "quality": {
-    "duplicate_components": [],
-    "orphaned_components": [
-      {
-        "component_type": "model",
-        "name": "LoginCredentials",
-        "path": "src/main/java/models/LoginCredentials.java"
-      },
-      {
-        "component_type": "model",
-        "name": "Orden",
-        "path": "src/main/java/models/Orden.java"
-      },
-      {
-        "component_type": "user_interface",
-        "name": "ResgisterPage",
-        "path": "src/main/java/userInterfaces/ResgisterPage.java"
-      }
-    ],
-    "risks": [
-      {
-        "code": "ORPHAN_COMPONENTS",
-        "description": "Se detectaron 3 componentes sin relaciones conocidas.",
-        "severity": "medium"
-      }
-    ]
-  },
-  "questions": [
-    {
-      "classes": [
-        "BillingAddressWasUpdated"
-      ],
-      "name": "BillingAddressWasUpdated",
-      "package": "questions",
-      "path": "src/main/java/questions/BillingAddressWasUpdated.java",
-      "references": [
-        "ADDRESS",
-        "BillingAddressPage",
-        "BillingAddressWasUpdated",
-        "CITY",
-        "PAGE_BODY",
-        "SELECTED_CITY_OPTION",
-        "WOOCOMMERCE_MESSAGE"
-      ]
-    },
-    {
-      "classes": [
-        "ObtenerResumenOrden"
-      ],
-      "name": "ObtenerResumenOrden",
-      "package": "questions",
-      "path": "src/main/java/questions/ObtenerResumenOrden.java",
-      "references": [
-        "AssertionError",
-        "ObtenerResumenOrden",
-        "Orden",
-        "Predicate",
-        "ProductHome"
-      ]
-    },
-    {
-      "classes": [
-        "PqrsRadicado"
-      ],
-      "name": "PqrsRadicado",
-      "package": "questions",
-      "path": "src/main/java/questions/PqrsRadicado.java",
-      "references": [
-        "AssertionError",
-        "CONFIRMACION_ENVIO",
-        "NUMERO_RADICADO",
-        "PqrsConfirmationPatterns",
-        "PqrsHome",
-        "PqrsRadicado",
-        "RADICADO_PATTERN",
-        "SUCCESS_PATTERN"
-      ]
-    },
-    {
-      "classes": [
-        "SuccessfulRegistration"
-      ],
-      "name": "SuccessfulRegistration",
-      "package": "questions",
-      "path": "src/main/java/questions/SuccessfulRegistration.java",
-      "references": [
-        "ACCOUNT_CONTENT",
-        "ACCOUNT_LOGOUT",
-        "CreateAccountHome",
-        "REGISTRATION_ERRORS",
-        "SuccessfulRegistration"
       ]
     }
   ],
   "step_definitions": [
     {
-      "classes": [
-        "ApplicationPqrsDefinitions"
-      ],
-      "definitions": [
-        {
-          "expression": "el usuario carga la informacion PQRS desde el Excel {string}",
-          "keyword": "Given"
-        },
-        {
-          "expression": "el usuario PQRS abre la pagina de bonBonite",
-          "keyword": "And"
-        },
-        {
-          "expression": "el usuario PQRS inicia sesion",
-          "keyword": "And"
-        },
-        {
-          "expression": "ingresa a la opcion crear solicitud PQRS",
-          "keyword": "When"
-        },
-        {
-          "expression": "diligencia el formulario con los datos requeridos",
-          "keyword": "And"
-        },
-        {
-          "expression": "el sistema genera un mensaje de confirmacion con el numero de radicado",
-          "keyword": "Then"
-        }
-      ],
-      "line_count": 98,
+      "id": "step_definition:src/test/java/stepDefinitions/ApplicationPqrsDefinitions.java",
       "name": "ApplicationPqrsDefinitions",
-      "package": "stepDefinitions",
-      "path": "src/test/java/stepDefinitions/ApplicationPqrsDefinitions.java",
+      "source_path": "src/test/java/stepDefinitions/ApplicationPqrsDefinitions.java",
+      "expressions": [
+        "el usuario carga la informacion PQRS desde el Excel {string}",
+        "el usuario PQRS abre la pagina de bonBonite",
+        "el usuario PQRS inicia sesion",
+        "ingresa a la opcion crear solicitud PQRS",
+        "diligencia el formulario con los datos requeridos",
+        "el sistema genera un mensaje de confirmacion con el numero de radicado"
+      ],
       "references": [
-        "And",
-        "DatosPruebaWeb",
-        "Given",
-        "IllegalStateException",
-        "Integer",
-        "LoginBonBonite",
-        "MatcherAssert",
-        "Matchers",
-        "OnStage",
-        "OnlineCast",
-        "OpenBrowser",
-        "OpenPqrsPage",
-        "Path",
-        "PqrsHome",
-        "PqrsRadicado",
-        "PqrsTestData",
-        "Scroll",
-        "Serenity",
-        "String",
-        "SubmitPqrsRequest",
-        "Then",
-        "Utility",
-        "When"
+        "task:src/main/java/tasks/browser/OpenBrowser.java",
+        "task:src/main/java/tasks/LoginBonBonite.java",
+        "task:src/main/java/tasks/pqrs/OpenPqrsPage.java",
+        "task:src/main/java/tasks/pqrs/SubmitPqrsRequest.java",
+        "actor:cliente",
+        "question:src/main/java/questions/PqrsRadicado.java"
       ]
     },
     {
-      "classes": [
-        "BillingAddressDefinitions"
-      ],
-      "definitions": [
-        {
-          "expression": "actualiza su direccion de facturacion a {string} y ciudad {string}",
-          "keyword": "When"
-        },
-        {
-          "expression": "debe confirmar que la direccion de facturacion quedo guardada como {string} en la ciudad {string}",
-          "keyword": "Then"
-        }
-      ],
-      "line_count": 34,
+      "id": "step_definition:src/test/java/stepDefinitions/BillingAddressDefinitions.java",
       "name": "BillingAddressDefinitions",
-      "package": "stepDefinitions",
-      "path": "src/test/java/stepDefinitions/BillingAddressDefinitions.java",
+      "source_path": "src/test/java/stepDefinitions/BillingAddressDefinitions.java",
+      "expressions": [
+        "actualiza su direccion de facturacion a {string} y ciudad {string}",
+        "debe confirmar que la direccion de facturacion quedo guardada como {string} en la ciudad {string}"
+      ],
       "references": [
-        "BillingAddressWasUpdated",
-        "GivenWhenThen",
-        "Matchers",
-        "OnStage",
-        "OnlineCast",
-        "Then",
-        "UpdateBillingAddress",
-        "When"
+        "task:src/main/java/tasks/UpdateBillingAddress.java",
+        "question:src/main/java/questions/BillingAddressWasUpdated.java"
       ]
     },
     {
-      "classes": [
-        "ProductManagementDefinitions"
-      ],
-      "definitions": [
-        {
-          "expression": "inicia sesion con su usuario",
-          "keyword": "And"
-        },
-        {
-          "expression": "busca la categoria de {string}",
-          "keyword": "And"
-        },
-        {
-          "expression": "selecciona un producto disponible",
-          "keyword": "When"
-        },
-        {
-          "expression": "realizamos el proceso de compra",
-          "keyword": "And"
-        },
-        {
-          "expression": "el sistema genera mensaje de confirmacion de compra con el numero de pedido",
-          "keyword": "Then"
-        }
-      ],
-      "line_count": 62,
+      "id": "step_definition:src/test/java/stepDefinitions/ProductManagementDefinitions.java",
       "name": "ProductManagementDefinitions",
-      "package": "stepDefinitions",
-      "path": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "source_path": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "expressions": [
+        "inicia sesion con su usuario",
+        "busca la categoria de {string}",
+        "selecciona un producto disponible",
+        "realizamos el proceso de compra",
+        "el sistema genera mensaje de confirmacion de compra con el numero de pedido"
+      ],
       "references": [
-        "And",
-        "GivenWhenThen",
-        "LoginBonBonite",
-        "Matchers",
-        "ObtenerResumenOrden",
-        "OnStage",
-        "OnlineCast",
-        "PurchaseProcessProduct",
-        "SelectCategory",
-        "SelectProduct",
-        "Then",
-        "When"
+        "task:src/main/java/tasks/LoginBonBonite.java",
+        "task:src/main/java/tasks/PurchaseProcessProduct.java",
+        "task:src/main/java/tasks/SelectCategory.java",
+        "task:src/main/java/tasks/SelectProduct.java",
+        "question:src/main/java/questions/ObtenerResumenOrden.java"
       ]
     },
     {
-      "classes": [
-        "RegisterUserDefinitions"
-      ],
-      "definitions": [
-        {
-          "expression": "^el usuario carga la informacion desde el Excel \\\"([^\\\"]*)\\\"$",
-          "keyword": "Given"
-        },
-        {
-          "expression": "el usuario esta en la pagina de bonBonite",
-          "keyword": "And"
-        },
-        {
-          "expression": "ingresa al formulario de registro",
-          "keyword": "When"
-        },
-        {
-          "expression": "ingresa sus datos correctamente",
-          "keyword": "And"
-        },
-        {
-          "expression": "deberia ver confirmacion de registro exitoso",
-          "keyword": "Then"
-        }
-      ],
-      "line_count": 94,
+      "id": "step_definition:src/test/java/stepDefinitions/RegisterUserDefinitions.java",
       "name": "RegisterUserDefinitions",
-      "package": "stepDefinitions",
-      "path": "src/test/java/stepDefinitions/RegisterUserDefinitions.java",
+      "source_path": "src/test/java/stepDefinitions/RegisterUserDefinitions.java",
+      "expressions": [
+        "^el usuario carga la informacion desde el Excel \\\"([^\\\"]*)\\\"$",
+        "el usuario esta en la pagina de bonBonite",
+        "ingresa al formulario de registro",
+        "ingresa sus datos correctamente",
+        "deberia ver confirmacion de registro exitoso"
+      ],
       "references": [
-        "And",
-        "CreateAccount",
-        "Given",
-        "GivenWhenThen",
-        "IllegalStateException",
-        "Integer",
-        "OnStage",
-        "OnlineCast",
-        "OpenBrowser",
-        "OpenRegister",
-        "Serenity",
-        "String",
-        "SuccessfulRegistration",
-        "Then",
-        "Utility",
-        "When"
+        "task:src/main/java/tasks/browser/OpenBrowser.java",
+        "task:src/main/java/tasks/registerUser/CreateAccount.java",
+        "task:src/main/java/tasks/registerUser/OpenRegister.java",
+        "actor:jhon",
+        "question:src/main/java/questions/SuccessfulRegistration.java"
       ]
+    }
+  ],
+  "actors": [
+    {
+      "id": "actor:cliente",
+      "name": "Cliente",
+      "source_path": "src/test/java/stepDefinitions/ApplicationPqrsDefinitions.java"
+    },
+    {
+      "id": "actor:jhon",
+      "name": "Jhon",
+      "source_path": "src/test/java/stepDefinitions/RegisterUserDefinitions.java"
     }
   ],
   "tasks": [
     {
-      "classes": [
-        "FillBillingAddress"
-      ],
-      "name": "FillBillingAddress",
-      "package": "tasks",
-      "path": "src/main/java/tasks/FillBillingAddress.java",
-      "references": [
-        "BillingAddressPage",
-        "Clear",
-        "Click",
-        "Enter",
-        "FillBillingAddress",
-        "GlobalWait",
-        "IllegalArgumentException",
-        "SelectFromOptions",
-        "Tasks"
-      ]
-    },
-    {
-      "classes": [
-        "LoginBonBonite"
-      ],
-      "name": "LoginBonBonite",
-      "package": "tasks",
-      "path": "src/main/java/tasks/LoginBonBonite.java",
-      "references": [
-        "BrowseTheWeb",
-        "ClickJs",
-        "Enter",
-        "LoginBonBonite",
-        "LoginBonBonitePage",
-        "LoginSupport",
-        "Serenity",
-        "Tasks"
-      ]
-    },
-    {
-      "classes": [
-        "OpenBillingAddressEditor"
-      ],
-      "name": "OpenBillingAddressEditor",
-      "package": "tasks",
-      "path": "src/main/java/tasks/OpenBillingAddressEditor.java",
-      "references": [
-        "BillingAddressPage",
-        "Click",
-        "GlobalWait",
-        "OpenBillingAddressEditor",
-        "Scroll",
-        "Tasks",
-        "WebElementStateMatchers"
-      ]
-    },
-    {
-      "classes": [
-        "PurchaseProcessProduct"
-      ],
-      "name": "PurchaseProcessProduct",
-      "package": "tasks",
-      "path": "src/main/java/tasks/PurchaseProcessProduct.java",
-      "references": [
-        "Click",
-        "GlobalWait",
-        "ProductHome",
-        "PurchaseProcessProduct",
-        "ScrollToCenter",
-        "Tasks"
-      ]
-    },
-    {
-      "classes": [
-        "SelectCategory"
-      ],
-      "name": "SelectCategory",
-      "package": "tasks",
-      "path": "src/main/java/tasks/SelectCategory.java",
-      "references": [
-        "CATEGORIA",
-        "Click",
-        "GlobalWait",
-        "IllegalArgumentException",
-        "ProductHome",
-        "SelectCategory",
-        "Serenity",
-        "Tasks"
-      ]
-    },
-    {
-      "classes": [
-        "SelectProduct"
-      ],
-      "name": "SelectProduct",
-      "package": "tasks",
-      "path": "src/main/java/tasks/SelectProduct.java",
-      "references": [
-        "Click",
-        "GlobalWait",
-        "PRODUCTO_LINK",
-        "ProductHome",
-        "SelectProduct",
-        "Serenity",
-        "TALLA",
-        "Tasks"
-      ]
-    },
-    {
-      "classes": [
-        "UpdateBillingAddress"
-      ],
-      "name": "UpdateBillingAddress",
-      "package": "tasks",
-      "path": "src/main/java/tasks/UpdateBillingAddress.java",
-      "references": [
-        "FillBillingAddress",
-        "OpenBillingAddressEditor",
-        "Tasks",
-        "UpdateBillingAddress"
-      ]
-    },
-    {
-      "classes": [
-        "OpenBrowser"
-      ],
+      "id": "task:src/main/java/tasks/browser/OpenBrowser.java",
       "name": "OpenBrowser",
-      "package": "tasks.browser",
-      "path": "src/main/java/tasks/browser/OpenBrowser.java",
+      "source_path": "src/main/java/tasks/browser/OpenBrowser.java",
+      "references": []
+    },
+    {
+      "id": "task:src/main/java/tasks/FillBillingAddress.java",
+      "name": "FillBillingAddress",
+      "source_path": "src/main/java/tasks/FillBillingAddress.java",
       "references": [
-        "BrowseTheWeb",
-        "EnvironmentSpecificConfiguration",
-        "FormatRecord",
-        "MyChromeDriver",
-        "OpenBrowser",
-        "SystemEnvironmentVariables",
-        "Tasks"
+        "target:src/main/java/userInterfaces/BillingAddressPage.java:5",
+        "target:src/main/java/userInterfaces/BillingAddressPage.java:6",
+        "target:src/main/java/userInterfaces/BillingAddressPage.java:7",
+        "target:src/main/java/userInterfaces/BillingAddressPage.java:8"
       ]
     },
     {
-      "classes": [
-        "FillPqrsForm"
-      ],
+      "id": "task:src/main/java/tasks/LoginBonBonite.java",
+      "name": "LoginBonBonite",
+      "source_path": "src/main/java/tasks/LoginBonBonite.java",
+      "references": [
+        "interaction:src/main/java/interactions/ClickJs.java",
+        "target:src/main/java/userInterfaces/CreateAccountHome.java:13",
+        "target:src/main/java/userInterfaces/LoginBonBonitePage.java:1",
+        "target:src/main/java/userInterfaces/LoginBonBonitePage.java:2",
+        "target:src/main/java/userInterfaces/LoginBonBonitePage.java:3",
+        "target:src/main/java/userInterfaces/LoginBonBonitePage.java:4"
+      ]
+    },
+    {
+      "id": "task:src/main/java/tasks/OpenBillingAddressEditor.java",
+      "name": "OpenBillingAddressEditor",
+      "source_path": "src/main/java/tasks/OpenBillingAddressEditor.java",
+      "references": [
+        "target:src/main/java/userInterfaces/BillingAddressPage.java:1",
+        "target:src/main/java/userInterfaces/BillingAddressPage.java:2",
+        "target:src/main/java/userInterfaces/BillingAddressPage.java:3",
+        "target:src/main/java/userInterfaces/BillingAddressPage.java:4"
+      ]
+    },
+    {
+      "id": "task:src/main/java/tasks/pqrs/FillPqrsForm.java",
       "name": "FillPqrsForm",
-      "package": "tasks.pqrs",
-      "path": "src/main/java/tasks/pqrs/FillPqrsForm.java",
+      "source_path": "src/main/java/tasks/pqrs/FillPqrsForm.java",
       "references": [
-        "BrowseTheWeb",
-        "By",
-        "ClickJs",
-        "Enter",
-        "FillPqrsForm",
-        "IllegalStateException",
-        "PqrsHome",
-        "SelectFromOptions"
+        "interaction:src/main/java/interactions/ClickJs.java",
+        "model:src/main/java/models/PqrsTestData.java",
+        "target:src/main/java/userInterfaces/PqrsHome.java:1",
+        "target:src/main/java/userInterfaces/PqrsHome.java:2",
+        "target:src/main/java/userInterfaces/PqrsHome.java:3",
+        "target:src/main/java/userInterfaces/PqrsHome.java:4",
+        "target:src/main/java/userInterfaces/PqrsHome.java:5",
+        "target:src/main/java/userInterfaces/PqrsHome.java:6",
+        "target:src/main/java/userInterfaces/PqrsHome.java:7",
+        "target:src/main/java/userInterfaces/PqrsHome.java:8",
+        "target:src/main/java/userInterfaces/PqrsHome.java:9",
+        "target:src/main/java/userInterfaces/PqrsHome.java:10",
+        "target:src/main/java/userInterfaces/PqrsHome.java:11"
       ]
     },
     {
-      "classes": [
-        "OpenPqrsPage"
-      ],
+      "id": "task:src/main/java/tasks/pqrs/OpenPqrsPage.java",
       "name": "OpenPqrsPage",
-      "package": "tasks.pqrs",
-      "path": "src/main/java/tasks/pqrs/OpenPqrsPage.java",
+      "source_path": "src/main/java/tasks/pqrs/OpenPqrsPage.java",
+      "references": []
+    },
+    {
+      "id": "task:src/main/java/tasks/pqrs/PqrsFormResponse.java",
+      "name": "PqrsFormResponse",
+      "source_path": "src/main/java/tasks/pqrs/PqrsFormResponse.java",
       "references": [
-        "BrowseTheWeb",
-        "EnvironmentSpecificConfiguration",
-        "IllegalStateException",
-        "OpenPqrsPage",
-        "SystemEnvironmentVariables",
-        "Tasks"
+        "target:src/main/java/userInterfaces/PqrsHome.java:12",
+        "target:src/main/java/userInterfaces/PqrsHome.java:13",
+        "target:src/main/java/userInterfaces/PqrsHome.java:14"
       ]
     },
     {
-      "classes": [
-        "SubmitPqrsRequest"
-      ],
+      "id": "task:src/main/java/tasks/pqrs/SubmitPqrsRequest.java",
       "name": "SubmitPqrsRequest",
-      "package": "tasks.pqrs",
-      "path": "src/main/java/tasks/pqrs/SubmitPqrsRequest.java",
+      "source_path": "src/main/java/tasks/pqrs/SubmitPqrsRequest.java",
       "references": [
-        "ClickJs",
-        "FillPqrsForm",
-        "Pause",
-        "PqrsFormResponse",
-        "PqrsHome",
-        "ScrollToCenter",
-        "SubmitPqrsRequest"
+        "interaction:src/main/java/interactions/ClickJs.java",
+        "interaction:src/main/java/interactions/Pause.java",
+        "interaction:src/main/java/interactions/ScrollToCenter.java",
+        "model:src/main/java/models/PqrsTestData.java",
+        "target:src/main/java/userInterfaces/PqrsHome.java:12"
       ]
     },
     {
-      "classes": [
-        "CreateAccount"
-      ],
+      "id": "task:src/main/java/tasks/PurchaseProcessProduct.java",
+      "name": "PurchaseProcessProduct",
+      "source_path": "src/main/java/tasks/PurchaseProcessProduct.java",
+      "references": [
+        "interaction:src/main/java/interactions/ScrollToCenter.java",
+        "target:src/main/java/userInterfaces/ProductHome.java:4",
+        "target:src/main/java/userInterfaces/ProductHome.java:5",
+        "target:src/main/java/userInterfaces/ProductHome.java:6",
+        "target:src/main/java/userInterfaces/ProductHome.java:7",
+        "target:src/main/java/userInterfaces/ProductHome.java:8",
+        "target:src/main/java/userInterfaces/ProductHome.java:14"
+      ]
+    },
+    {
+      "id": "task:src/main/java/tasks/registerUser/CreateAccount.java",
       "name": "CreateAccount",
-      "package": "tasks.registerUser",
-      "path": "src/main/java/tasks/registerUser/CreateAccount.java",
+      "source_path": "src/main/java/tasks/registerUser/CreateAccount.java",
       "references": [
-        "ACCOUNT_CONTENT",
-        "ACCOUNT_LOGOUT",
-        "BrowseTheWeb",
-        "Click",
-        "ClickJs",
-        "CreateAccount",
-        "CreateAccountHome",
-        "Enter",
-        "GlobalWait",
-        "IllegalStateException",
-        "REGISTRATION_ERRORS",
-        "Serenity",
-        "String",
-        "System",
-        "Tasks",
-        "ThreadLocalRandom",
-        "UUID",
-        "WebDriverWait"
+        "interaction:src/main/java/interactions/ClickJs.java",
+        "target:src/main/java/userInterfaces/CreateAccountHome.java:3",
+        "target:src/main/java/userInterfaces/CreateAccountHome.java:4",
+        "target:src/main/java/userInterfaces/CreateAccountHome.java:5",
+        "target:src/main/java/userInterfaces/CreateAccountHome.java:6",
+        "target:src/main/java/userInterfaces/CreateAccountHome.java:7",
+        "target:src/main/java/userInterfaces/CreateAccountHome.java:8",
+        "target:src/main/java/userInterfaces/CreateAccountHome.java:9",
+        "target:src/main/java/userInterfaces/CreateAccountHome.java:10",
+        "target:src/main/java/userInterfaces/CreateAccountHome.java:11",
+        "target:src/main/java/userInterfaces/CreateAccountHome.java:12",
+        "target:src/main/java/userInterfaces/CreateAccountHome.java:13",
+        "target:src/main/java/userInterfaces/LoginBonBonitePage.java:4",
+        "target:src/main/java/userInterfaces/LoginBonBonitePage.java:5",
+        "target:src/main/java/userInterfaces/PqrsHome.java:2",
+        "target:src/main/java/userInterfaces/PqrsHome.java:7"
       ]
     },
     {
-      "classes": [
-        "OpenRegister"
-      ],
+      "id": "task:src/main/java/tasks/registerUser/OpenRegister.java",
       "name": "OpenRegister",
-      "package": "tasks.registerUser",
-      "path": "src/main/java/tasks/registerUser/OpenRegister.java",
+      "source_path": "src/main/java/tasks/registerUser/OpenRegister.java",
       "references": [
-        "BrowseTheWeb",
-        "Click",
-        "CreateAccountHome",
-        "EnvironmentSpecificConfiguration",
-        "GlobalWait",
-        "OpenRegister",
-        "SystemEnvironmentVariables",
-        "Tasks"
+        "target:src/main/java/userInterfaces/CreateAccountHome.java:1",
+        "target:src/main/java/userInterfaces/CreateAccountHome.java:2"
+      ]
+    },
+    {
+      "id": "task:src/main/java/tasks/SelectCategory.java",
+      "name": "SelectCategory",
+      "source_path": "src/main/java/tasks/SelectCategory.java",
+      "references": [
+        "target:src/main/java/userInterfaces/PqrsHome.java:2",
+        "target:src/main/java/userInterfaces/ProductHome.java:1"
+      ]
+    },
+    {
+      "id": "task:src/main/java/tasks/SelectProduct.java",
+      "name": "SelectProduct",
+      "source_path": "src/main/java/tasks/SelectProduct.java",
+      "references": [
+        "target:src/main/java/userInterfaces/PqrsHome.java:2",
+        "target:src/main/java/userInterfaces/ProductHome.java:2",
+        "target:src/main/java/userInterfaces/ProductHome.java:3"
+      ]
+    },
+    {
+      "id": "task:src/main/java/tasks/UpdateBillingAddress.java",
+      "name": "UpdateBillingAddress",
+      "source_path": "src/main/java/tasks/UpdateBillingAddress.java",
+      "references": [
+        "target:src/main/java/userInterfaces/BillingAddressPage.java:5",
+        "target:src/main/java/userInterfaces/BillingAddressPage.java:6"
       ]
     }
   ],
-  "user_interfaces": [
+  "questions": [
     {
-      "classes": [
-        "BillingAddressPage"
-      ],
-      "name": "BillingAddressPage",
-      "package": "userInterfaces",
-      "path": "src/main/java/userInterfaces/BillingAddressPage.java",
+      "id": "question:src/main/java/questions/BillingAddressWasUpdated.java",
+      "name": "BillingAddressWasUpdated",
+      "source_path": "src/main/java/questions/BillingAddressWasUpdated.java",
       "references": [
-        "By",
-        "Target"
+        "target:src/main/java/userInterfaces/BillingAddressPage.java:5",
+        "target:src/main/java/userInterfaces/BillingAddressPage.java:6",
+        "target:src/main/java/userInterfaces/BillingAddressPage.java:9",
+        "target:src/main/java/userInterfaces/BillingAddressPage.java:10",
+        "target:src/main/java/userInterfaces/BillingAddressPage.java:11"
       ]
     },
     {
-      "classes": [
-        "CreateAccountHome"
-      ],
-      "name": "CreateAccountHome",
-      "package": "userInterfaces",
-      "path": "src/main/java/userInterfaces/CreateAccountHome.java",
+      "id": "question:src/main/java/questions/ObtenerResumenOrden.java",
+      "name": "ObtenerResumenOrden",
+      "source_path": "src/main/java/questions/ObtenerResumenOrden.java",
       "references": [
-        "By",
-        "Target"
+        "target:src/main/java/userInterfaces/ProductHome.java:10",
+        "target:src/main/java/userInterfaces/ProductHome.java:11",
+        "target:src/main/java/userInterfaces/ProductHome.java:12",
+        "target:src/main/java/userInterfaces/ProductHome.java:13",
+        "target:src/main/java/userInterfaces/ProductHome.java:14",
+        "target:src/main/java/userInterfaces/ProductHome.java:15",
+        "target:src/main/java/userInterfaces/ProductHome.java:16",
+        "target:src/main/java/userInterfaces/ProductHome.java:17"
       ]
     },
     {
-      "classes": [
-        "LoginBonBonitePage"
-      ],
-      "name": "LoginBonBonitePage",
-      "package": "userInterfaces",
-      "path": "src/main/java/userInterfaces/LoginBonBonitePage.java",
+      "id": "question:src/main/java/questions/PqrsRadicado.java",
+      "name": "PqrsRadicado",
+      "source_path": "src/main/java/questions/PqrsRadicado.java",
       "references": [
-        "By",
-        "Target"
+        "target:src/main/java/userInterfaces/PqrsHome.java:14",
+        "target:src/main/java/userInterfaces/PqrsHome.java:15"
       ]
     },
     {
-      "classes": [
-        "PqrsHome"
-      ],
-      "name": "PqrsHome",
-      "package": "userInterfaces",
-      "path": "src/main/java/userInterfaces/PqrsHome.java",
+      "id": "question:src/main/java/questions/SuccessfulRegistration.java",
+      "name": "SuccessfulRegistration",
+      "source_path": "src/main/java/questions/SuccessfulRegistration.java",
       "references": [
-        "By",
-        "Target"
+        "target:src/main/java/userInterfaces/CreateAccountHome.java:11",
+        "target:src/main/java/userInterfaces/CreateAccountHome.java:12",
+        "target:src/main/java/userInterfaces/CreateAccountHome.java:13",
+        "target:src/main/java/userInterfaces/LoginBonBonitePage.java:4",
+        "target:src/main/java/userInterfaces/LoginBonBonitePage.java:5"
+      ]
+    }
+  ],
+  "interactions": [
+    {
+      "id": "interaction:src/main/java/interactions/ClickJs.java",
+      "name": "ClickJs",
+      "source_path": "src/main/java/interactions/ClickJs.java",
+      "references": []
+    },
+    {
+      "id": "interaction:src/main/java/interactions/Pause.java",
+      "name": "Pause",
+      "source_path": "src/main/java/interactions/Pause.java",
+      "references": []
+    },
+    {
+      "id": "interaction:src/main/java/interactions/ScrollToCenter.java",
+      "name": "ScrollToCenter",
+      "source_path": "src/main/java/interactions/ScrollToCenter.java",
+      "references": []
+    }
+  ],
+  "targets": [
+    {
+      "id": "target:src/main/java/userInterfaces/BillingAddressPage.java:1",
+      "name": "opción Datos de la cuenta",
+      "source_path": "src/main/java/userInterfaces/BillingAddressPage.java",
+      "selector": "opción Datos de la cuenta",
+      "symbol": "DATA_LINK"
+    },
+    {
+      "id": "target:src/main/java/userInterfaces/BillingAddressPage.java:2",
+      "name": "sección dirección de facturación",
+      "source_path": "src/main/java/userInterfaces/BillingAddressPage.java",
+      "selector": "sección dirección de facturación",
+      "symbol": "BILLING_SECTION"
+    },
+    {
+      "id": "target:src/main/java/userInterfaces/BillingAddressPage.java:3",
+      "name": "editar dirección de facturación",
+      "source_path": "src/main/java/userInterfaces/BillingAddressPage.java",
+      "selector": "editar dirección de facturación",
+      "symbol": "EDIT_BILLING_ADDRESS"
+    },
+    {
+      "id": "target:src/main/java/userInterfaces/BillingAddressPage.java:4",
+      "name": "modal de dirección",
+      "source_path": "src/main/java/userInterfaces/BillingAddressPage.java",
+      "selector": "modal de dirección",
+      "symbol": "ADDRESS_MODAL"
+    },
+    {
+      "id": "target:src/main/java/userInterfaces/BillingAddressPage.java:5",
+      "name": "dirección de facturación",
+      "source_path": "src/main/java/userInterfaces/BillingAddressPage.java",
+      "selector": "dirección de facturación",
+      "symbol": "ADDRESS"
+    },
+    {
+      "id": "target:src/main/java/userInterfaces/BillingAddressPage.java:6",
+      "name": "ciudad de facturación",
+      "source_path": "src/main/java/userInterfaces/BillingAddressPage.java",
+      "selector": "ciudad de facturación",
+      "symbol": "CITY"
+    },
+    {
+      "id": "target:src/main/java/userInterfaces/BillingAddressPage.java:7",
+      "name": "guardar dirección de facturación",
+      "source_path": "src/main/java/userInterfaces/BillingAddressPage.java",
+      "selector": "guardar dirección de facturación",
+      "symbol": "SAVE_ADDRESS"
+    },
+    {
+      "id": "target:src/main/java/userInterfaces/BillingAddressPage.java:8",
+      "name": "confirmación de dirección guardada",
+      "source_path": "src/main/java/userInterfaces/BillingAddressPage.java",
+      "selector": "confirmación de dirección guardada",
+      "symbol": "SUCCESS_MESSAGE"
+    },
+    {
+      "id": "target:src/main/java/userInterfaces/BillingAddressPage.java:9",
+      "name": "mensaje de confirmación WooCommerce",
+      "source_path": "src/main/java/userInterfaces/BillingAddressPage.java",
+      "selector": "mensaje de confirmación WooCommerce",
+      "symbol": "WOOCOMMERCE_MESSAGE"
+    },
+    {
+      "id": "target:src/main/java/userInterfaces/BillingAddressPage.java:10",
+      "name": "contenido de la página",
+      "source_path": "src/main/java/userInterfaces/BillingAddressPage.java",
+      "selector": "contenido de la página",
+      "symbol": "PAGE_BODY"
+    },
+    {
+      "id": "target:src/main/java/userInterfaces/BillingAddressPage.java:11",
+      "name": "ciudad seleccionada",
+      "source_path": "src/main/java/userInterfaces/BillingAddressPage.java",
+      "selector": "ciudad seleccionada",
+      "symbol": "SELECTED_CITY_OPTION"
+    },
+    {
+      "id": "target:src/main/java/userInterfaces/CreateAccountHome.java:1",
+      "name": "mostrar formulario de registro",
+      "source_path": "src/main/java/userInterfaces/CreateAccountHome.java",
+      "selector": "mostrar formulario de registro",
+      "symbol": "REGISTER_TOGGLE"
+    },
+    {
+      "id": "target:src/main/java/userInterfaces/CreateAccountHome.java:2",
+      "name": "usuario del registro",
+      "source_path": "src/main/java/userInterfaces/CreateAccountHome.java",
+      "selector": "usuario del registro",
+      "symbol": "REGISTER_USER"
+    },
+    {
+      "id": "target:src/main/java/userInterfaces/CreateAccountHome.java:3",
+      "name": "Ingreso la cedula del usuario",
+      "source_path": "src/main/java/userInterfaces/CreateAccountHome.java",
+      "selector": "Ingreso la cedula del usuario",
+      "symbol": "INPUT_ID"
+    },
+    {
+      "id": "target:src/main/java/userInterfaces/CreateAccountHome.java:4",
+      "name": "Ingreso el nombre del usuario",
+      "source_path": "src/main/java/userInterfaces/CreateAccountHome.java",
+      "selector": "Ingreso el nombre del usuario",
+      "symbol": "INPUT_FIRSTNAME"
+    },
+    {
+      "id": "target:src/main/java/userInterfaces/CreateAccountHome.java:5",
+      "name": "Ingreso los apellidos del usuario",
+      "source_path": "src/main/java/userInterfaces/CreateAccountHome.java",
+      "selector": "Ingreso los apellidos del usuario",
+      "symbol": "INPUT_LASTNAME"
+    },
+    {
+      "id": "target:src/main/java/userInterfaces/CreateAccountHome.java:6",
+      "name": "Ingreso el correo del usuario",
+      "source_path": "src/main/java/userInterfaces/CreateAccountHome.java",
+      "selector": "Ingreso el correo del usuario",
+      "symbol": "INPUT_EMAIL"
+    },
+    {
+      "id": "target:src/main/java/userInterfaces/CreateAccountHome.java:7",
+      "name": "Ingreso la  password del usuario",
+      "source_path": "src/main/java/userInterfaces/CreateAccountHome.java",
+      "selector": "Ingreso la  password del usuario",
+      "symbol": "INPUT_PASSWORD"
+    },
+    {
+      "id": "target:src/main/java/userInterfaces/CreateAccountHome.java:8",
+      "name": "Ingreso la confirmacion del usuario",
+      "source_path": "src/main/java/userInterfaces/CreateAccountHome.java",
+      "selector": "Ingreso la confirmacion del usuario",
+      "symbol": "INPUT_PASSWORD2"
+    },
+    {
+      "id": "target:src/main/java/userInterfaces/CreateAccountHome.java:9",
+      "name": "Seleccionar autorizar tratamiento",
+      "source_path": "src/main/java/userInterfaces/CreateAccountHome.java",
+      "selector": "Seleccionar autorizar tratamiento",
+      "symbol": "SELECT_AUTORIZATION"
+    },
+    {
+      "id": "target:src/main/java/userInterfaces/CreateAccountHome.java:10",
+      "name": "boton registrar",
+      "source_path": "src/main/java/userInterfaces/CreateAccountHome.java",
+      "selector": "boton registrar",
+      "symbol": "BTTN_REGISTER"
+    },
+    {
+      "id": "target:src/main/java/userInterfaces/CreateAccountHome.java:11",
+      "name": "contenido de la cuenta",
+      "source_path": "src/main/java/userInterfaces/CreateAccountHome.java",
+      "selector": "contenido de la cuenta",
+      "symbol": "ACCOUNT_CONTENT"
+    },
+    {
+      "id": "target:src/main/java/userInterfaces/CreateAccountHome.java:12",
+      "name": "errores de registro",
+      "source_path": "src/main/java/userInterfaces/CreateAccountHome.java",
+      "selector": "errores de registro",
+      "symbol": "REGISTRATION_ERRORS"
+    },
+    {
+      "id": "target:src/main/java/userInterfaces/CreateAccountHome.java:13",
+      "name": "enlace de cierre de sesión",
+      "source_path": "src/main/java/userInterfaces/CreateAccountHome.java",
+      "selector": "enlace de cierre de sesión",
+      "symbol": "ACCOUNT_LOGOUT"
+    },
+    {
+      "id": "target:src/main/java/userInterfaces/LoginBonBonitePage.java:1",
+      "name": "usuario de inicio de sesión",
+      "source_path": "src/main/java/userInterfaces/LoginBonBonitePage.java",
+      "selector": "usuario de inicio de sesión",
+      "symbol": "INPUT_USER"
+    },
+    {
+      "id": "target:src/main/java/userInterfaces/LoginBonBonitePage.java:2",
+      "name": "contraseña de inicio de sesión",
+      "source_path": "src/main/java/userInterfaces/LoginBonBonitePage.java",
+      "selector": "contraseña de inicio de sesión",
+      "symbol": "INPUT_PASS"
+    },
+    {
+      "id": "target:src/main/java/userInterfaces/LoginBonBonitePage.java:3",
+      "name": "botón iniciar sesión",
+      "source_path": "src/main/java/userInterfaces/LoginBonBonitePage.java",
+      "selector": "botón iniciar sesión",
+      "symbol": "BTTN_LOGIN"
+    },
+    {
+      "id": "target:src/main/java/userInterfaces/LoginBonBonitePage.java:4",
+      "name": "enlace de cierre de sesión",
+      "source_path": "src/main/java/userInterfaces/LoginBonBonitePage.java",
+      "selector": "enlace de cierre de sesión",
+      "symbol": "ACCOUNT_LOGOUT"
+    },
+    {
+      "id": "target:src/main/java/userInterfaces/LoginBonBonitePage.java:5",
+      "name": "contenido de la cuenta",
+      "source_path": "src/main/java/userInterfaces/LoginBonBonitePage.java",
+      "selector": "contenido de la cuenta",
+      "symbol": "ACCOUNT_CONTENT"
+    },
+    {
+      "id": "target:src/main/java/userInterfaces/LoginBonBonitePage.java:6",
+      "name": "errores de inicio de sesión",
+      "source_path": "src/main/java/userInterfaces/LoginBonBonitePage.java",
+      "selector": "errores de inicio de sesión",
+      "symbol": "LOGIN_ERRORS"
+    },
+    {
+      "id": "target:src/main/java/userInterfaces/LoginBonBonitePage.java:7",
+      "name": "saludo de cuenta",
+      "source_path": "src/main/java/userInterfaces/LoginBonBonitePage.java",
+      "selector": "saludo de cuenta",
+      "symbol": "ACCOUNT_GREETING"
+    },
+    {
+      "id": "target:src/main/java/userInterfaces/PqrsHome.java:1",
+      "name": "punto de venta",
+      "source_path": "src/main/java/userInterfaces/PqrsHome.java",
+      "selector": "punto de venta",
+      "symbol": "PUNTO_VENTA"
+    },
+    {
+      "id": "target:src/main/java/userInterfaces/PqrsHome.java:2",
+      "name": "nombre completo del cliente",
+      "source_path": "src/main/java/userInterfaces/PqrsHome.java",
+      "selector": "nombre completo del cliente",
+      "symbol": "NOMBRE"
+    },
+    {
+      "id": "target:src/main/java/userInterfaces/PqrsHome.java:3",
+      "name": "dirección y ciudad",
+      "source_path": "src/main/java/userInterfaces/PqrsHome.java",
+      "selector": "dirección y ciudad",
+      "symbol": "DIRECCION"
+    },
+    {
+      "id": "target:src/main/java/userInterfaces/PqrsHome.java:4",
+      "name": "tipo de documento",
+      "source_path": "src/main/java/userInterfaces/PqrsHome.java",
+      "selector": "tipo de documento",
+      "symbol": "TIPO_DOCUMENTO"
+    },
+    {
+      "id": "target:src/main/java/userInterfaces/PqrsHome.java:5",
+      "name": "número de documento",
+      "source_path": "src/main/java/userInterfaces/PqrsHome.java",
+      "selector": "número de documento",
+      "symbol": "NUMERO_DOCUMENTO"
+    },
+    {
+      "id": "target:src/main/java/userInterfaces/PqrsHome.java:6",
+      "name": "teléfono",
+      "source_path": "src/main/java/userInterfaces/PqrsHome.java",
+      "selector": "teléfono",
+      "symbol": "TELEFONO"
+    },
+    {
+      "id": "target:src/main/java/userInterfaces/PqrsHome.java:7",
+      "name": "correo electrónico",
+      "source_path": "src/main/java/userInterfaces/PqrsHome.java",
+      "selector": "correo electrónico",
+      "symbol": "CORREO"
+    },
+    {
+      "id": "target:src/main/java/userInterfaces/PqrsHome.java:8",
+      "name": "tipo de solicitud",
+      "source_path": "src/main/java/userInterfaces/PqrsHome.java",
+      "selector": "tipo de solicitud",
+      "symbol": "TIPO_SOLICITUD"
+    },
+    {
+      "id": "target:src/main/java/userInterfaces/PqrsHome.java:9",
+      "name": "causal de la solicitud",
+      "source_path": "src/main/java/userInterfaces/PqrsHome.java",
+      "selector": "causal de la solicitud",
+      "symbol": "CAUSAL"
+    },
+    {
+      "id": "target:src/main/java/userInterfaces/PqrsHome.java:10",
+      "name": "descripción de la solicitud",
+      "source_path": "src/main/java/userInterfaces/PqrsHome.java",
+      "selector": "descripción de la solicitud",
+      "symbol": "DESCRIPCION"
+    },
+    {
+      "id": "target:src/main/java/userInterfaces/PqrsHome.java:11",
+      "name": "autorización de tratamiento de datos",
+      "source_path": "src/main/java/userInterfaces/PqrsHome.java",
+      "selector": "autorización de tratamiento de datos",
+      "symbol": "AUTORIZACION"
+    },
+    {
+      "id": "target:src/main/java/userInterfaces/PqrsHome.java:12",
+      "name": "crear PQRS",
+      "source_path": "src/main/java/userInterfaces/PqrsHome.java",
+      "selector": "crear PQRS",
+      "symbol": "ENVIAR"
+    },
+    {
+      "id": "target:src/main/java/userInterfaces/PqrsHome.java:13",
+      "name": "mensaje de respuesta de PQRS",
+      "source_path": "src/main/java/userInterfaces/PqrsHome.java",
+      "selector": "mensaje de respuesta de PQRS",
+      "symbol": "MENSAJE_RESPUESTA"
+    },
+    {
+      "id": "target:src/main/java/userInterfaces/PqrsHome.java:14",
+      "name": "confirmación de envío PQRS",
+      "source_path": "src/main/java/userInterfaces/PqrsHome.java",
+      "selector": "confirmación de envío PQRS",
+      "symbol": "CONFIRMACION_ENVIO"
+    },
+    {
+      "id": "target:src/main/java/userInterfaces/PqrsHome.java:15",
+      "name": "número de radicado PQRS",
+      "source_path": "src/main/java/userInterfaces/PqrsHome.java",
+      "selector": "número de radicado PQRS",
+      "symbol": "NUMERO_RADICADO"
+    },
+    {
+      "id": "target:src/main/java/userInterfaces/ProductHome.java:1",
+      "name": "categoría {0}",
+      "source_path": "src/main/java/userInterfaces/ProductHome.java",
+      "selector": "categoría {0}",
+      "symbol": "CATEGORIA"
+    },
+    {
+      "id": "target:src/main/java/userInterfaces/ProductHome.java:2",
+      "name": "link producto {0}",
+      "source_path": "src/main/java/userInterfaces/ProductHome.java",
+      "selector": "link producto {0}",
+      "symbol": "PRODUCTO_LINK"
+    },
+    {
+      "id": "target:src/main/java/userInterfaces/ProductHome.java:3",
+      "name": "talla {0}",
+      "source_path": "src/main/java/userInterfaces/ProductHome.java",
+      "selector": "talla {0}",
+      "symbol": "TALLA"
+    },
+    {
+      "id": "target:src/main/java/userInterfaces/ProductHome.java:4",
+      "name": "botón comprar ahora",
+      "source_path": "src/main/java/userInterfaces/ProductHome.java",
+      "selector": "botón comprar ahora",
+      "symbol": "BOTON_COMPRAR_AHORA_URL"
+    },
+    {
+      "id": "target:src/main/java/userInterfaces/ProductHome.java:5",
+      "name": "botón finalizar compra",
+      "source_path": "src/main/java/userInterfaces/ProductHome.java",
+      "selector": "botón finalizar compra",
+      "symbol": "BOTON_FINALIZAR_COMPRA"
+    },
+    {
+      "id": "target:src/main/java/userInterfaces/ProductHome.java:6",
+      "name": "botón continuar",
+      "source_path": "src/main/java/userInterfaces/ProductHome.java",
+      "selector": "botón continuar",
+      "symbol": "BOTON_CONTINUAR"
+    },
+    {
+      "id": "target:src/main/java/userInterfaces/ProductHome.java:7",
+      "name": "checkbox términos y condiciones",
+      "source_path": "src/main/java/userInterfaces/ProductHome.java",
+      "selector": "checkbox términos y condiciones",
+      "symbol": "CHECKBOX_TERMINOS"
+    },
+    {
+      "id": "target:src/main/java/userInterfaces/ProductHome.java:8",
+      "name": "botón realizar compra",
+      "source_path": "src/main/java/userInterfaces/ProductHome.java",
+      "selector": "botón realizar compra",
+      "symbol": "BOTON_REALIZAR_PEDIDO"
+    },
+    {
+      "id": "target:src/main/java/userInterfaces/ProductHome.java:9",
+      "name": "título finalizar compra",
+      "source_path": "src/main/java/userInterfaces/ProductHome.java",
+      "selector": "título finalizar compra",
+      "symbol": "TITULO_CHECKOUT"
+    },
+    {
+      "id": "target:src/main/java/userInterfaces/ProductHome.java:10",
+      "name": "número de pedido",
+      "source_path": "src/main/java/userInterfaces/ProductHome.java",
+      "selector": "número de pedido",
+      "symbol": "NUMERO_PEDIDO"
+    },
+    {
+      "id": "target:src/main/java/userInterfaces/ProductHome.java:11",
+      "name": "fecha del pedido",
+      "source_path": "src/main/java/userInterfaces/ProductHome.java",
+      "selector": "fecha del pedido",
+      "symbol": "FECHA_PEDIDO"
+    },
+    {
+      "id": "target:src/main/java/userInterfaces/ProductHome.java:12",
+      "name": "total del pedido",
+      "source_path": "src/main/java/userInterfaces/ProductHome.java",
+      "selector": "total del pedido",
+      "symbol": "TOTAL_PEDIDO"
+    },
+    {
+      "id": "target:src/main/java/userInterfaces/ProductHome.java:13",
+      "name": "método de pago",
+      "source_path": "src/main/java/userInterfaces/ProductHome.java",
+      "selector": "método de pago",
+      "symbol": "METODO_PAGO"
+    },
+    {
+      "id": "target:src/main/java/userInterfaces/ProductHome.java:14",
+      "name": "número de pedido alternativo",
+      "source_path": "src/main/java/userInterfaces/ProductHome.java",
+      "selector": "número de pedido alternativo",
+      "symbol": "NUMERO_PEDIDO_FALLBACK"
+    },
+    {
+      "id": "target:src/main/java/userInterfaces/ProductHome.java:15",
+      "name": "fecha del pedido alternativa",
+      "source_path": "src/main/java/userInterfaces/ProductHome.java",
+      "selector": "fecha del pedido alternativa",
+      "symbol": "FECHA_PEDIDO_FALLBACK"
+    },
+    {
+      "id": "target:src/main/java/userInterfaces/ProductHome.java:16",
+      "name": "total del pedido alternativo",
+      "source_path": "src/main/java/userInterfaces/ProductHome.java",
+      "selector": "total del pedido alternativo",
+      "symbol": "TOTAL_PEDIDO_FALLBACK"
+    },
+    {
+      "id": "target:src/main/java/userInterfaces/ProductHome.java:17",
+      "name": "método de pago alternativo",
+      "source_path": "src/main/java/userInterfaces/ProductHome.java",
+      "selector": "método de pago alternativo",
+      "symbol": "METODO_PAGO_FALLBACK"
+    },
+    {
+      "id": "target:src/main/java/userInterfaces/ResgisterPage.java:1",
+      "name": "Ingreso al iniciar sesion",
+      "source_path": "src/main/java/userInterfaces/ResgisterPage.java",
+      "selector": "Ingreso al iniciar sesion",
+      "symbol": "BTTN_INICIO"
+    },
+    {
+      "id": "target:src/main/java/userInterfaces/ResgisterPage.java:2",
+      "name": "Ingreso al iniciar sesion",
+      "source_path": "src/main/java/userInterfaces/ResgisterPage.java",
+      "selector": "Ingreso al iniciar sesion",
+      "symbol": "BTTN_REGISTRAR"
+    }
+  ],
+  "models": [
+    {
+      "id": "model:src/main/java/models/LoginCredentials.java",
+      "name": "LoginCredentials",
+      "source_path": "src/main/java/models/LoginCredentials.java",
+      "references": []
+    },
+    {
+      "id": "model:src/main/java/models/Orden.java",
+      "name": "Orden",
+      "source_path": "src/main/java/models/Orden.java",
+      "references": []
+    },
+    {
+      "id": "model:src/main/java/models/PqrsTestData.java",
+      "name": "PqrsTestData",
+      "source_path": "src/main/java/models/PqrsTestData.java",
+      "references": []
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "scenario:src/test/resources/features/ActualizarFacturacion.feature:4",
+      "feature_id": "feature:src/test/resources/features/ActualizarFacturacion.feature",
+      "name": "Cambiar dirección y ciudad de facturación",
+      "steps": [
+        "el usuario carga la informacion desde el Excel \"1\"",
+        "el usuario esta en la pagina de bonBonite",
+        "inicia sesion con su usuario",
+        "actualiza su direccion de facturacion a \"Cr 67 #54-77\" y ciudad \"Itagui\"",
+        "debe confirmar que la direccion de facturacion quedo guardada como \"Cr 67 #54-77\" en la ciudad \"Itagui\""
       ]
     },
     {
-      "classes": [
-        "ProductHome"
-      ],
-      "name": "ProductHome",
-      "package": "userInterfaces",
-      "path": "src/main/java/userInterfaces/ProductHome.java",
-      "references": [
-        "By",
-        "Target"
+      "id": "scenario:src/test/resources/features/CrearPQRS.feature:4",
+      "feature_id": "feature:src/test/resources/features/CrearPQRS.feature",
+      "name": "Crear una PQR exitosamente",
+      "steps": [
+        "el usuario carga la informacion PQRS desde el Excel \"<fila>\"",
+        "el usuario PQRS abre la pagina de bonBonite",
+        "el usuario PQRS inicia sesion",
+        "ingresa a la opcion crear solicitud PQRS",
+        "diligencia el formulario con los datos requeridos",
+        "el sistema genera un mensaje de confirmacion con el numero de radicado"
       ]
     },
     {
-      "classes": [
-        "ResgisterPage"
-      ],
-      "name": "ResgisterPage",
-      "package": "userInterfaces",
-      "path": "src/main/java/userInterfaces/ResgisterPage.java",
-      "references": [
-        "By",
-        "Target"
+      "id": "scenario:src/test/resources/features/GestionProductos.feature:4",
+      "feature_id": "feature:src/test/resources/features/GestionProductos.feature",
+      "name": "Compra exitosa de zapatos",
+      "steps": [
+        "el usuario carga la informacion desde el Excel \"<fila>\"",
+        "el usuario esta en la pagina de bonBonite",
+        "inicia sesion con su usuario",
+        "busca la categoria de \"zapatos\"",
+        "selecciona un producto disponible",
+        "realizamos el proceso de compra",
+        "el sistema genera mensaje de confirmacion de compra con el numero de pedido"
+      ]
+    },
+    {
+      "id": "scenario:src/test/resources/features/GestionProductos.feature:19",
+      "feature_id": "feature:src/test/resources/features/GestionProductos.feature",
+      "name": "Compra exitosa de bolsos",
+      "steps": [
+        "el usuario carga la informacion desde el Excel \"<fila>\"",
+        "el usuario esta en la pagina de bonBonite",
+        "inicia sesion con su usuario",
+        "busca la categoria de \"bolsos\"",
+        "selecciona un producto disponible",
+        "realizamos el proceso de compra",
+        "el sistema genera mensaje de confirmacion de compra con el numero de pedido"
+      ]
+    },
+    {
+      "id": "scenario:src/test/resources/features/GestionProductos.feature:35",
+      "feature_id": "feature:src/test/resources/features/GestionProductos.feature",
+      "name": "Compra exitosa de cinturones",
+      "steps": [
+        "el usuario carga la informacion desde el Excel \"<fila>\"",
+        "el usuario esta en la pagina de bonBonite",
+        "inicia sesion con su usuario",
+        "busca la categoria de \"cinturones\"",
+        "selecciona un producto disponible",
+        "realizamos el proceso de compra",
+        "el sistema genera mensaje de confirmacion de compra con el numero de pedido"
+      ]
+    },
+    {
+      "id": "scenario:src/test/resources/features/GestionProductos.feature:51",
+      "feature_id": "feature:src/test/resources/features/GestionProductos.feature",
+      "name": "Compra exitosa de accesorios",
+      "steps": [
+        "el usuario carga la informacion desde el Excel \"<fila>\"",
+        "el usuario esta en la pagina de bonBonite",
+        "inicia sesion con su usuario",
+        "busca la categoria de \"accesorios\"",
+        "selecciona un producto disponible",
+        "realizamos el proceso de compra",
+        "el sistema genera mensaje de confirmacion de compra con el numero de pedido"
+      ]
+    },
+    {
+      "id": "scenario:src/test/resources/features/GestionProductos.feature:66",
+      "feature_id": "feature:src/test/resources/features/GestionProductos.feature",
+      "name": "Compra exitosa en outlet",
+      "steps": [
+        "el usuario carga la informacion desde el Excel \"<fila>\"",
+        "el usuario esta en la pagina de bonBonite",
+        "inicia sesion con su usuario",
+        "busca la categoria de \"outlet\"",
+        "selecciona un producto disponible",
+        "realizamos el proceso de compra",
+        "el sistema genera mensaje de confirmacion de compra con el numero de pedido"
+      ]
+    },
+    {
+      "id": "scenario:src/test/resources/features/RegistrarUsuario.feature:4",
+      "feature_id": "feature:src/test/resources/features/RegistrarUsuario.feature",
+      "name": "Registro exitoso",
+      "steps": [
+        "el usuario carga la informacion desde el Excel \"<fila>\"",
+        "el usuario esta en la pagina de bonBonite",
+        "ingresa al formulario de registro",
+        "ingresa sus datos correctamente",
+        "deberia ver confirmacion de registro exitoso"
       ]
     }
   ]

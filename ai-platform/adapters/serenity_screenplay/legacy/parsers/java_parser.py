@@ -1,7 +1,7 @@
 import re
 from typing import Any
 
-from core.common.models import SourceFile
+from adapters.serenity_screenplay.legacy.common.models import SourceFile
 
 PACKAGE_RE = re.compile(r"^\s*package\s+([\w.]+)\s*;", re.MULTILINE)
 CLASS_RE = re.compile(r"\b(?:class|interface|record|enum)\s+(\w+)")
