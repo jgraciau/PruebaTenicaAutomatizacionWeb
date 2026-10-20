@@ -1,3 +1,4 @@
+import re
 from collections import defaultdict
 from html import escape
 from typing import Any
@@ -62,6 +63,18 @@ border-top:1px solid var(--line)}.scenario h3{font-size:1rem;margin:0 0 7px}.ste
 background:var(--paper);border:1px solid var(--line);border-radius:11px;padding:13px 15px}
 .next-step:before{content:counter(actions);display:inline-grid;place-items:center;width:25px;height:25px;
 margin-right:9px;border-radius:50%;background:var(--blue-soft);color:var(--blue);font-weight:700}
+.report-nav{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}.report-nav a{display:inline-flex;
+padding:7px 11px;border:1px solid #ffffff55;border-radius:999px;color:white;text-decoration:none;
+font-size:.86rem}.report-nav a:hover{background:#ffffff20}
+.finding-list{display:grid;gap:12px}.finding{background:var(--paper);border:1px solid var(--line);
+border-radius:12px;padding:16px}.finding h3{font-size:1rem;margin:0 0 8px}
+.finding p{margin:6px 0}.badge{display:inline-block;border-radius:999px;padding:3px 9px;
+background:var(--amber-soft);color:var(--amber);font-size:.78rem;font-weight:700}
+.badge.low{background:var(--green-soft);color:var(--green)}.advisory-table{min-width:720px}
+.score-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}
+.score-item{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:14px}
+.score-item strong{display:block;margin-bottom:5px}.report-nav a:focus-visible{outline:3px solid white;
+outline-offset:2px}
 footer{margin-top:32px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:.83rem}
 code{font-size:.82em;overflow-wrap:anywhere}a{color:var(--blue)}
 @media(max-width:600px){main{padding:16px 12px 36px}.hero{padding:23px}.feature summary span{float:none;display:block}}
@@ -166,12 +179,143 @@ def _report_data(maps: dict[str, dict[str, Any]]) -> dict[str, Any]:
         relation_counts[edge["relation"]] += 1
     return {
         "project": project,
+        "architecture": architecture,
         "metrics": metrics,
         "features": feature_summaries,
         "unmatched_steps": unmatched_steps,
         "matched_step_count": matched_step_total,
         "traceability": traceability,
         "relationships": relationships,
+        "relation_counts": relation_counts,
+    }
+
+
+def _advisory_data(data: dict[str, Any]) -> dict[str, Any]:
+    architecture = data["architecture"]
+    relationships = data["relationships"]
+    components = {
+        component["id"]: component
+        for category in (
+            "tasks",
+            "questions",
+            "interactions",
+            "targets",
+            "models",
+        )
+        for component in architecture.get(category, [])
+    }
+    connected_ids = {
+        identifier
+        for edge in relationships
+        for identifier in (edge["source_id"], edge["target_id"])
+    }
+    orphan_candidates = [
+        {
+            "type": category,
+            "name": component["name"],
+            "path": component.get("source_path", ""),
+        }
+        for category in ("tasks", "questions", "interactions", "targets", "models")
+        for component in architecture.get(category, [])
+        if component["id"] not in connected_ids
+    ]
+
+    relation_counts = data["relation_counts"]
+    heuristic_matches = sum(
+        edge["relation"] == "step_definition"
+        and edge.get("evidence", "").startswith("Heuristic match")
+        for edge in relationships
+    )
+    interaction_consumers: dict[str, set[str]] = defaultdict(set)
+    target_usage: dict[str, set[str]] = defaultdict(set)
+    for edge in relationships:
+        if edge["relation"] == "uses_interaction":
+            interaction_consumers[edge["target_id"]].add(edge["source_id"])
+        elif edge["target_type"] == "target":
+            target_usage[edge["target_id"]].add(edge["source_id"])
+    interactions = {
+        component["id"]: component
+        for component in architecture.get("interactions", [])
+    }
+    targets = {
+        component["id"]: component
+        for component in architecture.get("targets", [])
+    }
+    shared_interactions = [
+        {
+            "name": interactions[identifier]["name"],
+            "consumers": len(consumers),
+        }
+        for identifier, consumers in interaction_consumers.items()
+        if len(consumers) > 1
+    ]
+    shared_interactions.sort(key=lambda item: (-item["consumers"], item["name"]))
+    shared_targets = [
+        {
+            "name": targets[identifier]["name"],
+            "consumers": len(consumers),
+        }
+        for identifier, consumers in target_usage.items()
+        if len(consumers) > 1
+    ]
+    shared_targets.sort(key=lambda item: (-item["consumers"], item["name"]))
+
+    normalized_scenarios: dict[tuple[str, ...], list[str]] = defaultdict(list)
+    for feature in architecture.get("features", []):
+        for scenario in feature.get("scenarios", []):
+            normalized_steps = tuple(
+                re.sub(r'"[^"]*"', '"{valor}"', step.casefold())
+                for step in scenario.get("steps", [])
+            )
+            if normalized_steps:
+                normalized_scenarios[normalized_steps].append(scenario["name"])
+    repeated_flows = [
+        {"count": len(names), "examples": names}
+        for names in normalized_scenarios.values()
+        if len(names) > 1
+    ]
+    repeated_flows.sort(key=lambda item: (-item["count"], item["examples"][0]))
+
+    graph = {identifier: [] for identifier in components}
+    graph.update(
+        {
+            component["id"]: []
+            for category in ("features", "step_definitions", "actors")
+            for component in architecture.get(category, [])
+        }
+    )
+    graph.update(
+        {
+            scenario["id"]: []
+            for feature in architecture.get("features", [])
+            for scenario in feature.get("scenarios", [])
+        }
+    )
+    for edge in relationships:
+        if edge["source_id"] in graph and edge["target_id"] in graph:
+            graph[edge["source_id"]].append(edge["target_id"])
+    indegree = {identifier: 0 for identifier in graph}
+    for targets_for_node in graph.values():
+        for identifier in targets_for_node:
+            indegree[identifier] += 1
+    ready = [identifier for identifier, degree in indegree.items() if degree == 0]
+    visited_count = 0
+    while ready:
+        identifier = ready.pop()
+        visited_count += 1
+        for target_id in graph[identifier]:
+            indegree[target_id] -= 1
+            if indegree[target_id] == 0:
+                ready.append(target_id)
+    cycle_count = len(graph) - visited_count
+
+    return {
+        "orphan_candidates": orphan_candidates,
+        "heuristic_matches": heuristic_matches,
+        "shared_interactions": shared_interactions,
+        "shared_targets": shared_targets,
+        "repeated_flows": repeated_flows,
+        "cycle_count": cycle_count,
         "relation_counts": relation_counts,
     }
 
@@ -301,7 +445,10 @@ def render_markdown_report(maps: dict[str, dict[str, Any]]) -> str:
     )
 
 
-def render_html_report(maps: dict[str, dict[str, Any]]) -> str:
+def render_html_report(
+    maps: dict[str, dict[str, Any]],
+    quality_score: dict[str, Any] | None = None,
+) -> str:
     data = _report_data(maps)
     project = data["project"]
     metrics = data["metrics"]
@@ -414,6 +561,339 @@ def render_html_report(maps: dict[str, dict[str, Any]]) -> str:
         if errors
         else "No se registraron errores de lectura."
     )
+    advisory = _advisory_data(data)
+    orphan_candidates = advisory["orphan_candidates"]
+    orphan_names = ", ".join(item["name"] for item in orphan_candidates[:8])
+    if len(orphan_candidates) > 8:
+        orphan_names += f" y {len(orphan_candidates) - 8} más"
+
+    debt_findings: list[str] = []
+    if orphan_candidates:
+        debt_findings.append(
+            '<article class="finding"><h3>Componentes sin uso reflejado en el mapa</h3>'
+            f'<p><span class="badge">Revisión recomendada · {len(orphan_candidates)}</span></p>'
+            f"<p><strong>Elementos:</strong> {escape(orphan_names)}.</p>"
+            "<p><strong>Qué significa:</strong> no se encontró una relación para estos "
+            "componentes en el análisis. Esto no demuestra que estén muertos: puede "
+            "haber referencias que el análisis estático no reconoce.</p>"
+            "<p><strong>Qué hacer:</strong> confirmar el uso en el proyecto antes de "
+            "retirar código o marcarlo como deuda.</p></article>"
+        )
+    if advisory["repeated_flows"]:
+        repeated = advisory["repeated_flows"][0]
+        examples = ", ".join(repeated["examples"][:5])
+        debt_findings.append(
+            '<article class="finding"><h3>Flujos con pasos muy similares</h3>'
+            f'<p><span class="badge">Oportunidad de simplificación · {repeated["count"]} escenarios</span></p>'
+            f"<p><strong>Evidencia:</strong> {escape(examples)} comparten la misma "
+            "secuencia de pasos al normalizar los valores entre comillas.</p>"
+            "<p><strong>Impacto posible:</strong> una modificación del flujo común "
+            "puede requerir actualizar varios escenarios.</p>"
+            "<p><strong>Recomendación:</strong> evaluar ejemplos parametrizados si "
+            "los escenarios representan el mismo comportamiento.</p></article>"
+        )
+    if not debt_findings:
+        debt_findings.append(
+            '<div class="panel">No se detectaron componentes sin relaciones ni '
+            "secuencias repetidas con los mapas disponibles.</div>"
+        )
+
+    risk_findings: list[tuple[str, str, str, str, str, str]] = []
+    if advisory["cycle_count"]:
+        risk_findings.append(
+            (
+                "Arquitectura",
+                "HIGH",
+                f"{advisory['cycle_count']} nodos están afectados por ciclos o dependen de ellos.",
+                "Los cambios pueden propagarse entre componentes relacionados.",
+                "Revisar las relaciones cíclicas y confirmar si son intencionales.",
+                "P2",
+            )
+        )
+    if advisory["heuristic_matches"]:
+        risk_findings.append(
+            (
+                "Trazabilidad",
+                "MEDIUM",
+                f"{advisory['heuristic_matches']} relaciones escenario-paso usan coincidencia heurística.",
+                "La asociación puede ser aproximada; no confirma que la automatización pase.",
+                "Validar la correspondencia con ejecución de pruebas antes de reportar cobertura.",
+                "P2",
+            )
+        )
+    if orphan_candidates:
+        risk_findings.append(
+            (
+                "Mantenibilidad",
+                "MEDIUM",
+                f"{len(orphan_candidates)} componentes no muestran relaciones en el grafo.",
+                "Pueden ser componentes sin uso o referencias que el análisis no detectó.",
+                "Comprobar sus referencias reales y corregir el inventario o retirar solo lo confirmado.",
+                "P2",
+            )
+        )
+    if advisory["repeated_flows"]:
+        risk_findings.append(
+            (
+                "Reutilización",
+                "MEDIUM",
+                f"{advisory['repeated_flows'][0]['count']} escenarios comparten secuencia de pasos normalizada.",
+                "El mantenimiento del flujo podría repetirse en varios escenarios.",
+                "Evaluar parametrización si los casos son funcionalmente equivalentes.",
+                "P3",
+            )
+        )
+    if errors:
+        risk_findings.append(
+            (
+                "Calidad del inventario",
+                "HIGH",
+                f"El análisis reportó {len(errors)} errores de lectura.",
+                "El inventario puede estar incompleto.",
+                "Resolver los errores antes de tomar decisiones basadas en estos mapas.",
+                "P2",
+            )
+        )
+    risk_cards = "".join(
+        '<article class="finding"><h3>'
+        f"{escape(category)} · <span class=\"badge\">{escape(level)}</span></h3>"
+        f"<p><strong>Evidencia:</strong> {escape(evidence)}</p>"
+        f"<p><strong>Impacto posible:</strong> {escape(impact)}</p>"
+        f"<p><strong>Recomendación:</strong> {escape(recommendation)}</p>"
+        f'<p><strong>Prioridad:</strong> {escape(priority)}</p></article>'
+        for category, level, evidence, impact, recommendation, priority in risk_findings
+    ) or '<div class="panel">No se detectaron riesgos estructurales en los mapas. '
+    "Esto no sustituye pruebas ni revisión del código.</div>"
+
+    compliance_rows = [
+        (
+            "Tasks",
+            f"{metrics.get('tasks', 0)} tareas detectadas; "
+            f"{len([item for item in orphan_candidates if item['type'] == 'tasks'])} sin relaciones registradas.",
+            "El mapa no incluye tamaño ni lógica interna; responsabilidad única no verificable.",
+            "Confirmar los componentes sin uso reflejado y revisar su intención en código.",
+        ),
+        (
+            "Questions",
+            f"{metrics.get('questions', 0)} validaciones detectadas; "
+            f"{advisory['relation_counts'].get('queries_target', 0)} relaciones a elementos de interfaz.",
+            "La estructura de consulta es visible; simplicidad y propósito único no se pueden confirmar.",
+            "Validar que cada pregunta responda una necesidad de negocio concreta.",
+        ),
+        (
+            "Interactions",
+            f"{metrics.get('interactions', 0)} interacciones detectadas; "
+            f"{len(advisory['shared_interactions'])} aparecen reutilizadas por más de una tarea.",
+            "El uso compartido es una señal de reutilización, no evidencia de complejidad.",
+            "Mantenerlas técnicas y enfocadas; revisar las de mayor alcance antes de modificarlas.",
+        ),
+        (
+            "Step Definitions",
+            f"{metrics.get('step_definitions', 0)} definiciones para "
+            f"{metrics.get('steps', 0)} pasos; asociaciones heurísticas: {advisory['heuristic_matches']}.",
+            "Los mapas no revelan si contienen lógica de negocio o solo delegan acciones.",
+            "Validar asociaciones y comprobar que las definiciones deleguen en Tasks y Questions.",
+        ),
+        (
+            "Features",
+            f"{metrics.get('features', 0)} flujos y {metrics.get('scenarios', 0)} escenarios; "
+            f"{len(advisory['repeated_flows'])} grupos de pasos similares.",
+            "Se puede revisar cobertura declarada; no indica pruebas aprobadas.",
+            "Parametrizar variantes equivalentes y conservar las diferencias de negocio.",
+        ),
+    ]
+    compliance_html = "".join(
+        "<tr>"
+        f"<td><strong>{escape(name)}</strong></td>"
+        f"<td>{escape(evidence)}</td>"
+        f"<td>{escape(limitation)}</td>"
+        f"<td>{escape(recommendation)}</td>"
+        "</tr>"
+        for name, evidence, limitation, recommendation in compliance_rows
+    )
+    reuse_rows = [
+        (
+            "Interactions compartidas",
+            ", ".join(
+                f"{item['name']} ({item['consumers']} tareas)"
+                for item in advisory["shared_interactions"][:5]
+            )
+            or "No hay uso compartido registrado.",
+            "Revisar el contrato común; el grafo no demuestra responsabilidades mezcladas.",
+        ),
+        (
+            "Targets compartidos",
+            ", ".join(
+                f"{item['name']} ({item['consumers']} consumidores)"
+                for item in advisory["shared_targets"][:5]
+            )
+            or "No hay Targets con varios consumidores registrados.",
+            "Consolidar solo cuando selector y significado sean iguales.",
+        ),
+        (
+            "Flujos de escenario",
+            ", ".join(
+                f"{item['count']} escenarios con pasos similares"
+                for item in advisory["repeated_flows"][:3]
+            )
+            or "No se detectaron secuencias repetidas.",
+            "Evaluar ejemplos parametrizados si los casos describen el mismo comportamiento.",
+        ),
+    ]
+    reuse_html = "".join(
+        "<tr>"
+        f"<td><strong>{escape(name)}</strong></td>"
+        f"<td>{escape(evidence)}</td>"
+        f"<td>{escape(recommendation)}</td>"
+        "</tr>"
+        for name, evidence, recommendation in reuse_rows
+    )
+    dependency_rows = "".join(
+        "<tr>"
+        f"<td>{escape(_RELATION_LABELS.get(relation, relation))}</td>"
+        f"<td>{count}</td>"
+        "</tr>"
+        for relation, count in sorted(advisory["relation_counts"].items())
+    ) or '<tr><td colspan="2">No hay relaciones registradas.</td></tr>'
+    shared_interaction_summary = (
+        ", ".join(
+            f"{item['name']} ({item['consumers']} tareas)"
+            for item in advisory["shared_interactions"][:3]
+        )
+        or "No se observan interacciones utilizadas por varias tareas."
+    )
+    improvement_items = [
+        (
+            "P1 · Crítico",
+            "Resolver ciclos en las dependencias antes de ampliar el framework."
+            if advisory["cycle_count"]
+            else "No se identificaron acciones críticas con la evidencia disponible.",
+        ),
+        (
+            "P2 · Alto",
+            "Validar las asociaciones heurísticas entre escenarios y definiciones de pasos."
+            if advisory["heuristic_matches"]
+            else "Mantener la trazabilidad verificada al ampliar los escenarios.",
+        ),
+        (
+            "P2 · Alto",
+            "Confirmar si los componentes sin relaciones están en uso antes de limpiarlos."
+            if orphan_candidates
+            else "No se detectaron componentes sin relaciones en el grafo.",
+        ),
+        (
+            "P3 · Medio",
+            "Evaluar parametrizar escenarios con pasos similares y revisar interacciones compartidas."
+            if advisory["repeated_flows"] or advisory["shared_interactions"]
+            else "Revisar reutilización cuando se incorporen nuevos flujos.",
+        ),
+        (
+            "P4 · Bajo",
+            "Aclarar nombres de elementos repetidos solo si causan confusión en el equipo.",
+        ),
+    ]
+    improvement_html = "".join(
+        '<article class="finding"><h3>'
+        f"{escape(priority)}</h3><p>{escape(action)}</p></article>"
+        for priority, action in improvement_items
+    )
+    score_labels = {
+        "architecture": "Arquitectura",
+        "maintainability": "Mantenibilidad",
+        "scalability": "Escalabilidad",
+        "reusability": "Reutilización",
+        "screenplay_compliance": "Cumplimiento Screenplay",
+        "overall_quality": "Calidad general",
+    }
+    scores = quality_score.get("scores", {}) if quality_score else {}
+    score_explanations = {
+        "architecture": (
+            f"El grafo tiene {advisory['cycle_count']} nodos afectados por ciclos; "
+            f"se detectaron {advisory['heuristic_matches']} asociaciones heurísticas."
+        ),
+        "maintainability": (
+            f"Componentes sin relaciones registradas: {len(orphan_candidates)}. "
+            "Confirma su uso real antes de considerarlos código obsoleto."
+        ),
+        "scalability": (
+            f"Grupos de escenarios con pasos similares: {len(advisory['repeated_flows'])}. "
+            "Los mapas no miden crecimiento, rendimiento ni estabilidad."
+        ),
+        "reusability": (
+            f"Interacciones compartidas: {len(advisory['shared_interactions'])}; "
+            f"Targets con varios consumidores: {len(advisory['shared_targets'])}. "
+            "No se evidencia reutilización entre proyectos."
+        ),
+        "screenplay_compliance": (
+            f"Se detectaron {metrics.get('tasks', 0)} Tasks, "
+            f"{metrics.get('questions', 0)} Questions y "
+            f"{metrics.get('interactions', 0)} Interactions. "
+            "Las responsabilidades internas requieren revisar el código."
+        ),
+        "overall_quality": (
+            "Promedio orientativo de las dimensiones anteriores; no representa "
+            "resultados de pruebas ni una certificación."
+        ),
+    }
+    maturity_items = [
+        (
+            score_labels[key],
+            f"{value['score']}/100 · {value['classification']}",
+            score_explanations[key],
+        )
+        for key, value in scores.items()
+        if key in score_labels
+        and key in score_explanations
+        and isinstance(value, dict)
+        and isinstance(value.get("score"), (int, float))
+        and isinstance(value.get("classification"), str)
+    ]
+    if not maturity_items:
+        maturity_items = [
+            (
+                "Arquitectura",
+                "Estructura visible",
+                "Se observan capas y relaciones; el grafo registra "
+                + ("ciclos." if advisory["cycle_count"] else "no presenta ciclos."),
+            ),
+            (
+                "Mantenibilidad",
+                "Requiere validación" if orphan_candidates else "Señales favorables",
+                f"Componentes sin relaciones registradas: {len(orphan_candidates)}.",
+            ),
+            (
+                "Escalabilidad",
+                "Requiere seguimiento" if advisory["repeated_flows"] else "Sin alerta en mapas",
+                "La evaluación no mide velocidad, crecimiento ni comportamiento de ejecución.",
+            ),
+            (
+                "Reutilización",
+                "Observada" if advisory["shared_interactions"] or advisory["shared_targets"] else "Poco visible",
+                f"Interacciones compartidas detectadas: {len(advisory['shared_interactions'])}.",
+            ),
+            (
+                "Cumplimiento Screenplay",
+                "Estructura detectada",
+                "El inventario identifica Tasks, Questions e Interactions; sus responsabilidades internas no son verificables.",
+            ),
+        ]
+    maturity_html = "".join(
+        '<article class="score-item"><strong>'
+        f"{escape(name)} · {escape(status)}</strong><span class=\"muted small\">"
+        f"{escape(evidence)}</span></article>"
+        for name, status, evidence in maturity_items
+    )
+    cycle_summary = (
+        "No se detectaron ciclos en el grafo."
+        if not advisory["cycle_count"]
+        else f"Hay {advisory['cycle_count']} nodos afectados por dependencias cíclicas."
+    )
+    dependency_callout_class = "warning" if advisory["cycle_count"] else "success"
+    dependency_callout_message = (
+        f"Nodos afectados por dependencias cíclicas: {advisory['cycle_count']}."
+        if advisory["cycle_count"]
+        else "No se detectaron ciclos en las relaciones registradas."
+    )
     return (
         "<!doctype html><html lang=\"es\"><head><meta charset=\"utf-8\">"
         "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">"
@@ -427,16 +907,78 @@ def render_html_report(maps: dict[str, dict[str, Any]]) -> str:
         f'<span class="pill">{escape(project["framework"])}</span>'
         f'<span class="pill">{escape(project["language"])}</span>'
         '<span class="pill">Screenplay</span>'
-        "</div></header>"
+        "</div>"
+        '<nav class="report-nav" aria-label="Secciones del informe">'
+        '<a href="#lectura-ejecutiva">Lectura ejecutiva</a>'
+        '<a href="#arquitectura">Arquitectura</a>'
+        '<a href="#deuda-tecnica">Deuda técnica</a>'
+        '<a href="#riesgos">Riesgos</a>'
+        '<a href="#screenplay">Screenplay</a>'
+        '<a href="#reutilizacion">Reutilización</a>'
+        '<a href="#dependencias">Dependencias</a>'
+        '<a href="#plan-mejora">Plan de mejora</a>'
+        "</nav></header>"
         '<section class="section"><h2>Resumen ejecutivo</h2>'
         '<p class="intro">Qué está descrito y cómo se conecta con la automatización.</p>'
         f'<div class="cards">{card_html}</div></section>'
+        '<section class="section" id="lectura-ejecutiva"><h2>Lectura ejecutiva</h2>'
+        '<p class="intro">Una valoración orientativa para priorizar conversaciones; '
+        "no es una certificación ni una puntuación de calidad de ejecución.</p>"
+        f'<div class="score-grid">{maturity_html}</div>'
+        '<p class="muted small">La valoración se deriva de las relaciones registradas '
+        "en los mapas. Los detalles internos del código y la ejecución de pruebas "
+        "no son evaluados aquí.</p></section>"
         '<section class="section"><h2>Estado de trazabilidad</h2>'
         '<p class="intro">Indica si los pasos de los escenarios se pudieron relacionar '
         "estáticamente con código; no indica si las pruebas pasan.</p>"
         f'<div class="callout {status_class}">{escape(status_message)} '
         f'Trazabilidad estimada: <strong>{data["traceability"]}%</strong> '
         f'({data["matched_step_count"]} de {metrics.get("steps", 0)} pasos).</div></section>'
+        '<section class="section" id="arquitectura"><h2>Arquitectura: fortalezas y atención</h2>'
+        '<p class="intro">Qué muestran las relaciones entre especificaciones y componentes.</p>'
+        '<div class="finding-list">'
+        '<article class="finding"><h3>Fortalezas observadas</h3><p>'
+        f"{metrics.get('features', 0)} flujos y {metrics.get('scenarios', 0)} escenarios "
+        f"con {metrics.get('tasks', 0)} tareas, {metrics.get('questions', 0)} "
+        f"validaciones y {metrics.get('interactions', 0)} interacciones identificadas.</p>"
+        f"<p>Relaciones registradas: {len(data['relationships'])}. "
+        f"{cycle_summary}</p></article>"
+        '<article class="finding"><h3>Punto de atención</h3><p>'
+        f"{advisory['heuristic_matches']} asociaciones entre escenarios y definiciones "
+        "se basan en coincidencias heurísticas. Deben confirmarse antes de interpretarse "
+        "como cobertura real.</p></article>"
+        "</div></section>"
+        '<section class="section" id="deuda-tecnica"><h2>Deuda técnica candidata</h2>'
+        '<p class="intro">Elementos para verificar; una relación ausente no prueba que '
+        "el código esté sin uso.</p>"
+        f'<div class="finding-list">{"".join(debt_findings)}</div></section>'
+        '<section class="section" id="riesgos"><h2>Riesgos y oportunidades</h2>'
+        '<p class="intro">Cada hallazgo incluye evidencia, impacto posible y una acción sugerida.</p>'
+        f'<div class="finding-list">{risk_cards}</div></section>'
+        '<section class="section" id="screenplay"><h2>Screenplay: evaluación por componente</h2>'
+        '<p class="intro">El inventario permite revisar la estructura; simplicidad y '
+        "responsabilidades internas requieren inspeccionar el código.</p>"
+        '<div class="table-wrap"><table class="advisory-table"><thead><tr>'
+        "<th>Componente</th><th>Evidencia</th><th>Qué no puede confirmar el mapa</th>"
+        "<th>Siguiente paso</th></tr></thead>"
+        f"<tbody>{compliance_html}</tbody></table></div></section>"
+        '<section class="section" id="reutilizacion"><h2>Reutilización</h2>'
+        '<p class="intro">Oportunidades basadas en consumidores compartidos o pasos similares; '
+        "no se recomienda extraer componentes sin confirmar el beneficio.</p>"
+        '<div class="table-wrap"><table class="advisory-table"><thead><tr>'
+        "<th>Oportunidad</th><th>Qué se observa</th><th>Recomendación</th></tr></thead>"
+        f"<tbody>{reuse_html}</tbody></table></div></section>"
+        '<section class="section" id="dependencias"><h2>Dependencias y acoplamiento</h2>'
+        '<p class="intro">Relaciones que el análisis estático pudo reconstruir. '
+        f"Interacciones compartidas destacadas: {escape(shared_interaction_summary)}.</p>"
+        f'<div class="callout {dependency_callout_class}">'
+        f"{dependency_callout_message}"
+        "</div><div class=\"table-wrap\"><table><thead><tr><th>Relación</th>"
+        "<th>Cantidad</th></tr></thead>"
+        f"<tbody>{dependency_rows}</tbody></table></div></section>"
+        '<section class="section" id="plan-mejora"><h2>Plan de mejora priorizado</h2>'
+        '<p class="intro">Atender primero lo que puede distorsionar la confianza en el inventario.</p>'
+        f'<div class="finding-list">{improvement_html}</div></section>'
         '<section class="section"><h2>Cobertura por flujo de negocio</h2>'
         '<p class="intro">Resumen de escenarios escritos y pasos con una posible '
         'definición en el código.</p><div class="table-wrap"><table><thead><tr>'
@@ -466,4 +1008,3 @@ def render_html_report(maps: dict[str, dict[str, Any]]) -> str:
         "mantenimiento y próximos pasos; no como evidencia de ejecución exitosa."
         "</footer></main></body></html>"
     )
-

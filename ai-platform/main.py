@@ -117,8 +117,34 @@ def run_configured(
             render_markdown_report(maps),
             encoding="utf-8",
         )
+        quality_score = None
+        quality_score_path = config.reports_output / "quality-score.json"
+        if quality_score_path.is_file():
+            try:
+                candidate = json.loads(
+                    quality_score_path.read_text(encoding="utf-8")
+                )
+            except (OSError, json.JSONDecodeError) as exc:
+                logger.warning(
+                    "Ignoring invalid optional quality score %s: %s",
+                    quality_score_path,
+                    exc,
+                )
+            else:
+                if (
+                    isinstance(candidate, dict)
+                    and candidate.get("project") == result.project.name
+                    and isinstance(candidate.get("scores"), dict)
+                ):
+                    quality_score = candidate
+                else:
+                    logger.warning(
+                        "Ignoring quality score %s because it does not match project %s",
+                        quality_score_path,
+                        result.project.name,
+                    )
         (config.reports_output / "architecture-report.html").write_text(
-            render_html_report(maps),
+            render_html_report(maps, quality_score=quality_score),
             encoding="utf-8",
         )
     except OSError as exc:

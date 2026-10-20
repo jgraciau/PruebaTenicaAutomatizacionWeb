@@ -1,0 +1,52 @@
+{
+  "project": "Automatizacion Web Bon-Bonite",
+  "score_scale": {
+    "range": "0-100",
+    "classification_semantics": "Una puntuación baja indica mayor riesgo; las puntuaciones son heurísticas basadas únicamente en knowledge maps.",
+    "bands": {
+      "CRITICAL": "0-39",
+      "HIGH": "40-59",
+      "MEDIUM": "60-79",
+      "LOW": "80-100"
+    }
+  },
+  "scores": {
+    "architecture": {
+      "score": 100,
+      "classification": "LOW",
+      "rationale": "Basado en 107 nodos, 111 relaciones, 0 ciclos y 0 errores de análisis."
+    },
+    "maintainability": {
+      "score": 91,
+      "classification": "LOW",
+      "rationale": "Penaliza 22 componentes sin relación entre 89 componentes Screenplay inventariados."
+    },
+    "reusability": {
+      "score": 75,
+      "classification": "MEDIUM",
+      "rationale": "Señal heurística basada en relaciones (111) y recomendaciones de componentes compartidos."
+    },
+    "screenplay_compliance": {
+      "score": 100,
+      "classification": "LOW",
+      "rationale": "7/7 categorías presentes; 6/6 tipos de relación registrados."
+    },
+    "overall_quality": {
+      "score": 92,
+      "classification": "LOW",
+      "rationale": "Media aritmética de arquitectura, mantenibilidad, reutilización y estructura Screenplay."
+    }
+  },
+  "score_values": {
+    "architecture_score": 100,
+    "maintainability_score": 91,
+    "reusability_score": 75,
+    "screenplay_score": 100,
+    "overall_score": 92
+  },
+  "limitations": [
+    "Las puntuaciones son heurísticas calculadas solo con knowledge maps.",
+    "No se analizaron cuerpos de métodos ni se ejecutaron pruebas.",
+    "La falta de una relación no demuestra código muerto."
+  ]
+}

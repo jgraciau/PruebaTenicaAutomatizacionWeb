@@ -221,6 +221,23 @@ def test_same_engine_builds_universal_maps_for_multiple_projects(
         extension=extension,
         path_entries=path_entries,
     )
+    reports = config_path.parent / "reports"
+    reports.mkdir()
+    (reports / "quality-score.json").write_text(
+        json.dumps(
+            {
+                "project": f"{framework.title()} Project",
+                "scores": {
+                    "architecture": {
+                        "score": 88,
+                        "classification": "LOW",
+                        "rationale": "Relaciones claras para este ejemplo.",
+                    }
+                },
+            }
+        ),
+        encoding="utf-8",
+    )
 
     assert run_configured(config_path) == 0
 
@@ -268,6 +285,16 @@ def test_same_engine_builds_universal_maps_for_multiple_projects(
     assert "Reporte para producto" in architecture_html
     assert "Resumen ejecutivo" in architecture_html
     assert "Detalle por escenario" in architecture_html
+    assert "88/100" in architecture_html
+    assert "El grafo tiene" in architecture_html
+    assert "Lectura ejecutiva" in architecture_html
+    assert "Arquitectura: fortalezas y atención" in architecture_html
+    assert "Deuda técnica candidata" in architecture_html
+    assert "Riesgos y oportunidades" in architecture_html
+    assert "Screenplay: evaluación por componente" in architecture_html
+    assert "Reutilización" in architecture_html
+    assert "Dependencias y acoplamiento" in architecture_html
+    assert "Plan de mejora priorizado" in architecture_html
     assert "próximas acciones" in architecture_html.lower()
     assert "no ejecuta pruebas" in architecture_html.lower()
     assert "Resumen para producto" in architecture_markdown

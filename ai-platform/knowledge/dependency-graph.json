@@ -990,14 +990,6 @@
     },
     {
       "source_id": "interaction:src/main/java/interactions/ClickJs.java",
-      "target_id": "target:src/main/java/userInterfaces/LoginBonBonitePage.java:1",
-      "source_type": "interaction",
-      "target_type": "target",
-      "relation": "uses_target",
-      "evidence": "Task source passes the Target reference to this Interaction."
-    },
-    {
-      "source_id": "interaction:src/main/java/interactions/ClickJs.java",
       "target_id": "target:src/main/java/userInterfaces/CreateAccountHome.java:13",
       "source_type": "interaction",
       "target_type": "target",
@@ -1006,7 +998,7 @@
     },
     {
       "source_id": "interaction:src/main/java/interactions/ClickJs.java",
-      "target_id": "target:src/main/java/userInterfaces/LoginBonBonitePage.java:4",
+      "target_id": "target:src/main/java/userInterfaces/LoginBonBonitePage.java:3",
       "source_type": "interaction",
       "target_type": "target",
       "relation": "uses_target",
@@ -1014,7 +1006,15 @@
     },
     {
       "source_id": "interaction:src/main/java/interactions/ClickJs.java",
-      "target_id": "target:src/main/java/userInterfaces/LoginBonBonitePage.java:3",
+      "target_id": "target:src/main/java/userInterfaces/LoginBonBonitePage.java:1",
+      "source_type": "interaction",
+      "target_type": "target",
+      "relation": "uses_target",
+      "evidence": "Task source passes the Target reference to this Interaction."
+    },
+    {
+      "source_id": "interaction:src/main/java/interactions/ClickJs.java",
+      "target_id": "target:src/main/java/userInterfaces/LoginBonBonitePage.java:4",
       "source_type": "interaction",
       "target_type": "target",
       "relation": "uses_target",
@@ -1030,38 +1030,6 @@
     },
     {
       "source_id": "interaction:src/main/java/interactions/ClickJs.java",
-      "target_id": "target:src/main/java/userInterfaces/PqrsHome.java:3",
-      "source_type": "interaction",
-      "target_type": "target",
-      "relation": "uses_target",
-      "evidence": "Task source passes the Target reference to this Interaction."
-    },
-    {
-      "source_id": "interaction:src/main/java/interactions/ClickJs.java",
-      "target_id": "target:src/main/java/userInterfaces/PqrsHome.java:8",
-      "source_type": "interaction",
-      "target_type": "target",
-      "relation": "uses_target",
-      "evidence": "Task source passes the Target reference to this Interaction."
-    },
-    {
-      "source_id": "interaction:src/main/java/interactions/ClickJs.java",
-      "target_id": "target:src/main/java/userInterfaces/PqrsHome.java:1",
-      "source_type": "interaction",
-      "target_type": "target",
-      "relation": "uses_target",
-      "evidence": "Task source passes the Target reference to this Interaction."
-    },
-    {
-      "source_id": "interaction:src/main/java/interactions/ClickJs.java",
-      "target_id": "target:src/main/java/userInterfaces/PqrsHome.java:2",
-      "source_type": "interaction",
-      "target_type": "target",
-      "relation": "uses_target",
-      "evidence": "Task source passes the Target reference to this Interaction."
-    },
-    {
-      "source_id": "interaction:src/main/java/interactions/ClickJs.java",
       "target_id": "target:src/main/java/userInterfaces/PqrsHome.java:9",
       "source_type": "interaction",
       "target_type": "target",
@@ -1070,31 +1038,7 @@
     },
     {
       "source_id": "interaction:src/main/java/interactions/ClickJs.java",
-      "target_id": "target:src/main/java/userInterfaces/PqrsHome.java:7",
-      "source_type": "interaction",
-      "target_type": "target",
-      "relation": "uses_target",
-      "evidence": "Task source passes the Target reference to this Interaction."
-    },
-    {
-      "source_id": "interaction:src/main/java/interactions/ClickJs.java",
-      "target_id": "target:src/main/java/userInterfaces/PqrsHome.java:11",
-      "source_type": "interaction",
-      "target_type": "target",
-      "relation": "uses_target",
-      "evidence": "Task source passes the Target reference to this Interaction."
-    },
-    {
-      "source_id": "interaction:src/main/java/interactions/ClickJs.java",
-      "target_id": "target:src/main/java/userInterfaces/PqrsHome.java:6",
-      "source_type": "interaction",
-      "target_type": "target",
-      "relation": "uses_target",
-      "evidence": "Task source passes the Target reference to this Interaction."
-    },
-    {
-      "source_id": "interaction:src/main/java/interactions/ClickJs.java",
-      "target_id": "target:src/main/java/userInterfaces/PqrsHome.java:5",
+      "target_id": "target:src/main/java/userInterfaces/PqrsHome.java:4",
       "source_type": "interaction",
       "target_type": "target",
       "relation": "uses_target",
@@ -1110,19 +1054,67 @@
     },
     {
       "source_id": "interaction:src/main/java/interactions/ClickJs.java",
-      "target_id": "target:src/main/java/userInterfaces/PqrsHome.java:4",
+      "target_id": "target:src/main/java/userInterfaces/PqrsHome.java:3",
       "source_type": "interaction",
       "target_type": "target",
       "relation": "uses_target",
       "evidence": "Task source passes the Target reference to this Interaction."
     },
     {
-      "source_id": "task:src/main/java/tasks/pqrs/FillPqrsForm.java",
-      "target_id": "interaction:src/main/java/interactions/ClickJs.java",
-      "source_type": "task",
-      "target_type": "interaction",
-      "relation": "uses_interaction",
-      "evidence": "Interaction reference found in the task source."
+      "source_id": "interaction:src/main/java/interactions/ClickJs.java",
+      "target_id": "target:src/main/java/userInterfaces/PqrsHome.java:5",
+      "source_type": "interaction",
+      "target_type": "target",
+      "relation": "uses_target",
+      "evidence": "Task source passes the Target reference to this Interaction."
+    },
+    {
+      "source_id": "interaction:src/main/java/interactions/ClickJs.java",
+      "target_id": "target:src/main/java/userInterfaces/PqrsHome.java:2",
+      "source_type": "interaction",
+      "target_type": "target",
+      "relation": "uses_target",
+      "evidence": "Task source passes the Target reference to this Interaction."
+    },
+    {
+      "source_id": "interaction:src/main/java/interactions/ClickJs.java",
+      "target_id": "target:src/main/java/userInterfaces/PqrsHome.java:7",
+      "source_type": "interaction",
+      "target_type": "target",
+      "relation": "uses_target",
+      "evidence": "Task source passes the Target reference to this Interaction."
+    },
+    {
+      "source_id": "interaction:src/main/java/interactions/ClickJs.java",
+      "target_id": "target:src/main/java/userInterfaces/PqrsHome.java:1",
+      "source_type": "interaction",
+      "target_type": "target",
+      "relation": "uses_target",
+      "evidence": "Task source passes the Target reference to this Interaction."
+    },
+    {
+      "source_id": "interaction:src/main/java/interactions/ClickJs.java",
+      "target_id": "target:src/main/java/userInterfaces/PqrsHome.java:11",
+      "source_type": "interaction",
+      "target_type": "target",
+      "relation": "uses_target",
+      "evidence": "Task source passes the Target reference to this Interaction."
+    },
+    {
+      "source_id": "interaction:src/main/java/interactions/ClickJs.java",
+      "target_id": "target:src/main/java/userInterfaces/PqrsHome.java:8",
+      "source_type": "interaction",
+      "target_type": "target",
+      "relation": "uses_target",
+      "evidence": "Task source passes the Target reference to this Interaction."
+    },
+    {
+      "source_id": "interaction:src/main/java/interactions/ClickJs.java",
+      "target_id": "target:src/main/java/userInterfaces/PqrsHome.java:6",
+      "source_type": "interaction",
+      "target_type": "target",
+      "relation": "uses_target",
+      "evidence": "Task source passes the Target reference to this Interaction."
     },
     {
       "source_id": "task:src/main/java/tasks/pqrs/FillPqrsForm.java",
@@ -1133,7 +1125,15 @@
       "evidence": "Model reference found in the task source."
     },
     {
-      "source_id": "interaction:src/main/java/interactions/ClickJs.java",
+      "source_id": "task:src/main/java/tasks/pqrs/FillPqrsForm.java",
+      "target_id": "interaction:src/main/java/interactions/ClickJs.java",
+      "source_type": "task",
+      "target_type": "interaction",
+      "relation": "uses_interaction",
+      "evidence": "Interaction reference found in the task source."
+    },
+    {
+      "source_id": "interaction:src/main/java/interactions/ScrollToCenter.java",
       "target_id": "target:src/main/java/userInterfaces/PqrsHome.java:12",
       "source_type": "interaction",
       "target_type": "target",
@@ -1149,7 +1149,7 @@
       "evidence": "Task source passes the Target reference to this Interaction."
     },
     {
-      "source_id": "interaction:src/main/java/interactions/ScrollToCenter.java",
+      "source_id": "interaction:src/main/java/interactions/ClickJs.java",
       "target_id": "target:src/main/java/userInterfaces/PqrsHome.java:12",
       "source_type": "interaction",
       "target_type": "target",
@@ -1158,7 +1158,7 @@
     },
     {
       "source_id": "task:src/main/java/tasks/pqrs/SubmitPqrsRequest.java",
-      "target_id": "interaction:src/main/java/interactions/ClickJs.java",
+      "target_id": "interaction:src/main/java/interactions/ScrollToCenter.java",
       "source_type": "task",
       "target_type": "interaction",
       "relation": "uses_interaction",
@@ -1182,7 +1182,7 @@
     },
     {
       "source_id": "task:src/main/java/tasks/pqrs/SubmitPqrsRequest.java",
-      "target_id": "interaction:src/main/java/interactions/ScrollToCenter.java",
+      "target_id": "interaction:src/main/java/interactions/ClickJs.java",
       "source_type": "task",
       "target_type": "interaction",
       "relation": "uses_interaction",
@@ -1190,23 +1190,7 @@
     },
     {
       "source_id": "interaction:src/main/java/interactions/ScrollToCenter.java",
-      "target_id": "target:src/main/java/userInterfaces/ProductHome.java:8",
-      "source_type": "interaction",
-      "target_type": "target",
-      "relation": "uses_target",
-      "evidence": "Task source passes the Target reference to this Interaction."
-    },
-    {
-      "source_id": "interaction:src/main/java/interactions/ScrollToCenter.java",
-      "target_id": "target:src/main/java/userInterfaces/ProductHome.java:5",
-      "source_type": "interaction",
-      "target_type": "target",
-      "relation": "uses_target",
-      "evidence": "Task source passes the Target reference to this Interaction."
-    },
-    {
-      "source_id": "interaction:src/main/java/interactions/ScrollToCenter.java",
-      "target_id": "target:src/main/java/userInterfaces/ProductHome.java:6",
+      "target_id": "target:src/main/java/userInterfaces/ProductHome.java:4",
       "source_type": "interaction",
       "target_type": "target",
       "relation": "uses_target",
@@ -1222,6 +1206,14 @@
     },
     {
       "source_id": "interaction:src/main/java/interactions/ScrollToCenter.java",
+      "target_id": "target:src/main/java/userInterfaces/ProductHome.java:8",
+      "source_type": "interaction",
+      "target_type": "target",
+      "relation": "uses_target",
+      "evidence": "Task source passes the Target reference to this Interaction."
+    },
+    {
+      "source_id": "interaction:src/main/java/interactions/ScrollToCenter.java",
       "target_id": "target:src/main/java/userInterfaces/ProductHome.java:7",
       "source_type": "interaction",
       "target_type": "target",
@@ -1230,7 +1222,15 @@
     },
     {
       "source_id": "interaction:src/main/java/interactions/ScrollToCenter.java",
-      "target_id": "target:src/main/java/userInterfaces/ProductHome.java:4",
+      "target_id": "target:src/main/java/userInterfaces/ProductHome.java:6",
+      "source_type": "interaction",
+      "target_type": "target",
+      "relation": "uses_target",
+      "evidence": "Task source passes the Target reference to this Interaction."
+    },
+    {
+      "source_id": "interaction:src/main/java/interactions/ScrollToCenter.java",
+      "target_id": "target:src/main/java/userInterfaces/ProductHome.java:5",
       "source_type": "interaction",
       "target_type": "target",
       "relation": "uses_target",
@@ -1246,7 +1246,39 @@
     },
     {
       "source_id": "interaction:src/main/java/interactions/ClickJs.java",
-      "target_id": "target:src/main/java/userInterfaces/CreateAccountHome.java:12",
+      "target_id": "target:src/main/java/userInterfaces/CreateAccountHome.java:7",
+      "source_type": "interaction",
+      "target_type": "target",
+      "relation": "uses_target",
+      "evidence": "Task source passes the Target reference to this Interaction."
+    },
+    {
+      "source_id": "interaction:src/main/java/interactions/ClickJs.java",
+      "target_id": "target:src/main/java/userInterfaces/CreateAccountHome.java:10",
+      "source_type": "interaction",
+      "target_type": "target",
+      "relation": "uses_target",
+      "evidence": "Task source passes the Target reference to this Interaction."
+    },
+    {
+      "source_id": "interaction:src/main/java/interactions/ClickJs.java",
+      "target_id": "target:src/main/java/userInterfaces/CreateAccountHome.java:11",
+      "source_type": "interaction",
+      "target_type": "target",
+      "relation": "uses_target",
+      "evidence": "Task source passes the Target reference to this Interaction."
+    },
+    {
+      "source_id": "interaction:src/main/java/interactions/ClickJs.java",
+      "target_id": "target:src/main/java/userInterfaces/CreateAccountHome.java:13",
+      "source_type": "interaction",
+      "target_type": "target",
+      "relation": "uses_target",
+      "evidence": "Task source passes the Target reference to this Interaction."
+    },
+    {
+      "source_id": "interaction:src/main/java/interactions/ClickJs.java",
+      "target_id": "target:src/main/java/userInterfaces/CreateAccountHome.java:9",
       "source_type": "interaction",
       "target_type": "target",
       "relation": "uses_target",
@@ -1255,6 +1287,38 @@
     {
       "source_id": "interaction:src/main/java/interactions/ClickJs.java",
       "target_id": "target:src/main/java/userInterfaces/CreateAccountHome.java:3",
+      "source_type": "interaction",
+      "target_type": "target",
+      "relation": "uses_target",
+      "evidence": "Task source passes the Target reference to this Interaction."
+    },
+    {
+      "source_id": "interaction:src/main/java/interactions/ClickJs.java",
+      "target_id": "target:src/main/java/userInterfaces/CreateAccountHome.java:12",
+      "source_type": "interaction",
+      "target_type": "target",
+      "relation": "uses_target",
+      "evidence": "Task source passes the Target reference to this Interaction."
+    },
+    {
+      "source_id": "interaction:src/main/java/interactions/ClickJs.java",
+      "target_id": "target:src/main/java/userInterfaces/CreateAccountHome.java:5",
+      "source_type": "interaction",
+      "target_type": "target",
+      "relation": "uses_target",
+      "evidence": "Task source passes the Target reference to this Interaction."
+    },
+    {
+      "source_id": "interaction:src/main/java/interactions/ClickJs.java",
+      "target_id": "target:src/main/java/userInterfaces/CreateAccountHome.java:4",
+      "source_type": "interaction",
+      "target_type": "target",
+      "relation": "uses_target",
+      "evidence": "Task source passes the Target reference to this Interaction."
+    },
+    {
+      "source_id": "interaction:src/main/java/interactions/ClickJs.java",
+      "target_id": "target:src/main/java/userInterfaces/CreateAccountHome.java:6",
       "source_type": "interaction",
       "target_type": "target",
       "relation": "uses_target",
@@ -1278,23 +1342,7 @@
     },
     {
       "source_id": "interaction:src/main/java/interactions/ClickJs.java",
-      "target_id": "target:src/main/java/userInterfaces/CreateAccountHome.java:11",
-      "source_type": "interaction",
-      "target_type": "target",
-      "relation": "uses_target",
-      "evidence": "Task source passes the Target reference to this Interaction."
-    },
-    {
-      "source_id": "interaction:src/main/java/interactions/ClickJs.java",
-      "target_id": "target:src/main/java/userInterfaces/CreateAccountHome.java:10",
-      "source_type": "interaction",
-      "target_type": "target",
-      "relation": "uses_target",
-      "evidence": "Task source passes the Target reference to this Interaction."
-    },
-    {
-      "source_id": "interaction:src/main/java/interactions/ClickJs.java",
-      "target_id": "target:src/main/java/userInterfaces/CreateAccountHome.java:7",
+      "target_id": "target:src/main/java/userInterfaces/PqrsHome.java:7",
       "source_type": "interaction",
       "target_type": "target",
       "relation": "uses_target",
@@ -1310,55 +1358,7 @@
     },
     {
       "source_id": "interaction:src/main/java/interactions/ClickJs.java",
-      "target_id": "target:src/main/java/userInterfaces/CreateAccountHome.java:9",
-      "source_type": "interaction",
-      "target_type": "target",
-      "relation": "uses_target",
-      "evidence": "Task source passes the Target reference to this Interaction."
-    },
-    {
-      "source_id": "interaction:src/main/java/interactions/ClickJs.java",
-      "target_id": "target:src/main/java/userInterfaces/CreateAccountHome.java:6",
-      "source_type": "interaction",
-      "target_type": "target",
-      "relation": "uses_target",
-      "evidence": "Task source passes the Target reference to this Interaction."
-    },
-    {
-      "source_id": "interaction:src/main/java/interactions/ClickJs.java",
-      "target_id": "target:src/main/java/userInterfaces/PqrsHome.java:7",
-      "source_type": "interaction",
-      "target_type": "target",
-      "relation": "uses_target",
-      "evidence": "Task source passes the Target reference to this Interaction."
-    },
-    {
-      "source_id": "interaction:src/main/java/interactions/ClickJs.java",
-      "target_id": "target:src/main/java/userInterfaces/CreateAccountHome.java:13",
-      "source_type": "interaction",
-      "target_type": "target",
-      "relation": "uses_target",
-      "evidence": "Task source passes the Target reference to this Interaction."
-    },
-    {
-      "source_id": "interaction:src/main/java/interactions/ClickJs.java",
       "target_id": "target:src/main/java/userInterfaces/LoginBonBonitePage.java:4",
-      "source_type": "interaction",
-      "target_type": "target",
-      "relation": "uses_target",
-      "evidence": "Task source passes the Target reference to this Interaction."
-    },
-    {
-      "source_id": "interaction:src/main/java/interactions/ClickJs.java",
-      "target_id": "target:src/main/java/userInterfaces/CreateAccountHome.java:5",
-      "source_type": "interaction",
-      "target_type": "target",
-      "relation": "uses_target",
-      "evidence": "Task source passes the Target reference to this Interaction."
-    },
-    {
-      "source_id": "interaction:src/main/java/interactions/ClickJs.java",
-      "target_id": "target:src/main/java/userInterfaces/CreateAccountHome.java:4",
       "source_type": "interaction",
       "target_type": "target",
       "relation": "uses_target",

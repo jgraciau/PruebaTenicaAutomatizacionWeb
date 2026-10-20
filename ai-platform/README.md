@@ -88,16 +88,46 @@ reports. Dependency data remains available as JSON knowledge maps; dependency
 reports are not generated. JSON is UTF-8 and paths in the maps are
 project-relative.
 
-The architecture report is an executive, Spanish-language view for product
-owners: it summarizes scenarios, estimated step-to-code traceability, reusable
-actions, validations, coverage by business flow, and scenario details with
-recommended follow-ups. It states that results are static analysis, not proof
-that tests passed.
+The Spanish-language HTML architecture report is organized for product owners.
+It includes an executive reading, architecture observations, candidate technical
+debt, risks, Screenplay compliance, reuse opportunities, dependency analysis,
+and a prioritized improvement plan, in addition to scenario and flow coverage.
+All findings come from the generated maps and distinguish missing relationships
+from confirmed dead code. The report states that static traceability is not proof
+that tests passed. If `outputs/quality-score.json` exists for the configured
+project, its scores are shown with Spanish explanations; otherwise the report
+shows a qualitative assessment. Invalid or mismatched score files are ignored
+with a warning. The Markdown report remains a concise architecture summary.
 
 Relationships include feature-to-scenario, scenario-to-step-definition,
 step-definition-to-task, task-to-interaction/question/model, and
 question/interaction-to-target. Feature-to-step matching is static and
 heuristic; direct source references are recorded as evidence.
+
+## Architect Agent
+
+Run the Sprint 2 architectural analysis after generating the knowledge maps:
+
+```powershell
+python run_architect.py
+```
+
+The orchestrator loads the five maps from `knowledge/`, then runs the
+architecture, risk, technical-debt, Screenplay-compliance, and reuse analyzers.
+It calculates quality scores, consolidates recommendations into P1-P4
+priorities, and writes the architecture review, debt, risk, compliance, reuse,
+improvement-plan, and quality-score reports to `outputs/`.
+
+Alternate knowledge and report directories can be supplied without changing
+the project configuration:
+
+```powershell
+python run_architect.py --knowledge-dir "C:\work\skp\knowledge" --output-dir "C:\work\skp\outputs"
+```
+
+Missing maps are logged as `KnowledgeArtifactMissingException`; other maps are
+still analyzed and reports are generated with the available evidence. Scores
+are static-map heuristics, not a substitute for source review or test results.
 
 ## Compatibility
 
