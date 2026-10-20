@@ -12,6 +12,7 @@ from agents.architect.analyzers.reuse_analyzer import ReuseAnalyzer
 from agents.architect.analyzers.risk_analyzer import RiskAnalyzer
 from agents.architect.engines.recommendation_engine import RecommendationEngine
 from agents.architect.engines.scoring_engine import ScoringEngine
+from agents.architect.models.analysis_result import AnalysisResult
 from agents.architect.reports.architect_report_builder import ArchitectReportBuilder
 
 
@@ -56,19 +57,20 @@ class ArchitectAgent:
             "compliance": ComplianceAnalyzer(),
             "reuse": ReuseAnalyzer(),
         }
-        self.knowledge: dict[str, dict[str, Any]] = {}
-        self.analysis: dict[str, Any] = {
-            "maps": self.knowledge,
-            "analyses": {},
-            "scores": {},
-            "recommendations": [],
-            "errors": [],
-        }
+        self.result = AnalysisResult()
+
+    @property
+    def knowledge(self) -> dict[str, dict[str, Any]]:
+        return self.result.maps
+
+    @property
+    def analysis(self) -> dict[str, Any]:
+        return self.result.to_dict()
 
     def load_knowledge(self) -> dict[str, dict[str, Any]]:
         started = perf_counter()
         self.logger.info("Starting knowledge-map loading")
-        self.knowledge.clear()
+        self.result.maps.clear()
         errors: list[str] = []
         for map_name in self.REQUIRED_KNOWLEDGE_MAPS:
             artifact = self.knowledge_directory / f"{map_name}.json"
@@ -85,7 +87,7 @@ class ArchitectAgent:
                 )
                 errors.append(str(error))
                 self.logger.error("%s", error)
-                self.knowledge[map_name] = {}
+                self.result.maps[map_name] = {}
                 continue
             except (json.JSONDecodeError, UnicodeDecodeError) as exc:
                 error = KnowledgeArtifactInvalidException(
@@ -93,22 +95,21 @@ class ArchitectAgent:
                 )
                 errors.append(str(error))
                 self.logger.error("%s", error)
-                self.knowledge[map_name] = {}
+                self.result.maps[map_name] = {}
                 continue
             except OSError as exc:
                 errors.append(f"Unable to read knowledge map '{artifact}': {exc}")
                 self.logger.error("Unable to read knowledge map '%s': %s", artifact, exc)
-                self.knowledge[map_name] = {}
+                self.result.maps[map_name] = {}
                 continue
-            self.knowledge[map_name] = data
-        self.analysis["maps"] = self.knowledge
-        self.analysis["errors"] = errors
+            self.result.maps[map_name] = data
+        self.result.errors = errors
         self.logger.info(
             "Finished knowledge-map loading in %.3f seconds (%s errors)",
             perf_counter() - started,
             len(errors),
         )
-        return self.knowledge
+        return self.result.maps
 
     def _run_analyzer(self, name: str) -> dict[str, list[dict[str, Any]]]:
         started = perf_counter()
@@ -120,7 +121,7 @@ class ArchitectAgent:
             raise
         elapsed = perf_counter() - started
         self.logger.info("Finished %s analysis in %.3f seconds", name, elapsed)
-        self.analysis["analyses"][name] = result
+        self.result.analyses[name] = result
         return result
 
     def run_architecture_analysis(self) -> dict[str, list[dict[str, Any]]]:
@@ -143,9 +144,9 @@ class ArchitectAgent:
         self.logger.info("Starting scoring")
         scores = self.scoring_engine.calculate(
             self.knowledge,
-            self.analysis["analyses"],
+            self.result.analyses,
         )
-        self.analysis["scores"] = scores
+        self.result.scores = scores
         self.logger.info(
             "Finished scoring in %.3f seconds", perf_counter() - started
         )
@@ -157,7 +158,7 @@ class ArchitectAgent:
         recommendations = self.recommendation_engine.build(
             self.analysis["analyses"]
         )
-        self.analysis["recommendations"] = recommendations
+        self.result.recommendations = recommendations
         self.logger.info(
             "Finished recommendation generation in %.3f seconds (%s recommendations)",
             perf_counter() - started,
@@ -168,7 +169,10 @@ class ArchitectAgent:
     def generate_reports(self) -> list[Path]:
         started = perf_counter()
         self.logger.info("Starting report generation")
-        reports = self.report_builder.write(self.output_directory, self.analysis)
+        reports = self.report_builder.write(
+            self.output_directory,
+            self.result.to_dict(),
+        )
         self.logger.info(
             "Finished report generation in %.3f seconds (%s reports)",
             perf_counter() - started,
@@ -189,7 +193,7 @@ class ArchitectAgent:
             self.calculate_scores()
             self.build_recommendations()
             self.generate_reports()
-            return self.analysis
+            return self.result.to_dict()
         except Exception:
             self.logger.exception("Architect Agent analysis failed")
             raise

@@ -24,6 +24,26 @@ class ReuseAnalyzer:
             for component_id, source_ids in consumers.items()
             if len(source_ids) > 1
         ]
+        reusable_by_type: dict[str, list[tuple[str, int]]] = {
+            "tasks": [],
+            "questions": [],
+            "interactions": [],
+        }
+        for category in reusable_by_type:
+            values = architecture.get(category, [])
+            if not isinstance(values, list):
+                continue
+            for component in values:
+                if not isinstance(component, dict):
+                    continue
+                identifier = component.get("id")
+                if not isinstance(identifier, str):
+                    continue
+                consumer_count = len(consumers.get(identifier, set()))
+                if consumer_count > 1:
+                    reusable_by_type[category].append(
+                        (identifier, consumer_count)
+                    )
 
         signatures = repeated_scenario_signatures(architecture)
         repeated_groups = sum(1 for count in signatures.values() if count > 1)
@@ -38,9 +58,28 @@ class ReuseAnalyzer:
                 "low",
             )
         )
+        for category, candidates in reusable_by_type.items():
+            findings.append(
+                finding(
+                    f"reuse.{category}",
+                    f"Oportunidades de reutilización de {category}",
+                    "Se consideran reutilizables los componentes con más de un consumidor distinto registrado; comprobar contratos y semántica antes de extraer abstracciones.",
+                    (
+                        "; ".join(
+                            f"{identifier} ({count} consumidores)"
+                            for identifier, count in candidates
+                        )
+                        if candidates
+                        else "No hay consumidores múltiples registrados."
+                    ),
+                    "low",
+                )
+            )
         if shared or repeated_groups:
             evidence = (
-                f"{len(shared)} componente(s) compartidos; "
+                f"{len(shared)} componente(s) compartidos "
+                f"({sum(len(items) for items in reusable_by_type.values())} "
+                "Tasks/Questions/Interactions reutilizables); "
                 f"{repeated_groups} grupo(s) de escenarios con pasos idénticos."
             )
             recommendations.append(

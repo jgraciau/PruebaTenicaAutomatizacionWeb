@@ -77,6 +77,49 @@ class ComplianceAnalyzer:
                 )
             )
 
+        srp_candidates: list[str] = []
+        for category in ("tasks", "questions", "interactions"):
+            values = architecture.get(category, [])
+            if not isinstance(values, list):
+                continue
+            for component in values:
+                if not isinstance(component, dict):
+                    continue
+                responsibilities = component.get("responsibilities")
+                if isinstance(responsibilities, list) and len(responsibilities) > 1:
+                    srp_candidates.append(
+                        str(component.get("id", component.get("name", category)))
+                    )
+        if srp_candidates:
+            findings.append(
+                finding(
+                    "compliance.srp-candidates",
+                    "Hay componentes con múltiples responsabilidades declaradas",
+                    "La metadata indica más de una responsabilidad; se debe confirmar si existe una violación del principio de responsabilidad única en el código.",
+                    ", ".join(srp_candidates),
+                    "medium",
+                )
+            )
+            recommendations.append(
+                recommendation(
+                    "screenplay",
+                    "Revisar responsabilidades de componentes",
+                    "Validar cohesión y motivos de cambio de cada componente señalado y separar responsabilidades únicamente cuando el código lo justifique.",
+                    f"{len(srp_candidates)} componente(s) declaran responsabilidades múltiples.",
+                    "medium",
+                )
+            )
+        else:
+            findings.append(
+                finding(
+                    "compliance.srp-unverified",
+                    "El principio SRP no se puede certificar con los mapas",
+                    "Los knowledge maps no incluyen responsabilidades internas suficientes para demostrar que cada clase tiene un único motivo de cambio.",
+                    "Se requiere inspección de código fuente para validar SRP.",
+                    "low",
+                )
+            )
+
         findings.append(
             finding(
                 "compliance.static-boundary",

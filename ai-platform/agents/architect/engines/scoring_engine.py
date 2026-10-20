@@ -3,6 +3,7 @@ from typing import Any
 from agents.architect.analyzers._utils import (
     components,
     cycle_affected_count,
+    dependency_metrics,
     isolated_components,
     relationships,
 )
@@ -31,11 +32,17 @@ class ScoringEngine:
     ) -> dict[str, Any]:
         architecture = maps.get("architecture-map", {})
         graph = maps.get("dependency-graph", {})
+        metrics = dependency_metrics(maps)
         edges = graph.get("edges", [])
         if not isinstance(edges, list) or not edges:
             edges = relationships(maps)
         nodes = graph.get("nodes", [])
+        if not isinstance(nodes, list):
+            nodes = []
         scan_errors = architecture.get("scan_errors", [])
+        project = architecture.get("project", {})
+        if not scan_errors and isinstance(project, dict):
+            scan_errors = project.get("scan_errors", [])
         disconnected_count = sum(
             len(items) for items in isolated_components(maps).values()
         )
@@ -49,10 +56,12 @@ class ScoringEngine:
             if isinstance(scan_errors, list)
             else int(bool(scan_errors))
         )
+        degree_penalty = min(25, max(0, metrics["max_degree"] - 6) * 2)
         architecture_score = self._score(
             100
             - min(45, cycle_count * 15)
             - min(30, scan_error_count * 10)
+            - degree_penalty
             - (5 if not nodes and not edges else 0)
         )
         maintainability_score = self._score(
@@ -67,7 +76,7 @@ class ScoringEngine:
         shared_recommendations = analyses.get("reuse", {}).get(
             "recommendations", []
         )
-        reusability_score = self._score(
+        reuse_score = self._score(
             55
             + min(35, len(shared_recommendations) * 10)
             + min(10, len(edges) // 10)
@@ -106,7 +115,7 @@ class ScoringEngine:
             (
                 architecture_score
                 + maintainability_score
-                + reusability_score
+                + reuse_score
                 + screenplay_score
             )
             / 4
@@ -114,7 +123,8 @@ class ScoringEngine:
         values = {
             "architecture_score": architecture_score,
             "maintainability_score": maintainability_score,
-            "reusability_score": reusability_score,
+            "reuse_score": reuse_score,
+            "reusability_score": reuse_score,
             "screenplay_score": screenplay_score,
             "overall_score": overall_score,
         }
@@ -150,11 +160,11 @@ class ScoringEngine:
         }
         scores = {
             labels[name]: {
-                "score": score,
-                "classification": self._classification(score),
+                "score": values[name],
+                "classification": self._classification(values[name]),
                 "rationale": rationale[name],
             }
-            for name, score in values.items()
+            for name in labels
         }
         return {
             **values,

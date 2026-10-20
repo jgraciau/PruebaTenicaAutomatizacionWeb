@@ -128,6 +128,7 @@ class ArchitectReportBuilder:
                         for name in (
                             "architecture_score",
                             "maintainability_score",
+                            "reuse_score",
                             "reusability_score",
                             "screenplay_score",
                             "overall_score",

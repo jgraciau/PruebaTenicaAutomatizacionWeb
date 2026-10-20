@@ -4,12 +4,19 @@ Valoración heurística derivada de knowledge maps; los componentes sin relacion
 
 ## Puntuaciones (0-100)
 
-- **architecture:** 100/100 (LOW) — Basado en 107 nodos, 111 relaciones, 0 ciclos y 0 errores de análisis.
+- **architecture:** 75/100 (MEDIUM) — Basado en 107 nodos, 111 relaciones, 0 ciclos y 0 errores de análisis.
 - **maintainability:** 91/100 (LOW) — Penaliza 22 componentes sin relación entre 89 componentes Screenplay inventariados.
 - **reusability:** 75/100 (MEDIUM) — Señal heurística basada en relaciones (111) y recomendaciones de componentes compartidos.
 - **screenplay_compliance:** 100/100 (LOW) — 7/7 categorías presentes; 6/6 tipos de relación registrados.
-- **overall_quality:** 92/100 (LOW) — Media aritmética de arquitectura, mantenibilidad, reutilización y estructura Screenplay.
+- **overall_quality:** 85/100 (LOW) — Media aritmética de arquitectura, mantenibilidad, reutilización y estructura Screenplay.
 ## Hallazgos
+
+### Resumen de estructura y dependencias
+
+Inventario estático de componentes, relaciones y señales de acoplamiento.
+
+- **Evidencia:** 107 componentes; 107 nodos; 111 relaciones; acoplamiento medio 2.07; máximo 36.
+- **Severidad:** LOW
 
 ### No se registran ciclos de dependencias
 

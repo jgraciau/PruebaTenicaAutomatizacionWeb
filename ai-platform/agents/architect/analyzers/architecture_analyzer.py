@@ -3,8 +3,10 @@ from typing import Any
 from agents.architect.analyzers._utils import (
     finding,
     cycle_affected_count,
+    dependency_metrics,
     isolated_components,
-    relationships,
+    components,
+    graph_edges,
     recommendation,
 )
 
@@ -12,16 +14,43 @@ from agents.architect.analyzers._utils import (
 class ArchitectureAnalyzer:
     def analyze(self, maps: dict[str, dict[str, Any]]) -> dict[str, list[dict[str, Any]]]:
         architecture = maps.get("architecture-map", {})
-        graph = maps.get("dependency-graph", {})
-        edges = graph.get("edges", [])
-        if not isinstance(edges, list) or not edges:
-            edges = relationships(maps)
+        metrics = dependency_metrics(maps)
+        edges = graph_edges(maps)
         cycle_count = cycle_affected_count(maps)
         disconnected = isolated_components(maps)
         disconnected_count = sum(len(items) for items in disconnected.values())
+        component_categories = (
+            "features",
+            "scenarios",
+            "step_definitions",
+            "actors",
+            "tasks",
+            "questions",
+            "interactions",
+            "targets",
+            "models",
+        )
+        component_count = sum(
+            len(components(architecture, category))
+            for category in component_categories
+        )
 
         findings: list[dict[str, Any]] = []
         recommendations: list[dict[str, str]] = []
+        findings.append(
+            finding(
+                "architecture.inventory",
+                "Resumen de estructura y dependencias",
+                "Inventario estático de componentes, relaciones y señales de acoplamiento.",
+                (
+                    f"{component_count} componentes; {metrics['node_count']} nodos; "
+                    f"{metrics['edge_count']} relaciones; "
+                    f"acoplamiento medio {metrics['average_degree']:.2f}; "
+                    f"máximo {metrics['max_degree']}."
+                ),
+                "low",
+            )
+        )
         if cycle_count:
             findings.append(
                 finding(
@@ -44,6 +73,9 @@ class ArchitectureAnalyzer:
             )
 
         scan_errors = architecture.get("scan_errors", [])
+        project = architecture.get("project", {})
+        if not scan_errors and isinstance(project, dict):
+            scan_errors = project.get("scan_errors", [])
         if scan_errors:
             error_count = len(scan_errors) if isinstance(scan_errors, list) else 1
             findings.append(

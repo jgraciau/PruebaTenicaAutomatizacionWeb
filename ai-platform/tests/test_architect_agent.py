@@ -116,6 +116,7 @@ def test_architect_agent_runs_full_pipeline_and_generates_reports(
     )
     assert score_file["project"] == "Test Project"
     assert score_file["score_values"]["overall_score"] == result["scores"]["overall_score"]
+    assert score_file["score_values"]["reuse_score"] == result["scores"]["reuse_score"]
 
 
 def test_missing_knowledge_map_is_logged_and_pipeline_continues(

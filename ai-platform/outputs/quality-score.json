@@ -12,8 +12,8 @@
   },
   "scores": {
     "architecture": {
-      "score": 100,
-      "classification": "LOW",
+      "score": 75,
+      "classification": "MEDIUM",
       "rationale": "Basado en 107 nodos, 111 relaciones, 0 ciclos y 0 errores de análisis."
     },
     "maintainability": {
@@ -32,17 +32,18 @@
       "rationale": "7/7 categorías presentes; 6/6 tipos de relación registrados."
     },
     "overall_quality": {
-      "score": 92,
+      "score": 85,
       "classification": "LOW",
       "rationale": "Media aritmética de arquitectura, mantenibilidad, reutilización y estructura Screenplay."
     }
   },
   "score_values": {
-    "architecture_score": 100,
+    "architecture_score": 75,
     "maintainability_score": 91,
+    "reuse_score": 75,
     "reusability_score": 75,
     "screenplay_score": 100,
-    "overall_score": 92
+    "overall_score": 85
   },
   "limitations": [
     "Las puntuaciones son heurísticas calculadas solo con knowledge maps.",

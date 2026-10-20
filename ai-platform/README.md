@@ -117,6 +117,11 @@ architecture, risk, technical-debt, Screenplay-compliance, and reuse analyzers.
 It calculates quality scores, consolidates recommendations into P1-P4
 priorities, and writes the architecture review, debt, risk, compliance, reuse,
 improvement-plan, and quality-score reports to `outputs/`.
+The quality JSON includes architecture, maintainability, Screenplay, reuse, and
+overall scores on a 0-100 heuristic scale. Complexity is evaluated only when
+reported by a map; otherwise dependency fan-out is labeled as a structural
+proxy. Findings for unlinked or unreferenced components are candidates and
+must be checked against source code before removal.
 
 Alternate knowledge and report directories can be supplied without changing
 the project configuration:

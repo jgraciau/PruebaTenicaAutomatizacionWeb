@@ -1,5 +1,6 @@
 from agents.architect.engines.recommendation_engine import RecommendationEngine
 from agents.architect.engines.scoring_engine import ScoringEngine
+from agents.architect.engines.prioritization_engine import PrioritizationEngine
 
 
 def test_scoring_engine_returns_bounded_scores_and_quality_dimensions() -> None:
@@ -37,6 +38,7 @@ def test_scoring_engine_returns_bounded_scores_and_quality_dimensions() -> None:
     for name in (
         "architecture_score",
         "maintainability_score",
+        "reuse_score",
         "reusability_score",
         "screenplay_score",
         "overall_score",
@@ -125,3 +127,14 @@ def test_recommendations_are_consolidated_deduplicated_and_prioritized() -> None
         "debt",
         "screenplay",
     }
+
+
+def test_prioritization_engine_assigns_p4_to_information_only_items() -> None:
+    result = PrioritizationEngine().prioritize(
+        [
+            {"title": "Documentation note", "severity": "info"},
+            {"title": "Unknown severity", "severity": "unrecognized"},
+        ]
+    )
+
+    assert [item["priority"] for item in result] == ["P4", "P4"]
