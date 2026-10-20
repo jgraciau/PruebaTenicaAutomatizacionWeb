@@ -22,6 +22,24 @@ def test_scanner_classifies_artifacts_and_skips_generated(tmp_path: Path) -> Non
     assert all("build/" not in item.relative_path for item in result.project_files)
 
 
+def test_scanner_does_not_exclude_a_valid_ai_platform_source_module(
+    tmp_path: Path,
+) -> None:
+    module = tmp_path / "ai-platform" / "src" / "main" / "java" / "tasks"
+    module.mkdir(parents=True)
+    source = module / "SubmitOrder.java"
+    source.write_text(
+        "package tasks; class SubmitOrder implements Task {}",
+        encoding="utf-8",
+    )
+
+    result = ProjectScanner().scan(tmp_path)
+
+    assert [item.relative_path for item in result.tasks] == [
+        "ai-platform/src/main/java/tasks/SubmitOrder.java"
+    ]
+
+
 def test_feature_parser_reads_scenario_steps_and_background(tmp_path: Path) -> None:
     path = tmp_path / "sample.feature"
     text = "Feature: Sample\n Background:\n  Given shared context\n Scenario: works\n  When submit\n  Then success"
@@ -29,6 +47,7 @@ def test_feature_parser_reads_scenario_steps_and_background(tmp_path: Path) -> N
     parsed = FeatureParser().parse(SourceFile(path, "sample.feature", text))
     assert parsed["name"] == "Sample"
     assert parsed["background"] == ["shared context"]
+    assert parsed["background_steps"][0]["text"] == "shared context"
     assert [step["text"] for step in parsed["scenarios"][0]["steps"]] == ["submit", "success"]
 
 

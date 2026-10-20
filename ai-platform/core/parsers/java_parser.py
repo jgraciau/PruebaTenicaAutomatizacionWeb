@@ -8,7 +8,7 @@ CLASS_RE = re.compile(r"\b(?:class|interface|record|enum)\s+(\w+)")
 ANNOTATION_RE = re.compile(r"@(Given|When|Then|And|But)\s*\(\s*(\"(?:\\.|[^\"])*\")", re.MULTILINE)
 
 
-def parse_java(source: SourceFile, root_relative: str) -> dict[str, Any]:
+def parse_java(source: SourceFile) -> dict[str, Any]:
     package = PACKAGE_RE.search(source.content)
     classes = CLASS_RE.findall(source.content)
     return {
@@ -17,12 +17,11 @@ def parse_java(source: SourceFile, root_relative: str) -> dict[str, Any]:
         "name": classes[0] if classes else source.path.stem,
         "classes": classes,
         "references": sorted(set(re.findall(r"\b(?:new\s+)?([A-Z][A-Za-z0-9_]*)\s*(?:\(|\.)", source.content))),
-        "root": root_relative,
     }
 
 
 def parse_steps(source: SourceFile) -> dict[str, Any]:
-    base = parse_java(source, "")
+    base = parse_java(source)
     matches = [
         {"keyword": match.group(1), "expression": match.group(2)[1:-1]}
         for match in ANNOTATION_RE.finditer(source.content)

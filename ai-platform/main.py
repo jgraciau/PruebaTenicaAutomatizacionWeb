@@ -1,4 +1,5 @@
 import argparse
+import logging
 import sys
 from pathlib import Path
 
@@ -12,7 +13,7 @@ from core.common.logger import get_logger
 from core.common.serialization import write_json
 from core.scanner.project_scanner import ProjectScanner
 
-logger = get_logger(__name__)
+logger: logging.Logger = get_logger(__name__)
 
 
 def run(root: Path, output: Path) -> int:
@@ -22,6 +23,7 @@ def run(root: Path, output: Path) -> int:
         logger.error("No files could be scanned. See scan diagnostics.")
     architecture = ArchitectureBuilder().build(scan)
     dependencies = DependencyBuilder().build(architecture)
+    architecture = ArchitectureBuilder.add_quality_audit(architecture, dependencies)
     screenplay = ScreenplayBuilder().build(architecture, dependencies)
     try:
         write_json(output / "knowledge" / "architecture-map.json", architecture)
@@ -38,7 +40,10 @@ def run(root: Path, output: Path) -> int:
     except OSError as exc:
         logger.error("Unable to write output artifacts: %s", exc)
         return 2
-    logger.info("Wrote knowledge maps and report to %s", output.resolve())
+    logger.info(
+        "Generated maps and reports (JSON, Markdown, HTML in Spanish) in %s",
+        output.resolve(),
+    )
     return 1 if scan.errors and not scan.project_files else 0
 
 

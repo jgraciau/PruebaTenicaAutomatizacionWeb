@@ -36,6 +36,8 @@ Las rutas de los mapas son relativas a `--root`, usan separadores `/` y los arte
 
 Las relaciones entre características y definiciones de pasos son heurísticas; las referencias directas entre tipos Java se marcan como observadas. Se analizan anotaciones y expresiones comunes de Cucumber en Java. El panel HTML incluye gráficas del inventario de componentes y distribución de relaciones, métricas, patrones detectados y advertencias. Las gráficas SVG y los estilos están integrados: no requieren acceso a la red ni paquetes de visualización. Abre `outputs/architecture-report.html` en un navegador moderno después de ejecutar el escáner. Tanto el reporte HTML como el Markdown se regeneran automáticamente en cada ejecución de `python main.py` y se presentan en español.
 
+Los pasos de `Background` se incluyen en el inventario y se relacionan con sus definiciones de pasos. El mapa de dependencias distingue asociaciones heurísticas Feature → Step Definition de referencias Java observadas; cuando un Task usa varias Interactions se conserva cada vínculo. Los Models detectados en directorios de pruebas con sufijo `Test`/`Tests` no se cuentan como modelos de producción.
+
 ## Validación
 
 ```powershell

@@ -1,4 +1,1550 @@
 {
+  "dependency_chain": [
+    {
+      "evidence": "Feature→Step heurístico; Step→Task observado; Interaction no detectada.",
+      "feature": "src/test/resources/features/ActualizarFacturacion.feature",
+      "interaction": null,
+      "scenario": "Cambiar dirección y ciudad de facturación",
+      "step_definition": "src/test/java/stepDefinitions/BillingAddressDefinitions.java",
+      "task": "src/main/java/tasks/UpdateBillingAddress.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task observado; Interaction no detectada.",
+      "feature": "src/test/resources/features/ActualizarFacturacion.feature",
+      "interaction": null,
+      "scenario": "Cambiar dirección y ciudad de facturación",
+      "step_definition": "src/test/java/stepDefinitions/BillingAddressDefinitions.java",
+      "task": "src/main/java/tasks/UpdateBillingAddress.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task y Task→Interaction observados.",
+      "feature": "src/test/resources/features/ActualizarFacturacion.feature",
+      "interaction": "src/main/java/interactions/ClickJs.java",
+      "scenario": "Cambiar dirección y ciudad de facturación",
+      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "task": "src/main/java/tasks/LoginBonBonite.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task y Task→Interaction observados.",
+      "feature": "src/test/resources/features/ActualizarFacturacion.feature",
+      "interaction": "src/main/java/interactions/ScrollToCenter.java",
+      "scenario": "Cambiar dirección y ciudad de facturación",
+      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "task": "src/main/java/tasks/PurchaseProcessProduct.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task observado; Interaction no detectada.",
+      "feature": "src/test/resources/features/ActualizarFacturacion.feature",
+      "interaction": null,
+      "scenario": "Cambiar dirección y ciudad de facturación",
+      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "task": "src/main/java/tasks/SelectCategory.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task observado; Interaction no detectada.",
+      "feature": "src/test/resources/features/ActualizarFacturacion.feature",
+      "interaction": null,
+      "scenario": "Cambiar dirección y ciudad de facturación",
+      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "task": "src/main/java/tasks/SelectProduct.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task observado; Interaction no detectada.",
+      "feature": "src/test/resources/features/ActualizarFacturacion.feature",
+      "interaction": null,
+      "scenario": "Cambiar dirección y ciudad de facturación",
+      "step_definition": "src/test/java/stepDefinitions/RegisterUserDefinitions.java",
+      "task": "src/main/java/tasks/browser/OpenBrowser.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task observado; Interaction no detectada.",
+      "feature": "src/test/resources/features/ActualizarFacturacion.feature",
+      "interaction": null,
+      "scenario": "Cambiar dirección y ciudad de facturación",
+      "step_definition": "src/test/java/stepDefinitions/RegisterUserDefinitions.java",
+      "task": "src/main/java/tasks/browser/OpenBrowser.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task y Task→Interaction observados.",
+      "feature": "src/test/resources/features/ActualizarFacturacion.feature",
+      "interaction": "src/main/java/interactions/ClickJs.java",
+      "scenario": "Cambiar dirección y ciudad de facturación",
+      "step_definition": "src/test/java/stepDefinitions/RegisterUserDefinitions.java",
+      "task": "src/main/java/tasks/registerUser/CreateAccount.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task y Task→Interaction observados.",
+      "feature": "src/test/resources/features/ActualizarFacturacion.feature",
+      "interaction": "src/main/java/interactions/ClickJs.java",
+      "scenario": "Cambiar dirección y ciudad de facturación",
+      "step_definition": "src/test/java/stepDefinitions/RegisterUserDefinitions.java",
+      "task": "src/main/java/tasks/registerUser/CreateAccount.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task observado; Interaction no detectada.",
+      "feature": "src/test/resources/features/ActualizarFacturacion.feature",
+      "interaction": null,
+      "scenario": "Cambiar dirección y ciudad de facturación",
+      "step_definition": "src/test/java/stepDefinitions/RegisterUserDefinitions.java",
+      "task": "src/main/java/tasks/registerUser/OpenRegister.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task observado; Interaction no detectada.",
+      "feature": "src/test/resources/features/ActualizarFacturacion.feature",
+      "interaction": null,
+      "scenario": "Cambiar dirección y ciudad de facturación",
+      "step_definition": "src/test/java/stepDefinitions/RegisterUserDefinitions.java",
+      "task": "src/main/java/tasks/registerUser/OpenRegister.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task y Task→Interaction observados.",
+      "feature": "src/test/resources/features/CrearPQRS.feature",
+      "interaction": "src/main/java/interactions/ClickJs.java",
+      "scenario": "Crear una PQR exitosamente",
+      "step_definition": "src/test/java/stepDefinitions/ApplicationPqrsDefinitions.java",
+      "task": "src/main/java/tasks/LoginBonBonite.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task y Task→Interaction observados.",
+      "feature": "src/test/resources/features/CrearPQRS.feature",
+      "interaction": "src/main/java/interactions/ClickJs.java",
+      "scenario": "Crear una PQR exitosamente",
+      "step_definition": "src/test/java/stepDefinitions/ApplicationPqrsDefinitions.java",
+      "task": "src/main/java/tasks/LoginBonBonite.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task y Task→Interaction observados.",
+      "feature": "src/test/resources/features/CrearPQRS.feature",
+      "interaction": "src/main/java/interactions/ClickJs.java",
+      "scenario": "Crear una PQR exitosamente",
+      "step_definition": "src/test/java/stepDefinitions/ApplicationPqrsDefinitions.java",
+      "task": "src/main/java/tasks/LoginBonBonite.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task y Task→Interaction observados.",
+      "feature": "src/test/resources/features/CrearPQRS.feature",
+      "interaction": "src/main/java/interactions/ClickJs.java",
+      "scenario": "Crear una PQR exitosamente",
+      "step_definition": "src/test/java/stepDefinitions/ApplicationPqrsDefinitions.java",
+      "task": "src/main/java/tasks/LoginBonBonite.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task y Task→Interaction observados.",
+      "feature": "src/test/resources/features/CrearPQRS.feature",
+      "interaction": "src/main/java/interactions/ClickJs.java",
+      "scenario": "Crear una PQR exitosamente",
+      "step_definition": "src/test/java/stepDefinitions/ApplicationPqrsDefinitions.java",
+      "task": "src/main/java/tasks/LoginBonBonite.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task y Task→Interaction observados.",
+      "feature": "src/test/resources/features/CrearPQRS.feature",
+      "interaction": "src/main/java/interactions/ClickJs.java",
+      "scenario": "Crear una PQR exitosamente",
+      "step_definition": "src/test/java/stepDefinitions/ApplicationPqrsDefinitions.java",
+      "task": "src/main/java/tasks/LoginBonBonite.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task observado; Interaction no detectada.",
+      "feature": "src/test/resources/features/CrearPQRS.feature",
+      "interaction": null,
+      "scenario": "Crear una PQR exitosamente",
+      "step_definition": "src/test/java/stepDefinitions/ApplicationPqrsDefinitions.java",
+      "task": "src/main/java/tasks/browser/OpenBrowser.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task observado; Interaction no detectada.",
+      "feature": "src/test/resources/features/CrearPQRS.feature",
+      "interaction": null,
+      "scenario": "Crear una PQR exitosamente",
+      "step_definition": "src/test/java/stepDefinitions/ApplicationPqrsDefinitions.java",
+      "task": "src/main/java/tasks/browser/OpenBrowser.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task observado; Interaction no detectada.",
+      "feature": "src/test/resources/features/CrearPQRS.feature",
+      "interaction": null,
+      "scenario": "Crear una PQR exitosamente",
+      "step_definition": "src/test/java/stepDefinitions/ApplicationPqrsDefinitions.java",
+      "task": "src/main/java/tasks/browser/OpenBrowser.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task observado; Interaction no detectada.",
+      "feature": "src/test/resources/features/CrearPQRS.feature",
+      "interaction": null,
+      "scenario": "Crear una PQR exitosamente",
+      "step_definition": "src/test/java/stepDefinitions/ApplicationPqrsDefinitions.java",
+      "task": "src/main/java/tasks/browser/OpenBrowser.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task observado; Interaction no detectada.",
+      "feature": "src/test/resources/features/CrearPQRS.feature",
+      "interaction": null,
+      "scenario": "Crear una PQR exitosamente",
+      "step_definition": "src/test/java/stepDefinitions/ApplicationPqrsDefinitions.java",
+      "task": "src/main/java/tasks/browser/OpenBrowser.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task observado; Interaction no detectada.",
+      "feature": "src/test/resources/features/CrearPQRS.feature",
+      "interaction": null,
+      "scenario": "Crear una PQR exitosamente",
+      "step_definition": "src/test/java/stepDefinitions/ApplicationPqrsDefinitions.java",
+      "task": "src/main/java/tasks/browser/OpenBrowser.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task observado; Interaction no detectada.",
+      "feature": "src/test/resources/features/CrearPQRS.feature",
+      "interaction": null,
+      "scenario": "Crear una PQR exitosamente",
+      "step_definition": "src/test/java/stepDefinitions/ApplicationPqrsDefinitions.java",
+      "task": "src/main/java/tasks/pqrs/OpenPqrsPage.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task observado; Interaction no detectada.",
+      "feature": "src/test/resources/features/CrearPQRS.feature",
+      "interaction": null,
+      "scenario": "Crear una PQR exitosamente",
+      "step_definition": "src/test/java/stepDefinitions/ApplicationPqrsDefinitions.java",
+      "task": "src/main/java/tasks/pqrs/OpenPqrsPage.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task observado; Interaction no detectada.",
+      "feature": "src/test/resources/features/CrearPQRS.feature",
+      "interaction": null,
+      "scenario": "Crear una PQR exitosamente",
+      "step_definition": "src/test/java/stepDefinitions/ApplicationPqrsDefinitions.java",
+      "task": "src/main/java/tasks/pqrs/OpenPqrsPage.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task observado; Interaction no detectada.",
+      "feature": "src/test/resources/features/CrearPQRS.feature",
+      "interaction": null,
+      "scenario": "Crear una PQR exitosamente",
+      "step_definition": "src/test/java/stepDefinitions/ApplicationPqrsDefinitions.java",
+      "task": "src/main/java/tasks/pqrs/OpenPqrsPage.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task observado; Interaction no detectada.",
+      "feature": "src/test/resources/features/CrearPQRS.feature",
+      "interaction": null,
+      "scenario": "Crear una PQR exitosamente",
+      "step_definition": "src/test/java/stepDefinitions/ApplicationPqrsDefinitions.java",
+      "task": "src/main/java/tasks/pqrs/OpenPqrsPage.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task observado; Interaction no detectada.",
+      "feature": "src/test/resources/features/CrearPQRS.feature",
+      "interaction": null,
+      "scenario": "Crear una PQR exitosamente",
+      "step_definition": "src/test/java/stepDefinitions/ApplicationPqrsDefinitions.java",
+      "task": "src/main/java/tasks/pqrs/OpenPqrsPage.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task y Task→Interaction observados.",
+      "feature": "src/test/resources/features/CrearPQRS.feature",
+      "interaction": "src/main/java/interactions/ClickJs.java",
+      "scenario": "Crear una PQR exitosamente",
+      "step_definition": "src/test/java/stepDefinitions/ApplicationPqrsDefinitions.java",
+      "task": "src/main/java/tasks/pqrs/SubmitPqrsRequest.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task y Task→Interaction observados.",
+      "feature": "src/test/resources/features/CrearPQRS.feature",
+      "interaction": "src/main/java/interactions/ClickJs.java",
+      "scenario": "Crear una PQR exitosamente",
+      "step_definition": "src/test/java/stepDefinitions/ApplicationPqrsDefinitions.java",
+      "task": "src/main/java/tasks/pqrs/SubmitPqrsRequest.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task y Task→Interaction observados.",
+      "feature": "src/test/resources/features/CrearPQRS.feature",
+      "interaction": "src/main/java/interactions/ClickJs.java",
+      "scenario": "Crear una PQR exitosamente",
+      "step_definition": "src/test/java/stepDefinitions/ApplicationPqrsDefinitions.java",
+      "task": "src/main/java/tasks/pqrs/SubmitPqrsRequest.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task y Task→Interaction observados.",
+      "feature": "src/test/resources/features/CrearPQRS.feature",
+      "interaction": "src/main/java/interactions/ClickJs.java",
+      "scenario": "Crear una PQR exitosamente",
+      "step_definition": "src/test/java/stepDefinitions/ApplicationPqrsDefinitions.java",
+      "task": "src/main/java/tasks/pqrs/SubmitPqrsRequest.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task y Task→Interaction observados.",
+      "feature": "src/test/resources/features/CrearPQRS.feature",
+      "interaction": "src/main/java/interactions/ClickJs.java",
+      "scenario": "Crear una PQR exitosamente",
+      "step_definition": "src/test/java/stepDefinitions/ApplicationPqrsDefinitions.java",
+      "task": "src/main/java/tasks/pqrs/SubmitPqrsRequest.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task y Task→Interaction observados.",
+      "feature": "src/test/resources/features/CrearPQRS.feature",
+      "interaction": "src/main/java/interactions/ClickJs.java",
+      "scenario": "Crear una PQR exitosamente",
+      "step_definition": "src/test/java/stepDefinitions/ApplicationPqrsDefinitions.java",
+      "task": "src/main/java/tasks/pqrs/SubmitPqrsRequest.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task y Task→Interaction observados.",
+      "feature": "src/test/resources/features/CrearPQRS.feature",
+      "interaction": "src/main/java/interactions/Pause.java",
+      "scenario": "Crear una PQR exitosamente",
+      "step_definition": "src/test/java/stepDefinitions/ApplicationPqrsDefinitions.java",
+      "task": "src/main/java/tasks/pqrs/SubmitPqrsRequest.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task y Task→Interaction observados.",
+      "feature": "src/test/resources/features/CrearPQRS.feature",
+      "interaction": "src/main/java/interactions/Pause.java",
+      "scenario": "Crear una PQR exitosamente",
+      "step_definition": "src/test/java/stepDefinitions/ApplicationPqrsDefinitions.java",
+      "task": "src/main/java/tasks/pqrs/SubmitPqrsRequest.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task y Task→Interaction observados.",
+      "feature": "src/test/resources/features/CrearPQRS.feature",
+      "interaction": "src/main/java/interactions/Pause.java",
+      "scenario": "Crear una PQR exitosamente",
+      "step_definition": "src/test/java/stepDefinitions/ApplicationPqrsDefinitions.java",
+      "task": "src/main/java/tasks/pqrs/SubmitPqrsRequest.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task y Task→Interaction observados.",
+      "feature": "src/test/resources/features/CrearPQRS.feature",
+      "interaction": "src/main/java/interactions/Pause.java",
+      "scenario": "Crear una PQR exitosamente",
+      "step_definition": "src/test/java/stepDefinitions/ApplicationPqrsDefinitions.java",
+      "task": "src/main/java/tasks/pqrs/SubmitPqrsRequest.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task y Task→Interaction observados.",
+      "feature": "src/test/resources/features/CrearPQRS.feature",
+      "interaction": "src/main/java/interactions/Pause.java",
+      "scenario": "Crear una PQR exitosamente",
+      "step_definition": "src/test/java/stepDefinitions/ApplicationPqrsDefinitions.java",
+      "task": "src/main/java/tasks/pqrs/SubmitPqrsRequest.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task y Task→Interaction observados.",
+      "feature": "src/test/resources/features/CrearPQRS.feature",
+      "interaction": "src/main/java/interactions/Pause.java",
+      "scenario": "Crear una PQR exitosamente",
+      "step_definition": "src/test/java/stepDefinitions/ApplicationPqrsDefinitions.java",
+      "task": "src/main/java/tasks/pqrs/SubmitPqrsRequest.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task y Task→Interaction observados.",
+      "feature": "src/test/resources/features/CrearPQRS.feature",
+      "interaction": "src/main/java/interactions/ScrollToCenter.java",
+      "scenario": "Crear una PQR exitosamente",
+      "step_definition": "src/test/java/stepDefinitions/ApplicationPqrsDefinitions.java",
+      "task": "src/main/java/tasks/pqrs/SubmitPqrsRequest.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task y Task→Interaction observados.",
+      "feature": "src/test/resources/features/CrearPQRS.feature",
+      "interaction": "src/main/java/interactions/ScrollToCenter.java",
+      "scenario": "Crear una PQR exitosamente",
+      "step_definition": "src/test/java/stepDefinitions/ApplicationPqrsDefinitions.java",
+      "task": "src/main/java/tasks/pqrs/SubmitPqrsRequest.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task y Task→Interaction observados.",
+      "feature": "src/test/resources/features/CrearPQRS.feature",
+      "interaction": "src/main/java/interactions/ScrollToCenter.java",
+      "scenario": "Crear una PQR exitosamente",
+      "step_definition": "src/test/java/stepDefinitions/ApplicationPqrsDefinitions.java",
+      "task": "src/main/java/tasks/pqrs/SubmitPqrsRequest.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task y Task→Interaction observados.",
+      "feature": "src/test/resources/features/CrearPQRS.feature",
+      "interaction": "src/main/java/interactions/ScrollToCenter.java",
+      "scenario": "Crear una PQR exitosamente",
+      "step_definition": "src/test/java/stepDefinitions/ApplicationPqrsDefinitions.java",
+      "task": "src/main/java/tasks/pqrs/SubmitPqrsRequest.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task y Task→Interaction observados.",
+      "feature": "src/test/resources/features/CrearPQRS.feature",
+      "interaction": "src/main/java/interactions/ScrollToCenter.java",
+      "scenario": "Crear una PQR exitosamente",
+      "step_definition": "src/test/java/stepDefinitions/ApplicationPqrsDefinitions.java",
+      "task": "src/main/java/tasks/pqrs/SubmitPqrsRequest.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task y Task→Interaction observados.",
+      "feature": "src/test/resources/features/CrearPQRS.feature",
+      "interaction": "src/main/java/interactions/ScrollToCenter.java",
+      "scenario": "Crear una PQR exitosamente",
+      "step_definition": "src/test/java/stepDefinitions/ApplicationPqrsDefinitions.java",
+      "task": "src/main/java/tasks/pqrs/SubmitPqrsRequest.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task y Task→Interaction observados.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": "src/main/java/interactions/ClickJs.java",
+      "scenario": "Compra exitosa de accesorios",
+      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "task": "src/main/java/tasks/LoginBonBonite.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task y Task→Interaction observados.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": "src/main/java/interactions/ClickJs.java",
+      "scenario": "Compra exitosa de accesorios",
+      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "task": "src/main/java/tasks/LoginBonBonite.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task y Task→Interaction observados.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": "src/main/java/interactions/ClickJs.java",
+      "scenario": "Compra exitosa de accesorios",
+      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "task": "src/main/java/tasks/LoginBonBonite.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task y Task→Interaction observados.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": "src/main/java/interactions/ClickJs.java",
+      "scenario": "Compra exitosa de accesorios",
+      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "task": "src/main/java/tasks/LoginBonBonite.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task y Task→Interaction observados.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": "src/main/java/interactions/ClickJs.java",
+      "scenario": "Compra exitosa de accesorios",
+      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "task": "src/main/java/tasks/LoginBonBonite.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task y Task→Interaction observados.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": "src/main/java/interactions/ScrollToCenter.java",
+      "scenario": "Compra exitosa de accesorios",
+      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "task": "src/main/java/tasks/PurchaseProcessProduct.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task y Task→Interaction observados.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": "src/main/java/interactions/ScrollToCenter.java",
+      "scenario": "Compra exitosa de accesorios",
+      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "task": "src/main/java/tasks/PurchaseProcessProduct.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task y Task→Interaction observados.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": "src/main/java/interactions/ScrollToCenter.java",
+      "scenario": "Compra exitosa de accesorios",
+      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "task": "src/main/java/tasks/PurchaseProcessProduct.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task y Task→Interaction observados.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": "src/main/java/interactions/ScrollToCenter.java",
+      "scenario": "Compra exitosa de accesorios",
+      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "task": "src/main/java/tasks/PurchaseProcessProduct.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task y Task→Interaction observados.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": "src/main/java/interactions/ScrollToCenter.java",
+      "scenario": "Compra exitosa de accesorios",
+      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "task": "src/main/java/tasks/PurchaseProcessProduct.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task observado; Interaction no detectada.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": null,
+      "scenario": "Compra exitosa de accesorios",
+      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "task": "src/main/java/tasks/SelectCategory.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task observado; Interaction no detectada.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": null,
+      "scenario": "Compra exitosa de accesorios",
+      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "task": "src/main/java/tasks/SelectCategory.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task observado; Interaction no detectada.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": null,
+      "scenario": "Compra exitosa de accesorios",
+      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "task": "src/main/java/tasks/SelectCategory.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task observado; Interaction no detectada.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": null,
+      "scenario": "Compra exitosa de accesorios",
+      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "task": "src/main/java/tasks/SelectCategory.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task observado; Interaction no detectada.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": null,
+      "scenario": "Compra exitosa de accesorios",
+      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "task": "src/main/java/tasks/SelectCategory.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task observado; Interaction no detectada.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": null,
+      "scenario": "Compra exitosa de accesorios",
+      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "task": "src/main/java/tasks/SelectProduct.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task observado; Interaction no detectada.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": null,
+      "scenario": "Compra exitosa de accesorios",
+      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "task": "src/main/java/tasks/SelectProduct.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task observado; Interaction no detectada.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": null,
+      "scenario": "Compra exitosa de accesorios",
+      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "task": "src/main/java/tasks/SelectProduct.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task observado; Interaction no detectada.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": null,
+      "scenario": "Compra exitosa de accesorios",
+      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "task": "src/main/java/tasks/SelectProduct.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task observado; Interaction no detectada.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": null,
+      "scenario": "Compra exitosa de accesorios",
+      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "task": "src/main/java/tasks/SelectProduct.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task observado; Interaction no detectada.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": null,
+      "scenario": "Compra exitosa de accesorios",
+      "step_definition": "src/test/java/stepDefinitions/RegisterUserDefinitions.java",
+      "task": "src/main/java/tasks/browser/OpenBrowser.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task observado; Interaction no detectada.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": null,
+      "scenario": "Compra exitosa de accesorios",
+      "step_definition": "src/test/java/stepDefinitions/RegisterUserDefinitions.java",
+      "task": "src/main/java/tasks/browser/OpenBrowser.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task y Task→Interaction observados.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": "src/main/java/interactions/ClickJs.java",
+      "scenario": "Compra exitosa de accesorios",
+      "step_definition": "src/test/java/stepDefinitions/RegisterUserDefinitions.java",
+      "task": "src/main/java/tasks/registerUser/CreateAccount.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task y Task→Interaction observados.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": "src/main/java/interactions/ClickJs.java",
+      "scenario": "Compra exitosa de accesorios",
+      "step_definition": "src/test/java/stepDefinitions/RegisterUserDefinitions.java",
+      "task": "src/main/java/tasks/registerUser/CreateAccount.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task observado; Interaction no detectada.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": null,
+      "scenario": "Compra exitosa de accesorios",
+      "step_definition": "src/test/java/stepDefinitions/RegisterUserDefinitions.java",
+      "task": "src/main/java/tasks/registerUser/OpenRegister.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task observado; Interaction no detectada.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": null,
+      "scenario": "Compra exitosa de accesorios",
+      "step_definition": "src/test/java/stepDefinitions/RegisterUserDefinitions.java",
+      "task": "src/main/java/tasks/registerUser/OpenRegister.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task y Task→Interaction observados.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": "src/main/java/interactions/ClickJs.java",
+      "scenario": "Compra exitosa de bolsos",
+      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "task": "src/main/java/tasks/LoginBonBonite.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task y Task→Interaction observados.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": "src/main/java/interactions/ClickJs.java",
+      "scenario": "Compra exitosa de bolsos",
+      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "task": "src/main/java/tasks/LoginBonBonite.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task y Task→Interaction observados.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": "src/main/java/interactions/ClickJs.java",
+      "scenario": "Compra exitosa de bolsos",
+      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "task": "src/main/java/tasks/LoginBonBonite.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task y Task→Interaction observados.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": "src/main/java/interactions/ClickJs.java",
+      "scenario": "Compra exitosa de bolsos",
+      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "task": "src/main/java/tasks/LoginBonBonite.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task y Task→Interaction observados.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": "src/main/java/interactions/ClickJs.java",
+      "scenario": "Compra exitosa de bolsos",
+      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "task": "src/main/java/tasks/LoginBonBonite.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task y Task→Interaction observados.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": "src/main/java/interactions/ScrollToCenter.java",
+      "scenario": "Compra exitosa de bolsos",
+      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "task": "src/main/java/tasks/PurchaseProcessProduct.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task y Task→Interaction observados.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": "src/main/java/interactions/ScrollToCenter.java",
+      "scenario": "Compra exitosa de bolsos",
+      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "task": "src/main/java/tasks/PurchaseProcessProduct.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task y Task→Interaction observados.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": "src/main/java/interactions/ScrollToCenter.java",
+      "scenario": "Compra exitosa de bolsos",
+      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "task": "src/main/java/tasks/PurchaseProcessProduct.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task y Task→Interaction observados.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": "src/main/java/interactions/ScrollToCenter.java",
+      "scenario": "Compra exitosa de bolsos",
+      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "task": "src/main/java/tasks/PurchaseProcessProduct.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task y Task→Interaction observados.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": "src/main/java/interactions/ScrollToCenter.java",
+      "scenario": "Compra exitosa de bolsos",
+      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "task": "src/main/java/tasks/PurchaseProcessProduct.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task observado; Interaction no detectada.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": null,
+      "scenario": "Compra exitosa de bolsos",
+      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "task": "src/main/java/tasks/SelectCategory.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task observado; Interaction no detectada.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": null,
+      "scenario": "Compra exitosa de bolsos",
+      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "task": "src/main/java/tasks/SelectCategory.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task observado; Interaction no detectada.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": null,
+      "scenario": "Compra exitosa de bolsos",
+      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "task": "src/main/java/tasks/SelectCategory.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task observado; Interaction no detectada.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": null,
+      "scenario": "Compra exitosa de bolsos",
+      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "task": "src/main/java/tasks/SelectCategory.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task observado; Interaction no detectada.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": null,
+      "scenario": "Compra exitosa de bolsos",
+      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "task": "src/main/java/tasks/SelectCategory.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task observado; Interaction no detectada.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": null,
+      "scenario": "Compra exitosa de bolsos",
+      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "task": "src/main/java/tasks/SelectProduct.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task observado; Interaction no detectada.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": null,
+      "scenario": "Compra exitosa de bolsos",
+      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "task": "src/main/java/tasks/SelectProduct.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task observado; Interaction no detectada.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": null,
+      "scenario": "Compra exitosa de bolsos",
+      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "task": "src/main/java/tasks/SelectProduct.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task observado; Interaction no detectada.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": null,
+      "scenario": "Compra exitosa de bolsos",
+      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "task": "src/main/java/tasks/SelectProduct.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task observado; Interaction no detectada.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": null,
+      "scenario": "Compra exitosa de bolsos",
+      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "task": "src/main/java/tasks/SelectProduct.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task observado; Interaction no detectada.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": null,
+      "scenario": "Compra exitosa de bolsos",
+      "step_definition": "src/test/java/stepDefinitions/RegisterUserDefinitions.java",
+      "task": "src/main/java/tasks/browser/OpenBrowser.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task observado; Interaction no detectada.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": null,
+      "scenario": "Compra exitosa de bolsos",
+      "step_definition": "src/test/java/stepDefinitions/RegisterUserDefinitions.java",
+      "task": "src/main/java/tasks/browser/OpenBrowser.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task y Task→Interaction observados.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": "src/main/java/interactions/ClickJs.java",
+      "scenario": "Compra exitosa de bolsos",
+      "step_definition": "src/test/java/stepDefinitions/RegisterUserDefinitions.java",
+      "task": "src/main/java/tasks/registerUser/CreateAccount.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task y Task→Interaction observados.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": "src/main/java/interactions/ClickJs.java",
+      "scenario": "Compra exitosa de bolsos",
+      "step_definition": "src/test/java/stepDefinitions/RegisterUserDefinitions.java",
+      "task": "src/main/java/tasks/registerUser/CreateAccount.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task observado; Interaction no detectada.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": null,
+      "scenario": "Compra exitosa de bolsos",
+      "step_definition": "src/test/java/stepDefinitions/RegisterUserDefinitions.java",
+      "task": "src/main/java/tasks/registerUser/OpenRegister.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task observado; Interaction no detectada.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": null,
+      "scenario": "Compra exitosa de bolsos",
+      "step_definition": "src/test/java/stepDefinitions/RegisterUserDefinitions.java",
+      "task": "src/main/java/tasks/registerUser/OpenRegister.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task y Task→Interaction observados.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": "src/main/java/interactions/ClickJs.java",
+      "scenario": "Compra exitosa de cinturones",
+      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "task": "src/main/java/tasks/LoginBonBonite.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task y Task→Interaction observados.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": "src/main/java/interactions/ClickJs.java",
+      "scenario": "Compra exitosa de cinturones",
+      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "task": "src/main/java/tasks/LoginBonBonite.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task y Task→Interaction observados.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": "src/main/java/interactions/ClickJs.java",
+      "scenario": "Compra exitosa de cinturones",
+      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "task": "src/main/java/tasks/LoginBonBonite.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task y Task→Interaction observados.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": "src/main/java/interactions/ClickJs.java",
+      "scenario": "Compra exitosa de cinturones",
+      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "task": "src/main/java/tasks/LoginBonBonite.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task y Task→Interaction observados.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": "src/main/java/interactions/ClickJs.java",
+      "scenario": "Compra exitosa de cinturones",
+      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "task": "src/main/java/tasks/LoginBonBonite.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task y Task→Interaction observados.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": "src/main/java/interactions/ScrollToCenter.java",
+      "scenario": "Compra exitosa de cinturones",
+      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "task": "src/main/java/tasks/PurchaseProcessProduct.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task y Task→Interaction observados.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": "src/main/java/interactions/ScrollToCenter.java",
+      "scenario": "Compra exitosa de cinturones",
+      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "task": "src/main/java/tasks/PurchaseProcessProduct.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task y Task→Interaction observados.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": "src/main/java/interactions/ScrollToCenter.java",
+      "scenario": "Compra exitosa de cinturones",
+      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "task": "src/main/java/tasks/PurchaseProcessProduct.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task y Task→Interaction observados.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": "src/main/java/interactions/ScrollToCenter.java",
+      "scenario": "Compra exitosa de cinturones",
+      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "task": "src/main/java/tasks/PurchaseProcessProduct.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task y Task→Interaction observados.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": "src/main/java/interactions/ScrollToCenter.java",
+      "scenario": "Compra exitosa de cinturones",
+      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "task": "src/main/java/tasks/PurchaseProcessProduct.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task observado; Interaction no detectada.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": null,
+      "scenario": "Compra exitosa de cinturones",
+      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "task": "src/main/java/tasks/SelectCategory.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task observado; Interaction no detectada.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": null,
+      "scenario": "Compra exitosa de cinturones",
+      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "task": "src/main/java/tasks/SelectCategory.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task observado; Interaction no detectada.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": null,
+      "scenario": "Compra exitosa de cinturones",
+      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "task": "src/main/java/tasks/SelectCategory.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task observado; Interaction no detectada.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": null,
+      "scenario": "Compra exitosa de cinturones",
+      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "task": "src/main/java/tasks/SelectCategory.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task observado; Interaction no detectada.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": null,
+      "scenario": "Compra exitosa de cinturones",
+      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "task": "src/main/java/tasks/SelectCategory.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task observado; Interaction no detectada.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": null,
+      "scenario": "Compra exitosa de cinturones",
+      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "task": "src/main/java/tasks/SelectProduct.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task observado; Interaction no detectada.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": null,
+      "scenario": "Compra exitosa de cinturones",
+      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "task": "src/main/java/tasks/SelectProduct.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task observado; Interaction no detectada.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": null,
+      "scenario": "Compra exitosa de cinturones",
+      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "task": "src/main/java/tasks/SelectProduct.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task observado; Interaction no detectada.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": null,
+      "scenario": "Compra exitosa de cinturones",
+      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "task": "src/main/java/tasks/SelectProduct.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task observado; Interaction no detectada.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": null,
+      "scenario": "Compra exitosa de cinturones",
+      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "task": "src/main/java/tasks/SelectProduct.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task observado; Interaction no detectada.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": null,
+      "scenario": "Compra exitosa de cinturones",
+      "step_definition": "src/test/java/stepDefinitions/RegisterUserDefinitions.java",
+      "task": "src/main/java/tasks/browser/OpenBrowser.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task observado; Interaction no detectada.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": null,
+      "scenario": "Compra exitosa de cinturones",
+      "step_definition": "src/test/java/stepDefinitions/RegisterUserDefinitions.java",
+      "task": "src/main/java/tasks/browser/OpenBrowser.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task y Task→Interaction observados.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": "src/main/java/interactions/ClickJs.java",
+      "scenario": "Compra exitosa de cinturones",
+      "step_definition": "src/test/java/stepDefinitions/RegisterUserDefinitions.java",
+      "task": "src/main/java/tasks/registerUser/CreateAccount.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task y Task→Interaction observados.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": "src/main/java/interactions/ClickJs.java",
+      "scenario": "Compra exitosa de cinturones",
+      "step_definition": "src/test/java/stepDefinitions/RegisterUserDefinitions.java",
+      "task": "src/main/java/tasks/registerUser/CreateAccount.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task observado; Interaction no detectada.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": null,
+      "scenario": "Compra exitosa de cinturones",
+      "step_definition": "src/test/java/stepDefinitions/RegisterUserDefinitions.java",
+      "task": "src/main/java/tasks/registerUser/OpenRegister.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task observado; Interaction no detectada.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": null,
+      "scenario": "Compra exitosa de cinturones",
+      "step_definition": "src/test/java/stepDefinitions/RegisterUserDefinitions.java",
+      "task": "src/main/java/tasks/registerUser/OpenRegister.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task y Task→Interaction observados.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": "src/main/java/interactions/ClickJs.java",
+      "scenario": "Compra exitosa de zapatos",
+      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "task": "src/main/java/tasks/LoginBonBonite.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task y Task→Interaction observados.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": "src/main/java/interactions/ClickJs.java",
+      "scenario": "Compra exitosa de zapatos",
+      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "task": "src/main/java/tasks/LoginBonBonite.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task y Task→Interaction observados.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": "src/main/java/interactions/ClickJs.java",
+      "scenario": "Compra exitosa de zapatos",
+      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "task": "src/main/java/tasks/LoginBonBonite.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task y Task→Interaction observados.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": "src/main/java/interactions/ClickJs.java",
+      "scenario": "Compra exitosa de zapatos",
+      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "task": "src/main/java/tasks/LoginBonBonite.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task y Task→Interaction observados.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": "src/main/java/interactions/ClickJs.java",
+      "scenario": "Compra exitosa de zapatos",
+      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "task": "src/main/java/tasks/LoginBonBonite.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task y Task→Interaction observados.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": "src/main/java/interactions/ScrollToCenter.java",
+      "scenario": "Compra exitosa de zapatos",
+      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "task": "src/main/java/tasks/PurchaseProcessProduct.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task y Task→Interaction observados.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": "src/main/java/interactions/ScrollToCenter.java",
+      "scenario": "Compra exitosa de zapatos",
+      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "task": "src/main/java/tasks/PurchaseProcessProduct.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task y Task→Interaction observados.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": "src/main/java/interactions/ScrollToCenter.java",
+      "scenario": "Compra exitosa de zapatos",
+      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "task": "src/main/java/tasks/PurchaseProcessProduct.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task y Task→Interaction observados.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": "src/main/java/interactions/ScrollToCenter.java",
+      "scenario": "Compra exitosa de zapatos",
+      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "task": "src/main/java/tasks/PurchaseProcessProduct.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task y Task→Interaction observados.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": "src/main/java/interactions/ScrollToCenter.java",
+      "scenario": "Compra exitosa de zapatos",
+      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "task": "src/main/java/tasks/PurchaseProcessProduct.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task observado; Interaction no detectada.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": null,
+      "scenario": "Compra exitosa de zapatos",
+      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "task": "src/main/java/tasks/SelectCategory.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task observado; Interaction no detectada.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": null,
+      "scenario": "Compra exitosa de zapatos",
+      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "task": "src/main/java/tasks/SelectCategory.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task observado; Interaction no detectada.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": null,
+      "scenario": "Compra exitosa de zapatos",
+      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "task": "src/main/java/tasks/SelectCategory.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task observado; Interaction no detectada.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": null,
+      "scenario": "Compra exitosa de zapatos",
+      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "task": "src/main/java/tasks/SelectCategory.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task observado; Interaction no detectada.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": null,
+      "scenario": "Compra exitosa de zapatos",
+      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "task": "src/main/java/tasks/SelectCategory.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task observado; Interaction no detectada.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": null,
+      "scenario": "Compra exitosa de zapatos",
+      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "task": "src/main/java/tasks/SelectProduct.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task observado; Interaction no detectada.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": null,
+      "scenario": "Compra exitosa de zapatos",
+      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "task": "src/main/java/tasks/SelectProduct.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task observado; Interaction no detectada.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": null,
+      "scenario": "Compra exitosa de zapatos",
+      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "task": "src/main/java/tasks/SelectProduct.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task observado; Interaction no detectada.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": null,
+      "scenario": "Compra exitosa de zapatos",
+      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "task": "src/main/java/tasks/SelectProduct.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task observado; Interaction no detectada.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": null,
+      "scenario": "Compra exitosa de zapatos",
+      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "task": "src/main/java/tasks/SelectProduct.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task observado; Interaction no detectada.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": null,
+      "scenario": "Compra exitosa de zapatos",
+      "step_definition": "src/test/java/stepDefinitions/RegisterUserDefinitions.java",
+      "task": "src/main/java/tasks/browser/OpenBrowser.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task observado; Interaction no detectada.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": null,
+      "scenario": "Compra exitosa de zapatos",
+      "step_definition": "src/test/java/stepDefinitions/RegisterUserDefinitions.java",
+      "task": "src/main/java/tasks/browser/OpenBrowser.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task y Task→Interaction observados.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": "src/main/java/interactions/ClickJs.java",
+      "scenario": "Compra exitosa de zapatos",
+      "step_definition": "src/test/java/stepDefinitions/RegisterUserDefinitions.java",
+      "task": "src/main/java/tasks/registerUser/CreateAccount.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task y Task→Interaction observados.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": "src/main/java/interactions/ClickJs.java",
+      "scenario": "Compra exitosa de zapatos",
+      "step_definition": "src/test/java/stepDefinitions/RegisterUserDefinitions.java",
+      "task": "src/main/java/tasks/registerUser/CreateAccount.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task observado; Interaction no detectada.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": null,
+      "scenario": "Compra exitosa de zapatos",
+      "step_definition": "src/test/java/stepDefinitions/RegisterUserDefinitions.java",
+      "task": "src/main/java/tasks/registerUser/OpenRegister.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task observado; Interaction no detectada.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": null,
+      "scenario": "Compra exitosa de zapatos",
+      "step_definition": "src/test/java/stepDefinitions/RegisterUserDefinitions.java",
+      "task": "src/main/java/tasks/registerUser/OpenRegister.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task y Task→Interaction observados.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": "src/main/java/interactions/ClickJs.java",
+      "scenario": "Compra exitosa en outlet",
+      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "task": "src/main/java/tasks/LoginBonBonite.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task y Task→Interaction observados.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": "src/main/java/interactions/ClickJs.java",
+      "scenario": "Compra exitosa en outlet",
+      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "task": "src/main/java/tasks/LoginBonBonite.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task y Task→Interaction observados.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": "src/main/java/interactions/ClickJs.java",
+      "scenario": "Compra exitosa en outlet",
+      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "task": "src/main/java/tasks/LoginBonBonite.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task y Task→Interaction observados.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": "src/main/java/interactions/ClickJs.java",
+      "scenario": "Compra exitosa en outlet",
+      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "task": "src/main/java/tasks/LoginBonBonite.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task y Task→Interaction observados.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": "src/main/java/interactions/ClickJs.java",
+      "scenario": "Compra exitosa en outlet",
+      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "task": "src/main/java/tasks/LoginBonBonite.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task y Task→Interaction observados.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": "src/main/java/interactions/ScrollToCenter.java",
+      "scenario": "Compra exitosa en outlet",
+      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "task": "src/main/java/tasks/PurchaseProcessProduct.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task y Task→Interaction observados.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": "src/main/java/interactions/ScrollToCenter.java",
+      "scenario": "Compra exitosa en outlet",
+      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "task": "src/main/java/tasks/PurchaseProcessProduct.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task y Task→Interaction observados.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": "src/main/java/interactions/ScrollToCenter.java",
+      "scenario": "Compra exitosa en outlet",
+      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "task": "src/main/java/tasks/PurchaseProcessProduct.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task y Task→Interaction observados.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": "src/main/java/interactions/ScrollToCenter.java",
+      "scenario": "Compra exitosa en outlet",
+      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "task": "src/main/java/tasks/PurchaseProcessProduct.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task y Task→Interaction observados.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": "src/main/java/interactions/ScrollToCenter.java",
+      "scenario": "Compra exitosa en outlet",
+      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "task": "src/main/java/tasks/PurchaseProcessProduct.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task observado; Interaction no detectada.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": null,
+      "scenario": "Compra exitosa en outlet",
+      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "task": "src/main/java/tasks/SelectCategory.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task observado; Interaction no detectada.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": null,
+      "scenario": "Compra exitosa en outlet",
+      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "task": "src/main/java/tasks/SelectCategory.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task observado; Interaction no detectada.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": null,
+      "scenario": "Compra exitosa en outlet",
+      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "task": "src/main/java/tasks/SelectCategory.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task observado; Interaction no detectada.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": null,
+      "scenario": "Compra exitosa en outlet",
+      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "task": "src/main/java/tasks/SelectCategory.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task observado; Interaction no detectada.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": null,
+      "scenario": "Compra exitosa en outlet",
+      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "task": "src/main/java/tasks/SelectCategory.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task observado; Interaction no detectada.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": null,
+      "scenario": "Compra exitosa en outlet",
+      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "task": "src/main/java/tasks/SelectProduct.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task observado; Interaction no detectada.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": null,
+      "scenario": "Compra exitosa en outlet",
+      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "task": "src/main/java/tasks/SelectProduct.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task observado; Interaction no detectada.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": null,
+      "scenario": "Compra exitosa en outlet",
+      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "task": "src/main/java/tasks/SelectProduct.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task observado; Interaction no detectada.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": null,
+      "scenario": "Compra exitosa en outlet",
+      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "task": "src/main/java/tasks/SelectProduct.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task observado; Interaction no detectada.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": null,
+      "scenario": "Compra exitosa en outlet",
+      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "task": "src/main/java/tasks/SelectProduct.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task observado; Interaction no detectada.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": null,
+      "scenario": "Compra exitosa en outlet",
+      "step_definition": "src/test/java/stepDefinitions/RegisterUserDefinitions.java",
+      "task": "src/main/java/tasks/browser/OpenBrowser.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task observado; Interaction no detectada.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": null,
+      "scenario": "Compra exitosa en outlet",
+      "step_definition": "src/test/java/stepDefinitions/RegisterUserDefinitions.java",
+      "task": "src/main/java/tasks/browser/OpenBrowser.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task y Task→Interaction observados.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": "src/main/java/interactions/ClickJs.java",
+      "scenario": "Compra exitosa en outlet",
+      "step_definition": "src/test/java/stepDefinitions/RegisterUserDefinitions.java",
+      "task": "src/main/java/tasks/registerUser/CreateAccount.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task y Task→Interaction observados.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": "src/main/java/interactions/ClickJs.java",
+      "scenario": "Compra exitosa en outlet",
+      "step_definition": "src/test/java/stepDefinitions/RegisterUserDefinitions.java",
+      "task": "src/main/java/tasks/registerUser/CreateAccount.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task observado; Interaction no detectada.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": null,
+      "scenario": "Compra exitosa en outlet",
+      "step_definition": "src/test/java/stepDefinitions/RegisterUserDefinitions.java",
+      "task": "src/main/java/tasks/registerUser/OpenRegister.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task observado; Interaction no detectada.",
+      "feature": "src/test/resources/features/GestionProductos.feature",
+      "interaction": null,
+      "scenario": "Compra exitosa en outlet",
+      "step_definition": "src/test/java/stepDefinitions/RegisterUserDefinitions.java",
+      "task": "src/main/java/tasks/registerUser/OpenRegister.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task observado; Interaction no detectada.",
+      "feature": "src/test/resources/features/RegistrarUsuario.feature",
+      "interaction": null,
+      "scenario": "Registro exitoso",
+      "step_definition": "src/test/java/stepDefinitions/RegisterUserDefinitions.java",
+      "task": "src/main/java/tasks/browser/OpenBrowser.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task observado; Interaction no detectada.",
+      "feature": "src/test/resources/features/RegistrarUsuario.feature",
+      "interaction": null,
+      "scenario": "Registro exitoso",
+      "step_definition": "src/test/java/stepDefinitions/RegisterUserDefinitions.java",
+      "task": "src/main/java/tasks/browser/OpenBrowser.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task observado; Interaction no detectada.",
+      "feature": "src/test/resources/features/RegistrarUsuario.feature",
+      "interaction": null,
+      "scenario": "Registro exitoso",
+      "step_definition": "src/test/java/stepDefinitions/RegisterUserDefinitions.java",
+      "task": "src/main/java/tasks/browser/OpenBrowser.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task observado; Interaction no detectada.",
+      "feature": "src/test/resources/features/RegistrarUsuario.feature",
+      "interaction": null,
+      "scenario": "Registro exitoso",
+      "step_definition": "src/test/java/stepDefinitions/RegisterUserDefinitions.java",
+      "task": "src/main/java/tasks/browser/OpenBrowser.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task observado; Interaction no detectada.",
+      "feature": "src/test/resources/features/RegistrarUsuario.feature",
+      "interaction": null,
+      "scenario": "Registro exitoso",
+      "step_definition": "src/test/java/stepDefinitions/RegisterUserDefinitions.java",
+      "task": "src/main/java/tasks/browser/OpenBrowser.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task y Task→Interaction observados.",
+      "feature": "src/test/resources/features/RegistrarUsuario.feature",
+      "interaction": "src/main/java/interactions/ClickJs.java",
+      "scenario": "Registro exitoso",
+      "step_definition": "src/test/java/stepDefinitions/RegisterUserDefinitions.java",
+      "task": "src/main/java/tasks/registerUser/CreateAccount.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task y Task→Interaction observados.",
+      "feature": "src/test/resources/features/RegistrarUsuario.feature",
+      "interaction": "src/main/java/interactions/ClickJs.java",
+      "scenario": "Registro exitoso",
+      "step_definition": "src/test/java/stepDefinitions/RegisterUserDefinitions.java",
+      "task": "src/main/java/tasks/registerUser/CreateAccount.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task y Task→Interaction observados.",
+      "feature": "src/test/resources/features/RegistrarUsuario.feature",
+      "interaction": "src/main/java/interactions/ClickJs.java",
+      "scenario": "Registro exitoso",
+      "step_definition": "src/test/java/stepDefinitions/RegisterUserDefinitions.java",
+      "task": "src/main/java/tasks/registerUser/CreateAccount.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task y Task→Interaction observados.",
+      "feature": "src/test/resources/features/RegistrarUsuario.feature",
+      "interaction": "src/main/java/interactions/ClickJs.java",
+      "scenario": "Registro exitoso",
+      "step_definition": "src/test/java/stepDefinitions/RegisterUserDefinitions.java",
+      "task": "src/main/java/tasks/registerUser/CreateAccount.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task y Task→Interaction observados.",
+      "feature": "src/test/resources/features/RegistrarUsuario.feature",
+      "interaction": "src/main/java/interactions/ClickJs.java",
+      "scenario": "Registro exitoso",
+      "step_definition": "src/test/java/stepDefinitions/RegisterUserDefinitions.java",
+      "task": "src/main/java/tasks/registerUser/CreateAccount.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task observado; Interaction no detectada.",
+      "feature": "src/test/resources/features/RegistrarUsuario.feature",
+      "interaction": null,
+      "scenario": "Registro exitoso",
+      "step_definition": "src/test/java/stepDefinitions/RegisterUserDefinitions.java",
+      "task": "src/main/java/tasks/registerUser/OpenRegister.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task observado; Interaction no detectada.",
+      "feature": "src/test/resources/features/RegistrarUsuario.feature",
+      "interaction": null,
+      "scenario": "Registro exitoso",
+      "step_definition": "src/test/java/stepDefinitions/RegisterUserDefinitions.java",
+      "task": "src/main/java/tasks/registerUser/OpenRegister.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task observado; Interaction no detectada.",
+      "feature": "src/test/resources/features/RegistrarUsuario.feature",
+      "interaction": null,
+      "scenario": "Registro exitoso",
+      "step_definition": "src/test/java/stepDefinitions/RegisterUserDefinitions.java",
+      "task": "src/main/java/tasks/registerUser/OpenRegister.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task observado; Interaction no detectada.",
+      "feature": "src/test/resources/features/RegistrarUsuario.feature",
+      "interaction": null,
+      "scenario": "Registro exitoso",
+      "step_definition": "src/test/java/stepDefinitions/RegisterUserDefinitions.java",
+      "task": "src/main/java/tasks/registerUser/OpenRegister.java"
+    },
+    {
+      "evidence": "Feature→Step heurístico; Step→Task observado; Interaction no detectada.",
+      "feature": "src/test/resources/features/RegistrarUsuario.feature",
+      "interaction": null,
+      "scenario": "Registro exitoso",
+      "step_definition": "src/test/java/stepDefinitions/RegisterUserDefinitions.java",
+      "task": "src/main/java/tasks/registerUser/OpenRegister.java"
+    }
+  ],
   "feature_to_step_definition": [
     {
       "evidence": "complete Gherkin step matched annotated expression",
@@ -6,7 +1552,10 @@
       "gherkin_step": "actualiza su direccion de facturacion a \"Cr 67 #54-77\" y ciudad \"Itagui\"",
       "relation": "heuristic",
       "scenario": "Cambiar dirección y ciudad de facturación",
-      "step_definition": "src/test/java/stepDefinitions/BillingAddressDefinitions.java"
+      "source": "src/test/resources/features/ActualizarFacturacion.feature",
+      "source_type": "feature",
+      "target": "src/test/java/stepDefinitions/BillingAddressDefinitions.java",
+      "target_type": "step_definition"
     },
     {
       "evidence": "complete Gherkin step matched annotated expression",
@@ -14,7 +1563,10 @@
       "gherkin_step": "debe confirmar que la direccion de facturacion quedo guardada como \"Cr 67 #54-77\" en la ciudad \"Itagui\"",
       "relation": "heuristic",
       "scenario": "Cambiar dirección y ciudad de facturación",
-      "step_definition": "src/test/java/stepDefinitions/BillingAddressDefinitions.java"
+      "source": "src/test/resources/features/ActualizarFacturacion.feature",
+      "source_type": "feature",
+      "target": "src/test/java/stepDefinitions/BillingAddressDefinitions.java",
+      "target_type": "step_definition"
     },
     {
       "evidence": "complete Gherkin step matched annotated expression",
@@ -22,7 +1574,10 @@
       "gherkin_step": "inicia sesion con su usuario",
       "relation": "heuristic",
       "scenario": "Cambiar dirección y ciudad de facturación",
-      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java"
+      "source": "src/test/resources/features/ActualizarFacturacion.feature",
+      "source_type": "feature",
+      "target": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "target_type": "step_definition"
     },
     {
       "evidence": "complete Gherkin step matched annotated expression",
@@ -30,7 +1585,10 @@
       "gherkin_step": "el usuario carga la informacion desde el Excel \"1\"",
       "relation": "heuristic",
       "scenario": "Cambiar dirección y ciudad de facturación",
-      "step_definition": "src/test/java/stepDefinitions/RegisterUserDefinitions.java"
+      "source": "src/test/resources/features/ActualizarFacturacion.feature",
+      "source_type": "feature",
+      "target": "src/test/java/stepDefinitions/RegisterUserDefinitions.java",
+      "target_type": "step_definition"
     },
     {
       "evidence": "complete Gherkin step matched annotated expression",
@@ -38,7 +1596,10 @@
       "gherkin_step": "el usuario esta en la pagina de bonBonite",
       "relation": "heuristic",
       "scenario": "Cambiar dirección y ciudad de facturación",
-      "step_definition": "src/test/java/stepDefinitions/RegisterUserDefinitions.java"
+      "source": "src/test/resources/features/ActualizarFacturacion.feature",
+      "source_type": "feature",
+      "target": "src/test/java/stepDefinitions/RegisterUserDefinitions.java",
+      "target_type": "step_definition"
     },
     {
       "evidence": "complete Gherkin step matched annotated expression",
@@ -46,7 +1607,10 @@
       "gherkin_step": "el usuario carga la informacion PQRS desde el Excel \"<fila>\"",
       "relation": "heuristic",
       "scenario": "Crear una PQR exitosamente",
-      "step_definition": "src/test/java/stepDefinitions/ApplicationPqrsDefinitions.java"
+      "source": "src/test/resources/features/CrearPQRS.feature",
+      "source_type": "feature",
+      "target": "src/test/java/stepDefinitions/ApplicationPqrsDefinitions.java",
+      "target_type": "step_definition"
     },
     {
       "evidence": "complete Gherkin step matched annotated expression",
@@ -54,7 +1618,10 @@
       "gherkin_step": "el usuario PQRS abre la pagina de bonBonite",
       "relation": "heuristic",
       "scenario": "Crear una PQR exitosamente",
-      "step_definition": "src/test/java/stepDefinitions/ApplicationPqrsDefinitions.java"
+      "source": "src/test/resources/features/CrearPQRS.feature",
+      "source_type": "feature",
+      "target": "src/test/java/stepDefinitions/ApplicationPqrsDefinitions.java",
+      "target_type": "step_definition"
     },
     {
       "evidence": "complete Gherkin step matched annotated expression",
@@ -62,7 +1629,10 @@
       "gherkin_step": "el usuario PQRS inicia sesion",
       "relation": "heuristic",
       "scenario": "Crear una PQR exitosamente",
-      "step_definition": "src/test/java/stepDefinitions/ApplicationPqrsDefinitions.java"
+      "source": "src/test/resources/features/CrearPQRS.feature",
+      "source_type": "feature",
+      "target": "src/test/java/stepDefinitions/ApplicationPqrsDefinitions.java",
+      "target_type": "step_definition"
     },
     {
       "evidence": "complete Gherkin step matched annotated expression",
@@ -70,7 +1640,10 @@
       "gherkin_step": "ingresa a la opcion crear solicitud PQRS",
       "relation": "heuristic",
       "scenario": "Crear una PQR exitosamente",
-      "step_definition": "src/test/java/stepDefinitions/ApplicationPqrsDefinitions.java"
+      "source": "src/test/resources/features/CrearPQRS.feature",
+      "source_type": "feature",
+      "target": "src/test/java/stepDefinitions/ApplicationPqrsDefinitions.java",
+      "target_type": "step_definition"
     },
     {
       "evidence": "complete Gherkin step matched annotated expression",
@@ -78,7 +1651,10 @@
       "gherkin_step": "diligencia el formulario con los datos requeridos",
       "relation": "heuristic",
       "scenario": "Crear una PQR exitosamente",
-      "step_definition": "src/test/java/stepDefinitions/ApplicationPqrsDefinitions.java"
+      "source": "src/test/resources/features/CrearPQRS.feature",
+      "source_type": "feature",
+      "target": "src/test/java/stepDefinitions/ApplicationPqrsDefinitions.java",
+      "target_type": "step_definition"
     },
     {
       "evidence": "complete Gherkin step matched annotated expression",
@@ -86,7 +1662,10 @@
       "gherkin_step": "el sistema genera un mensaje de confirmacion con el numero de radicado",
       "relation": "heuristic",
       "scenario": "Crear una PQR exitosamente",
-      "step_definition": "src/test/java/stepDefinitions/ApplicationPqrsDefinitions.java"
+      "source": "src/test/resources/features/CrearPQRS.feature",
+      "source_type": "feature",
+      "target": "src/test/java/stepDefinitions/ApplicationPqrsDefinitions.java",
+      "target_type": "step_definition"
     },
     {
       "evidence": "complete Gherkin step matched annotated expression",
@@ -94,7 +1673,10 @@
       "gherkin_step": "inicia sesion con su usuario",
       "relation": "heuristic",
       "scenario": "Compra exitosa de zapatos",
-      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java"
+      "source": "src/test/resources/features/GestionProductos.feature",
+      "source_type": "feature",
+      "target": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "target_type": "step_definition"
     },
     {
       "evidence": "complete Gherkin step matched annotated expression",
@@ -102,7 +1684,10 @@
       "gherkin_step": "busca la categoria de \"zapatos\"",
       "relation": "heuristic",
       "scenario": "Compra exitosa de zapatos",
-      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java"
+      "source": "src/test/resources/features/GestionProductos.feature",
+      "source_type": "feature",
+      "target": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "target_type": "step_definition"
     },
     {
       "evidence": "complete Gherkin step matched annotated expression",
@@ -110,7 +1695,10 @@
       "gherkin_step": "selecciona un producto disponible",
       "relation": "heuristic",
       "scenario": "Compra exitosa de zapatos",
-      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java"
+      "source": "src/test/resources/features/GestionProductos.feature",
+      "source_type": "feature",
+      "target": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "target_type": "step_definition"
     },
     {
       "evidence": "complete Gherkin step matched annotated expression",
@@ -118,7 +1706,10 @@
       "gherkin_step": "realizamos el proceso de compra",
       "relation": "heuristic",
       "scenario": "Compra exitosa de zapatos",
-      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java"
+      "source": "src/test/resources/features/GestionProductos.feature",
+      "source_type": "feature",
+      "target": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "target_type": "step_definition"
     },
     {
       "evidence": "complete Gherkin step matched annotated expression",
@@ -126,7 +1717,10 @@
       "gherkin_step": "el sistema genera mensaje de confirmacion de compra con el numero de pedido",
       "relation": "heuristic",
       "scenario": "Compra exitosa de zapatos",
-      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java"
+      "source": "src/test/resources/features/GestionProductos.feature",
+      "source_type": "feature",
+      "target": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "target_type": "step_definition"
     },
     {
       "evidence": "complete Gherkin step matched annotated expression",
@@ -134,7 +1728,10 @@
       "gherkin_step": "inicia sesion con su usuario",
       "relation": "heuristic",
       "scenario": "Compra exitosa de bolsos",
-      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java"
+      "source": "src/test/resources/features/GestionProductos.feature",
+      "source_type": "feature",
+      "target": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "target_type": "step_definition"
     },
     {
       "evidence": "complete Gherkin step matched annotated expression",
@@ -142,7 +1739,10 @@
       "gherkin_step": "busca la categoria de \"bolsos\"",
       "relation": "heuristic",
       "scenario": "Compra exitosa de bolsos",
-      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java"
+      "source": "src/test/resources/features/GestionProductos.feature",
+      "source_type": "feature",
+      "target": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "target_type": "step_definition"
     },
     {
       "evidence": "complete Gherkin step matched annotated expression",
@@ -150,7 +1750,10 @@
       "gherkin_step": "selecciona un producto disponible",
       "relation": "heuristic",
       "scenario": "Compra exitosa de bolsos",
-      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java"
+      "source": "src/test/resources/features/GestionProductos.feature",
+      "source_type": "feature",
+      "target": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "target_type": "step_definition"
     },
     {
       "evidence": "complete Gherkin step matched annotated expression",
@@ -158,7 +1761,10 @@
       "gherkin_step": "realizamos el proceso de compra",
       "relation": "heuristic",
       "scenario": "Compra exitosa de bolsos",
-      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java"
+      "source": "src/test/resources/features/GestionProductos.feature",
+      "source_type": "feature",
+      "target": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "target_type": "step_definition"
     },
     {
       "evidence": "complete Gherkin step matched annotated expression",
@@ -166,7 +1772,10 @@
       "gherkin_step": "el sistema genera mensaje de confirmacion de compra con el numero de pedido",
       "relation": "heuristic",
       "scenario": "Compra exitosa de bolsos",
-      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java"
+      "source": "src/test/resources/features/GestionProductos.feature",
+      "source_type": "feature",
+      "target": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "target_type": "step_definition"
     },
     {
       "evidence": "complete Gherkin step matched annotated expression",
@@ -174,7 +1783,10 @@
       "gherkin_step": "inicia sesion con su usuario",
       "relation": "heuristic",
       "scenario": "Compra exitosa de cinturones",
-      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java"
+      "source": "src/test/resources/features/GestionProductos.feature",
+      "source_type": "feature",
+      "target": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "target_type": "step_definition"
     },
     {
       "evidence": "complete Gherkin step matched annotated expression",
@@ -182,7 +1794,10 @@
       "gherkin_step": "busca la categoria de \"cinturones\"",
       "relation": "heuristic",
       "scenario": "Compra exitosa de cinturones",
-      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java"
+      "source": "src/test/resources/features/GestionProductos.feature",
+      "source_type": "feature",
+      "target": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "target_type": "step_definition"
     },
     {
       "evidence": "complete Gherkin step matched annotated expression",
@@ -190,7 +1805,10 @@
       "gherkin_step": "selecciona un producto disponible",
       "relation": "heuristic",
       "scenario": "Compra exitosa de cinturones",
-      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java"
+      "source": "src/test/resources/features/GestionProductos.feature",
+      "source_type": "feature",
+      "target": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "target_type": "step_definition"
     },
     {
       "evidence": "complete Gherkin step matched annotated expression",
@@ -198,7 +1816,10 @@
       "gherkin_step": "realizamos el proceso de compra",
       "relation": "heuristic",
       "scenario": "Compra exitosa de cinturones",
-      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java"
+      "source": "src/test/resources/features/GestionProductos.feature",
+      "source_type": "feature",
+      "target": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "target_type": "step_definition"
     },
     {
       "evidence": "complete Gherkin step matched annotated expression",
@@ -206,7 +1827,10 @@
       "gherkin_step": "el sistema genera mensaje de confirmacion de compra con el numero de pedido",
       "relation": "heuristic",
       "scenario": "Compra exitosa de cinturones",
-      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java"
+      "source": "src/test/resources/features/GestionProductos.feature",
+      "source_type": "feature",
+      "target": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "target_type": "step_definition"
     },
     {
       "evidence": "complete Gherkin step matched annotated expression",
@@ -214,7 +1838,10 @@
       "gherkin_step": "inicia sesion con su usuario",
       "relation": "heuristic",
       "scenario": "Compra exitosa de accesorios",
-      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java"
+      "source": "src/test/resources/features/GestionProductos.feature",
+      "source_type": "feature",
+      "target": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "target_type": "step_definition"
     },
     {
       "evidence": "complete Gherkin step matched annotated expression",
@@ -222,7 +1849,10 @@
       "gherkin_step": "busca la categoria de \"accesorios\"",
       "relation": "heuristic",
       "scenario": "Compra exitosa de accesorios",
-      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java"
+      "source": "src/test/resources/features/GestionProductos.feature",
+      "source_type": "feature",
+      "target": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "target_type": "step_definition"
     },
     {
       "evidence": "complete Gherkin step matched annotated expression",
@@ -230,7 +1860,10 @@
       "gherkin_step": "selecciona un producto disponible",
       "relation": "heuristic",
       "scenario": "Compra exitosa de accesorios",
-      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java"
+      "source": "src/test/resources/features/GestionProductos.feature",
+      "source_type": "feature",
+      "target": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "target_type": "step_definition"
     },
     {
       "evidence": "complete Gherkin step matched annotated expression",
@@ -238,7 +1871,10 @@
       "gherkin_step": "realizamos el proceso de compra",
       "relation": "heuristic",
       "scenario": "Compra exitosa de accesorios",
-      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java"
+      "source": "src/test/resources/features/GestionProductos.feature",
+      "source_type": "feature",
+      "target": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "target_type": "step_definition"
     },
     {
       "evidence": "complete Gherkin step matched annotated expression",
@@ -246,7 +1882,10 @@
       "gherkin_step": "el sistema genera mensaje de confirmacion de compra con el numero de pedido",
       "relation": "heuristic",
       "scenario": "Compra exitosa de accesorios",
-      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java"
+      "source": "src/test/resources/features/GestionProductos.feature",
+      "source_type": "feature",
+      "target": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "target_type": "step_definition"
     },
     {
       "evidence": "complete Gherkin step matched annotated expression",
@@ -254,7 +1893,10 @@
       "gherkin_step": "inicia sesion con su usuario",
       "relation": "heuristic",
       "scenario": "Compra exitosa en outlet",
-      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java"
+      "source": "src/test/resources/features/GestionProductos.feature",
+      "source_type": "feature",
+      "target": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "target_type": "step_definition"
     },
     {
       "evidence": "complete Gherkin step matched annotated expression",
@@ -262,7 +1904,10 @@
       "gherkin_step": "busca la categoria de \"outlet\"",
       "relation": "heuristic",
       "scenario": "Compra exitosa en outlet",
-      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java"
+      "source": "src/test/resources/features/GestionProductos.feature",
+      "source_type": "feature",
+      "target": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "target_type": "step_definition"
     },
     {
       "evidence": "complete Gherkin step matched annotated expression",
@@ -270,7 +1915,10 @@
       "gherkin_step": "selecciona un producto disponible",
       "relation": "heuristic",
       "scenario": "Compra exitosa en outlet",
-      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java"
+      "source": "src/test/resources/features/GestionProductos.feature",
+      "source_type": "feature",
+      "target": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "target_type": "step_definition"
     },
     {
       "evidence": "complete Gherkin step matched annotated expression",
@@ -278,7 +1926,10 @@
       "gherkin_step": "realizamos el proceso de compra",
       "relation": "heuristic",
       "scenario": "Compra exitosa en outlet",
-      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java"
+      "source": "src/test/resources/features/GestionProductos.feature",
+      "source_type": "feature",
+      "target": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "target_type": "step_definition"
     },
     {
       "evidence": "complete Gherkin step matched annotated expression",
@@ -286,7 +1937,10 @@
       "gherkin_step": "el sistema genera mensaje de confirmacion de compra con el numero de pedido",
       "relation": "heuristic",
       "scenario": "Compra exitosa en outlet",
-      "step_definition": "src/test/java/stepDefinitions/ProductManagementDefinitions.java"
+      "source": "src/test/resources/features/GestionProductos.feature",
+      "source_type": "feature",
+      "target": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "target_type": "step_definition"
     },
     {
       "evidence": "complete Gherkin step matched annotated expression",
@@ -294,7 +1948,10 @@
       "gherkin_step": "el usuario carga la informacion desde el Excel \"<fila>\"",
       "relation": "heuristic",
       "scenario": "Compra exitosa de zapatos",
-      "step_definition": "src/test/java/stepDefinitions/RegisterUserDefinitions.java"
+      "source": "src/test/resources/features/GestionProductos.feature",
+      "source_type": "feature",
+      "target": "src/test/java/stepDefinitions/RegisterUserDefinitions.java",
+      "target_type": "step_definition"
     },
     {
       "evidence": "complete Gherkin step matched annotated expression",
@@ -302,7 +1959,10 @@
       "gherkin_step": "el usuario esta en la pagina de bonBonite",
       "relation": "heuristic",
       "scenario": "Compra exitosa de zapatos",
-      "step_definition": "src/test/java/stepDefinitions/RegisterUserDefinitions.java"
+      "source": "src/test/resources/features/GestionProductos.feature",
+      "source_type": "feature",
+      "target": "src/test/java/stepDefinitions/RegisterUserDefinitions.java",
+      "target_type": "step_definition"
     },
     {
       "evidence": "complete Gherkin step matched annotated expression",
@@ -310,7 +1970,10 @@
       "gherkin_step": "el usuario carga la informacion desde el Excel \"<fila>\"",
       "relation": "heuristic",
       "scenario": "Compra exitosa de bolsos",
-      "step_definition": "src/test/java/stepDefinitions/RegisterUserDefinitions.java"
+      "source": "src/test/resources/features/GestionProductos.feature",
+      "source_type": "feature",
+      "target": "src/test/java/stepDefinitions/RegisterUserDefinitions.java",
+      "target_type": "step_definition"
     },
     {
       "evidence": "complete Gherkin step matched annotated expression",
@@ -318,7 +1981,10 @@
       "gherkin_step": "el usuario esta en la pagina de bonBonite",
       "relation": "heuristic",
       "scenario": "Compra exitosa de bolsos",
-      "step_definition": "src/test/java/stepDefinitions/RegisterUserDefinitions.java"
+      "source": "src/test/resources/features/GestionProductos.feature",
+      "source_type": "feature",
+      "target": "src/test/java/stepDefinitions/RegisterUserDefinitions.java",
+      "target_type": "step_definition"
     },
     {
       "evidence": "complete Gherkin step matched annotated expression",
@@ -326,7 +1992,10 @@
       "gherkin_step": "el usuario carga la informacion desde el Excel \"<fila>\"",
       "relation": "heuristic",
       "scenario": "Compra exitosa de cinturones",
-      "step_definition": "src/test/java/stepDefinitions/RegisterUserDefinitions.java"
+      "source": "src/test/resources/features/GestionProductos.feature",
+      "source_type": "feature",
+      "target": "src/test/java/stepDefinitions/RegisterUserDefinitions.java",
+      "target_type": "step_definition"
     },
     {
       "evidence": "complete Gherkin step matched annotated expression",
@@ -334,7 +2003,10 @@
       "gherkin_step": "el usuario esta en la pagina de bonBonite",
       "relation": "heuristic",
       "scenario": "Compra exitosa de cinturones",
-      "step_definition": "src/test/java/stepDefinitions/RegisterUserDefinitions.java"
+      "source": "src/test/resources/features/GestionProductos.feature",
+      "source_type": "feature",
+      "target": "src/test/java/stepDefinitions/RegisterUserDefinitions.java",
+      "target_type": "step_definition"
     },
     {
       "evidence": "complete Gherkin step matched annotated expression",
@@ -342,7 +2014,10 @@
       "gherkin_step": "el usuario carga la informacion desde el Excel \"<fila>\"",
       "relation": "heuristic",
       "scenario": "Compra exitosa de accesorios",
-      "step_definition": "src/test/java/stepDefinitions/RegisterUserDefinitions.java"
+      "source": "src/test/resources/features/GestionProductos.feature",
+      "source_type": "feature",
+      "target": "src/test/java/stepDefinitions/RegisterUserDefinitions.java",
+      "target_type": "step_definition"
     },
     {
       "evidence": "complete Gherkin step matched annotated expression",
@@ -350,7 +2025,10 @@
       "gherkin_step": "el usuario esta en la pagina de bonBonite",
       "relation": "heuristic",
       "scenario": "Compra exitosa de accesorios",
-      "step_definition": "src/test/java/stepDefinitions/RegisterUserDefinitions.java"
+      "source": "src/test/resources/features/GestionProductos.feature",
+      "source_type": "feature",
+      "target": "src/test/java/stepDefinitions/RegisterUserDefinitions.java",
+      "target_type": "step_definition"
     },
     {
       "evidence": "complete Gherkin step matched annotated expression",
@@ -358,7 +2036,10 @@
       "gherkin_step": "el usuario carga la informacion desde el Excel \"<fila>\"",
       "relation": "heuristic",
       "scenario": "Compra exitosa en outlet",
-      "step_definition": "src/test/java/stepDefinitions/RegisterUserDefinitions.java"
+      "source": "src/test/resources/features/GestionProductos.feature",
+      "source_type": "feature",
+      "target": "src/test/java/stepDefinitions/RegisterUserDefinitions.java",
+      "target_type": "step_definition"
     },
     {
       "evidence": "complete Gherkin step matched annotated expression",
@@ -366,7 +2047,10 @@
       "gherkin_step": "el usuario esta en la pagina de bonBonite",
       "relation": "heuristic",
       "scenario": "Compra exitosa en outlet",
-      "step_definition": "src/test/java/stepDefinitions/RegisterUserDefinitions.java"
+      "source": "src/test/resources/features/GestionProductos.feature",
+      "source_type": "feature",
+      "target": "src/test/java/stepDefinitions/RegisterUserDefinitions.java",
+      "target_type": "step_definition"
     },
     {
       "evidence": "complete Gherkin step matched annotated expression",
@@ -374,7 +2058,10 @@
       "gherkin_step": "el usuario carga la informacion desde el Excel \"<fila>\"",
       "relation": "heuristic",
       "scenario": "Registro exitoso",
-      "step_definition": "src/test/java/stepDefinitions/RegisterUserDefinitions.java"
+      "source": "src/test/resources/features/RegistrarUsuario.feature",
+      "source_type": "feature",
+      "target": "src/test/java/stepDefinitions/RegisterUserDefinitions.java",
+      "target_type": "step_definition"
     },
     {
       "evidence": "complete Gherkin step matched annotated expression",
@@ -382,7 +2069,10 @@
       "gherkin_step": "el usuario esta en la pagina de bonBonite",
       "relation": "heuristic",
       "scenario": "Registro exitoso",
-      "step_definition": "src/test/java/stepDefinitions/RegisterUserDefinitions.java"
+      "source": "src/test/resources/features/RegistrarUsuario.feature",
+      "source_type": "feature",
+      "target": "src/test/java/stepDefinitions/RegisterUserDefinitions.java",
+      "target_type": "step_definition"
     },
     {
       "evidence": "complete Gherkin step matched annotated expression",
@@ -390,7 +2080,10 @@
       "gherkin_step": "ingresa al formulario de registro",
       "relation": "heuristic",
       "scenario": "Registro exitoso",
-      "step_definition": "src/test/java/stepDefinitions/RegisterUserDefinitions.java"
+      "source": "src/test/resources/features/RegistrarUsuario.feature",
+      "source_type": "feature",
+      "target": "src/test/java/stepDefinitions/RegisterUserDefinitions.java",
+      "target_type": "step_definition"
     },
     {
       "evidence": "complete Gherkin step matched annotated expression",
@@ -398,7 +2091,10 @@
       "gherkin_step": "ingresa sus datos correctamente",
       "relation": "heuristic",
       "scenario": "Registro exitoso",
-      "step_definition": "src/test/java/stepDefinitions/RegisterUserDefinitions.java"
+      "source": "src/test/resources/features/RegistrarUsuario.feature",
+      "source_type": "feature",
+      "target": "src/test/java/stepDefinitions/RegisterUserDefinitions.java",
+      "target_type": "step_definition"
     },
     {
       "evidence": "complete Gherkin step matched annotated expression",
@@ -406,11 +2102,60 @@
       "gherkin_step": "deberia ver confirmacion de registro exitoso",
       "relation": "heuristic",
       "scenario": "Registro exitoso",
-      "step_definition": "src/test/java/stepDefinitions/RegisterUserDefinitions.java"
+      "source": "src/test/resources/features/RegistrarUsuario.feature",
+      "source_type": "feature",
+      "target": "src/test/java/stepDefinitions/RegisterUserDefinitions.java",
+      "target_type": "step_definition"
     }
   ],
+  "interaction_to_user_interface": [],
   "notes": [
-    "Feature-to-step matching supports common regex and Cucumber {string}, {int}, {float}, {double}, and {word} expressions. Unsupported parameter types are not guessed. Java type references are observed; feature links are heuristic."
+    "Las asociaciones Feature → Step Definition son heurísticas y requieren validación; las referencias directas de tipos Java son observadas.",
+    "Los vínculos hacia User Interfaces y Models solo se incluyen cuando se encuentran referencias directas en el código fuente."
+  ],
+  "step_definition_to_model": [
+    {
+      "evidence": "Java source references model type",
+      "relation": "observed",
+      "source": "src/test/java/stepDefinitions/ApplicationPqrsDefinitions.java",
+      "source_type": "step_definition",
+      "target": "src/main/java/models/PqrsTestData.java",
+      "target_type": "model"
+    }
+  ],
+  "step_definition_to_question": [
+    {
+      "evidence": "Java source references question type",
+      "relation": "observed",
+      "source": "src/test/java/stepDefinitions/ApplicationPqrsDefinitions.java",
+      "source_type": "step_definition",
+      "target": "src/main/java/questions/PqrsRadicado.java",
+      "target_type": "question"
+    },
+    {
+      "evidence": "Java source references question type",
+      "relation": "observed",
+      "source": "src/test/java/stepDefinitions/BillingAddressDefinitions.java",
+      "source_type": "step_definition",
+      "target": "src/main/java/questions/BillingAddressWasUpdated.java",
+      "target_type": "question"
+    },
+    {
+      "evidence": "Java source references question type",
+      "relation": "observed",
+      "source": "src/test/java/stepDefinitions/ProductManagementDefinitions.java",
+      "source_type": "step_definition",
+      "target": "src/main/java/questions/ObtenerResumenOrden.java",
+      "target_type": "question"
+    },
+    {
+      "evidence": "Java source references question type",
+      "relation": "observed",
+      "source": "src/test/java/stepDefinitions/RegisterUserDefinitions.java",
+      "source_type": "step_definition",
+      "target": "src/main/java/questions/SuccessfulRegistration.java",
+      "target_type": "question"
+    }
   ],
   "step_definition_to_task": [
     {
@@ -568,5 +2313,88 @@
       "target_type": "interaction"
     }
   ],
-  "task_to_question": []
+  "task_to_model": [],
+  "task_to_question": [],
+  "task_to_user_interface": [
+    {
+      "evidence": "Java source references user-interface type",
+      "relation": "observed",
+      "source": "src/main/java/tasks/FillBillingAddress.java",
+      "source_type": "task",
+      "target": "src/main/java/userInterfaces/BillingAddressPage.java",
+      "target_type": "user_interface"
+    },
+    {
+      "evidence": "Java source references user-interface type",
+      "relation": "observed",
+      "source": "src/main/java/tasks/LoginBonBonite.java",
+      "source_type": "task",
+      "target": "src/main/java/userInterfaces/LoginBonBonitePage.java",
+      "target_type": "user_interface"
+    },
+    {
+      "evidence": "Java source references user-interface type",
+      "relation": "observed",
+      "source": "src/main/java/tasks/OpenBillingAddressEditor.java",
+      "source_type": "task",
+      "target": "src/main/java/userInterfaces/BillingAddressPage.java",
+      "target_type": "user_interface"
+    },
+    {
+      "evidence": "Java source references user-interface type",
+      "relation": "observed",
+      "source": "src/main/java/tasks/PurchaseProcessProduct.java",
+      "source_type": "task",
+      "target": "src/main/java/userInterfaces/ProductHome.java",
+      "target_type": "user_interface"
+    },
+    {
+      "evidence": "Java source references user-interface type",
+      "relation": "observed",
+      "source": "src/main/java/tasks/SelectCategory.java",
+      "source_type": "task",
+      "target": "src/main/java/userInterfaces/ProductHome.java",
+      "target_type": "user_interface"
+    },
+    {
+      "evidence": "Java source references user-interface type",
+      "relation": "observed",
+      "source": "src/main/java/tasks/SelectProduct.java",
+      "source_type": "task",
+      "target": "src/main/java/userInterfaces/ProductHome.java",
+      "target_type": "user_interface"
+    },
+    {
+      "evidence": "Java source references user-interface type",
+      "relation": "observed",
+      "source": "src/main/java/tasks/pqrs/FillPqrsForm.java",
+      "source_type": "task",
+      "target": "src/main/java/userInterfaces/PqrsHome.java",
+      "target_type": "user_interface"
+    },
+    {
+      "evidence": "Java source references user-interface type",
+      "relation": "observed",
+      "source": "src/main/java/tasks/pqrs/SubmitPqrsRequest.java",
+      "source_type": "task",
+      "target": "src/main/java/userInterfaces/PqrsHome.java",
+      "target_type": "user_interface"
+    },
+    {
+      "evidence": "Java source references user-interface type",
+      "relation": "observed",
+      "source": "src/main/java/tasks/registerUser/CreateAccount.java",
+      "source_type": "task",
+      "target": "src/main/java/userInterfaces/CreateAccountHome.java",
+      "target_type": "user_interface"
+    },
+    {
+      "evidence": "Java source references user-interface type",
+      "relation": "observed",
+      "source": "src/main/java/tasks/registerUser/OpenRegister.java",
+      "source_type": "task",
+      "target": "src/main/java/userInterfaces/CreateAccountHome.java",
+      "target_type": "user_interface"
+    }
+  ]
 }

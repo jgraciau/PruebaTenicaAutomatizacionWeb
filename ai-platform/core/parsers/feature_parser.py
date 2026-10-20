@@ -5,11 +5,10 @@ from core.common.models import SourceFile
 
 
 class FeatureParser:
-    STEP_KEYWORDS = {"Given", "When", "Then", "And", "But", "*", "Dado", "Dada", "Dados", "Dadas", "Cuando", "Entonces", "Y", "Pero"}
-
     def parse(self, source: SourceFile) -> dict[str, Any]:
         feature = ""
         background: list[str] = []
+        background_steps: list[dict[str, Any]] = []
         scenarios: list[dict[str, Any]] = []
         current: dict[str, Any] | None = None
         in_background = False
@@ -47,4 +46,11 @@ class FeatureParser:
                     current["steps"].append(step)
                 elif in_background:
                     background.append(step["text"])
-        return {"path": source.relative_path, "name": feature or source.path.stem, "background": background, "scenarios": scenarios}
+                    background_steps.append(step)
+        return {
+            "path": source.relative_path,
+            "name": feature or source.path.stem,
+            "background": background,
+            "background_steps": background_steps,
+            "scenarios": scenarios,
+        }

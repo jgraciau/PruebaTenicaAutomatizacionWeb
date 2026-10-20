@@ -21,3 +21,5 @@ class ScanResult:
     user_interfaces: tuple[SourceFile, ...]
     models: tuple[SourceFile, ...]
     errors: tuple[str, ...] = ()
+    orphaned_components: tuple[dict[str, str], ...] = ()
+    duplicates: tuple[dict[str, object], ...] = ()

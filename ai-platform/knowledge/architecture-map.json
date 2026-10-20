@@ -2,6 +2,7 @@
   "features": [
     {
       "background": [],
+      "background_steps": [],
       "name": "Actualizar dirección de facturación",
       "path": "src/test/resources/features/ActualizarFacturacion.feature",
       "scenarios": [
@@ -41,6 +42,7 @@
     },
     {
       "background": [],
+      "background_steps": [],
       "name": "Gestión de PQR",
       "path": "src/test/resources/features/CrearPQRS.feature",
       "scenarios": [
@@ -88,6 +90,7 @@
     },
     {
       "background": [],
+      "background_steps": [],
       "name": "Gestion de compras de productos",
       "path": "src/test/resources/features/GestionProductos.feature",
       "scenarios": [
@@ -320,6 +323,7 @@
     },
     {
       "background": [],
+      "background_steps": [],
       "name": "Registro de usuario",
       "path": "src/test/resources/features/RegistrarUsuario.feature",
       "scenarios": [
@@ -372,8 +376,7 @@
       "references": [
         "BrowseTheWeb",
         "ClickJs"
-      ],
-      "root": "interaction"
+      ]
     },
     {
       "classes": [
@@ -387,8 +390,7 @@
         "IllegalStateException",
         "Pause",
         "Thread"
-      ],
-      "root": "interaction"
+      ]
     },
     {
       "classes": [
@@ -400,8 +402,7 @@
       "references": [
         "BrowseTheWeb",
         "ScrollToCenter"
-      ],
-      "root": "interaction"
+      ]
     }
   ],
   "models": [
@@ -409,6 +410,7 @@
       "classes": [
         "LoginCredentials"
       ],
+      "model_markers": [],
       "name": "LoginCredentials",
       "package": "models",
       "path": "src/main/java/models/LoginCredentials.java",
@@ -416,25 +418,25 @@
         "IllegalStateException",
         "LoginCredentials",
         "System"
-      ],
-      "root": "model"
+      ]
     },
     {
       "classes": [
         "Orden"
       ],
+      "model_markers": [],
       "name": "Orden",
       "package": "models",
       "path": "src/main/java/models/Orden.java",
       "references": [
         "Orden"
-      ],
-      "root": "model"
+      ]
     },
     {
       "classes": [
         "PqrsTestData"
       ],
+      "model_markers": [],
       "name": "PqrsTestData",
       "package": "models",
       "path": "src/main/java/models/PqrsTestData.java",
@@ -444,23 +446,7 @@
         "PqrsTestData",
         "String",
         "System"
-      ],
-      "root": "model"
-    },
-    {
-      "classes": [
-        "PqrsTestDataTest"
-      ],
-      "name": "PqrsTestDataTest",
-      "package": "models",
-      "path": "src/test/java/models/PqrsTestDataTest.java",
-      "references": [
-        "Map",
-        "MatcherAssert",
-        "Matchers",
-        "PqrsTestData"
-      ],
-      "root": "model"
+      ]
     }
   ],
   "project": {
@@ -475,6 +461,33 @@
     "root": ".",
     "scan_errors": [],
     "source_files_scanned": 48
+  },
+  "quality": {
+    "duplicate_components": [],
+    "orphaned_components": [
+      {
+        "component_type": "model",
+        "name": "LoginCredentials",
+        "path": "src/main/java/models/LoginCredentials.java"
+      },
+      {
+        "component_type": "model",
+        "name": "Orden",
+        "path": "src/main/java/models/Orden.java"
+      },
+      {
+        "component_type": "user_interface",
+        "name": "ResgisterPage",
+        "path": "src/main/java/userInterfaces/ResgisterPage.java"
+      }
+    ],
+    "risks": [
+      {
+        "code": "ORPHAN_COMPONENTS",
+        "description": "Se detectaron 3 componentes sin relaciones conocidas.",
+        "severity": "medium"
+      }
+    ]
   },
   "questions": [
     {
@@ -492,8 +505,7 @@
         "PAGE_BODY",
         "SELECTED_CITY_OPTION",
         "WOOCOMMERCE_MESSAGE"
-      ],
-      "root": "question"
+      ]
     },
     {
       "classes": [
@@ -508,8 +520,7 @@
         "Orden",
         "Predicate",
         "ProductHome"
-      ],
-      "root": "question"
+      ]
     },
     {
       "classes": [
@@ -527,8 +538,7 @@
         "PqrsRadicado",
         "RADICADO_PATTERN",
         "SUCCESS_PATTERN"
-      ],
-      "root": "question"
+      ]
     },
     {
       "classes": [
@@ -543,8 +553,7 @@
         "CreateAccountHome",
         "REGISTRATION_ERRORS",
         "SuccessfulRegistration"
-      ],
-      "root": "question"
+      ]
     }
   ],
   "step_definitions": [
@@ -606,8 +615,7 @@
         "Then",
         "Utility",
         "When"
-      ],
-      "root": ""
+      ]
     },
     {
       "classes": [
@@ -636,8 +644,7 @@
         "Then",
         "UpdateBillingAddress",
         "When"
-      ],
-      "root": ""
+      ]
     },
     {
       "classes": [
@@ -682,8 +689,7 @@
         "SelectProduct",
         "Then",
         "When"
-      ],
-      "root": ""
+      ]
     },
     {
       "classes": [
@@ -732,8 +738,7 @@
         "Then",
         "Utility",
         "When"
-      ],
-      "root": ""
+      ]
     }
   ],
   "tasks": [
@@ -754,8 +759,7 @@
         "IllegalArgumentException",
         "SelectFromOptions",
         "Tasks"
-      ],
-      "root": "task"
+      ]
     },
     {
       "classes": [
@@ -773,8 +777,7 @@
         "LoginSupport",
         "Serenity",
         "Tasks"
-      ],
-      "root": "task"
+      ]
     },
     {
       "classes": [
@@ -791,8 +794,7 @@
         "Scroll",
         "Tasks",
         "WebElementStateMatchers"
-      ],
-      "root": "task"
+      ]
     },
     {
       "classes": [
@@ -808,8 +810,7 @@
         "PurchaseProcessProduct",
         "ScrollToCenter",
         "Tasks"
-      ],
-      "root": "task"
+      ]
     },
     {
       "classes": [
@@ -827,8 +828,7 @@
         "SelectCategory",
         "Serenity",
         "Tasks"
-      ],
-      "root": "task"
+      ]
     },
     {
       "classes": [
@@ -846,8 +846,7 @@
         "Serenity",
         "TALLA",
         "Tasks"
-      ],
-      "root": "task"
+      ]
     },
     {
       "classes": [
@@ -861,8 +860,7 @@
         "OpenBillingAddressEditor",
         "Tasks",
         "UpdateBillingAddress"
-      ],
-      "root": "task"
+      ]
     },
     {
       "classes": [
@@ -879,8 +877,7 @@
         "OpenBrowser",
         "SystemEnvironmentVariables",
         "Tasks"
-      ],
-      "root": "task"
+      ]
     },
     {
       "classes": [
@@ -898,8 +895,7 @@
         "IllegalStateException",
         "PqrsHome",
         "SelectFromOptions"
-      ],
-      "root": "task"
+      ]
     },
     {
       "classes": [
@@ -915,8 +911,7 @@
         "OpenPqrsPage",
         "SystemEnvironmentVariables",
         "Tasks"
-      ],
-      "root": "task"
+      ]
     },
     {
       "classes": [
@@ -933,8 +928,7 @@
         "PqrsHome",
         "ScrollToCenter",
         "SubmitPqrsRequest"
-      ],
-      "root": "task"
+      ]
     },
     {
       "classes": [
@@ -962,8 +956,7 @@
         "ThreadLocalRandom",
         "UUID",
         "WebDriverWait"
-      ],
-      "root": "task"
+      ]
     },
     {
       "classes": [
@@ -981,8 +974,7 @@
         "OpenRegister",
         "SystemEnvironmentVariables",
         "Tasks"
-      ],
-      "root": "task"
+      ]
     }
   ],
   "user_interfaces": [
@@ -996,8 +988,7 @@
       "references": [
         "By",
         "Target"
-      ],
-      "root": "user_interface"
+      ]
     },
     {
       "classes": [
@@ -1009,8 +1000,7 @@
       "references": [
         "By",
         "Target"
-      ],
-      "root": "user_interface"
+      ]
     },
     {
       "classes": [
@@ -1022,8 +1012,7 @@
       "references": [
         "By",
         "Target"
-      ],
-      "root": "user_interface"
+      ]
     },
     {
       "classes": [
@@ -1035,8 +1024,7 @@
       "references": [
         "By",
         "Target"
-      ],
-      "root": "user_interface"
+      ]
     },
     {
       "classes": [
@@ -1048,8 +1036,7 @@
       "references": [
         "By",
         "Target"
-      ],
-      "root": "user_interface"
+      ]
     },
     {
       "classes": [
@@ -1061,8 +1048,7 @@
       "references": [
         "By",
         "Target"
-      ],
-      "root": "user_interface"
+      ]
     }
   ]
 }

@@ -41,8 +41,20 @@ def _bar_chart(metrics: dict[str, int]) -> str:
 
 
 def _donut_chart(metrics: dict[str, int]) -> str:
-    keys = ("feature_to_step_definition", "step_definition_to_task", "task_to_interaction", "task_to_question")
-    labels = ("Característica → paso", "Paso → Task", "Task → Interaction", "Task → Question")
+    keys = (
+        "feature_to_step_definition",
+        "step_definition_to_task",
+        "step_definition_to_model",
+        "task_to_interaction",
+        "task_to_question",
+    )
+    labels = (
+        "Característica → paso",
+        "Paso → Task",
+        "Paso → Modelo",
+        "Task → Interaction",
+        "Task → Question",
+    )
     values = [int(metrics.get(key, 0)) for key in keys]
     colors = ("#2563eb", "#7c3aed", "#0891b2", "#ea580c")
     total = sum(values)
@@ -88,14 +100,16 @@ def render_html_report(
     relation_labels = {
         "feature_to_step_definition": "Característica → definición de paso",
         "step_definition_to_task": "Definición de paso → Task",
+        "step_definition_to_model": "Definición de paso → Modelo",
         "task_to_interaction": "Task → Interaction",
         "task_to_question": "Task → Question",
     }
     relation_metrics = {
-        key: len(dependencies[key])
+        key: len(dependencies.get(key, []))
         for key in (
             "feature_to_step_definition",
             "step_definition_to_task",
+            "step_definition_to_model",
             "task_to_interaction",
             "task_to_question",
         )
@@ -153,6 +167,33 @@ def render_html_report(
         f'<section class="card warning"><h2>Advertencias del análisis</h2><ul>{warnings}</ul></section>'
         if warnings
         else '<section class="card success"><h2>Estado del análisis</h2><p>No se encontraron errores de lectura o exploración.</p></section>'
+    )
+    quality = architecture.get("quality", {})
+    risks = quality.get("risks", [])
+    risk_items = "".join(
+        f'<li><strong>{html.escape(str(risk["severity"]).title())} — '
+        f'{html.escape(str(risk["code"]))}:</strong> '
+        f'{html.escape(str(risk["description"]))}</li>'
+        for risk in risks
+    ) or "<li>No se detectaron riesgos estáticos.</li>"
+    orphan_items = "".join(
+        f'<li><code>{html.escape(str(item["path"]))}</code> '
+        f'({html.escape(str(item["component_type"]))}: '
+        f'{html.escape(str(item["name"]))})</li>'
+        for item in quality.get("orphaned_components", [])
+    ) or "<li>No se detectaron componentes huérfanos.</li>"
+    duplicate_items = "".join(
+        f'<li><strong>{html.escape(str(item["component_type"]))} — '
+        f'{html.escape(str(item["name"]))}:</strong> '
+        f'{", ".join(f"<code>{html.escape(str(path))}</code>" for path in item["paths"])}</li>'
+        for item in quality.get("duplicate_components", [])
+    ) or "<li>No se detectaron componentes duplicados por nombre dentro de su categoría.</li>"
+    quality_section = (
+        '<section class="grid">'
+        f'<article class="card"><h2>Riesgos detectados ({len(risks)})</h2><ul class="quality-list">{risk_items}</ul></article>'
+        f'<article class="card"><h2>Componentes huérfanos ({len(quality.get("orphaned_components", []))})</h2><ul class="quality-list">{orphan_items}</ul></article>'
+        f'<article class="card"><h2>Componentes duplicados ({len(quality.get("duplicate_components", []))})</h2><ul class="quality-list">{duplicate_items}</ul></article>'
+        '</section>'
     )
     generated_items = [
         ("Archivos fuente", project["source_files_scanned"]),
@@ -218,6 +259,7 @@ def render_html_report(
     <p class="meta">Raíz analizada: <code>{html.escape(str(project["root"]))}</code> · Frameworks detectados: {html.escape(", ".join(map(str, project["frameworks"])))}</p>
   </section>
   {warning_section}
+  {quality_section}
   <section class="card scope" style="margin-top:18px"><h2>Alcance y limitaciones</h2><p>Este reporte inspecciona únicamente los archivos fuente. No ejecuta código Java ni pruebas. Las relaciones entre características y definiciones de pasos son heurísticas; las referencias de tipos Java son observadas. Las llamadas indirectas, la inyección de dependencias y las expresiones Cucumber no compatibles pueden limitar la detección de relaciones.</p></section>
   <footer>Generado por FKA · Las gráficas SVG están integradas; este reporte funciona sin conexión y se actualiza en cada ejecución.</footer>
 </main>
